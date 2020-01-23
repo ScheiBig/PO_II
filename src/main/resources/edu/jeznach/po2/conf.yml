@@ -1,0 +1,13 @@
+---
+!!edu.jeznach.po2.configuration.Configuration
+application:
+  # how many threads user application uses to communicate with server (and server uses vice-versa)
+  thread_per_user: 5
+  # size limit of storage for each user in megabytes
+  size_per_user: 1024
+server:
+  # which absolute path should be used for server storage, if null will use project directory
+  path: null
+  # how many different pseudo-drives should server use
+  drive_count: 5
+...
