@@ -1,4 +1,4 @@
-package edu.jeznach.po2.gui;
+package edu.jeznach.po2.common.gui;
 
 import edu.jeznach.po2.util.CollectionAssembler;
 import edu.jeznach.po2.util.Pair;
@@ -30,7 +30,10 @@ public class NotificationSender {
     private TriFunction<String, String, TrayIcon.MessageType, Void> currentSender;
 
     private enum IconName {
-        S, I, W, E
+        /** Success */ S,
+        /** Info */ I,
+        /** Warning */ W,
+        /** Error */ E
     }
     private static Map<IconName, String> icons = CollectionAssembler.map(IconName.class, String.class,
                                                                   Pair.of(IconName.S, "✅"),

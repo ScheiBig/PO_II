@@ -1,4 +1,4 @@
-package edu.jeznach.po2.file;
+package edu.jeznach.po2.common.file;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -14,7 +14,7 @@ import java.io.Writer;
  * <p>Allows to <i>attach</i>, <i>detach</i> and <i>update</i> files.
  * <i>Attach</i> represents that file was created, <i>detach</i> represents
  * that file was deleted and <i>update</i> represents that file contents was
- * changed. Renaming file should be handled as <i>detaching</i> file with old name
+ * changed. Renaming or moving file should be handled as <i>detaching</i> file with old name
  * and <i>attaching</i> once again with new name, as only modification and no
  * creation date is mapped
  * <br><br>
@@ -36,23 +36,23 @@ public interface FileMapper<M> extends Closeable {
      * will always {@link Yaml#dump(Object, Writer) dump} its result to specified
      * path, so it is important to provide file that can be overridden and/or losing
      * of its current contents is not important anymore.
-     * @param filePath the full path (and name) of file that is to be used to save mapping,
+     * @param file the file that is to be used to save mapping,
      *                 if {@code null} then mapping will not be saved to file (runtime only)
      * @return object containing created mapping
      */
-    @NotNull M createStructure(@Nullable String filePath);
+    @NotNull M createStructure(@Nullable File file);
 
     /**
      * Loads mapping from file.
      * <br><br>
-     * <p>It would be advised to call this method prior to {@link #createStructure(String)},
+     * <p>It would be advised to call this method prior to {@link #createStructure(File)},
      * and perform some actions based on difference of those two calls, as this would
      * suggest that modifications to file structure were performed in between execution
      * of application
-     * @param filePath the full path (and name) of file that is to be used to load mapping
+     * @param file the file that is to be used to load mapping
      * @return object containing loaded mapping
      */
-    @Nullable M loadStructure(@NotNull String filePath);
+    @Nullable M loadStructure(@NotNull File file);
 
     /**
      * Attaches file to mapping

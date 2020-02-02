@@ -1,14 +1,15 @@
 package edu.jeznach.po2.configuration;
 
-import edu.jeznach.po2.gui.NotificationSender;
+import edu.jeznach.po2.common.gui.NotificationSender;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.yaml.snakeyaml.Yaml;
 
 import javax.swing.*;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.io.Reader;
+import java.io.StringWriter;
 
 /**
  * Used to load and provide at runtime properties that were read from configuration file.
@@ -57,7 +58,7 @@ public class Configuration {
     @NotNull public static final String CLIENT_ICON_PATH;
     private static final String DEFAULT_CLIENT_ICON_PATH = "";
 
-    private static final String CONF_YML_PATH = "src/main/resources/edu/jeznach/po2/conf.yml";
+    private static final String CONF_YML_PATH = "/edu/jeznach/po2/conf.yml";
 
     static {
         @NotNull Integer threadPerUser;
@@ -68,7 +69,7 @@ public class Configuration {
         @NotNull String clientIconPath;
         try {
             Yaml yaml = new Yaml();
-            Reader reader = new FileReader(CONF_YML_PATH);
+            Reader reader = new InputStreamReader(Configuration.class.getResourceAsStream(CONF_YML_PATH));
             Configuration configuration = yaml.load(reader);
             threadPerUser = configuration.application.getThread_per_user();
             sizePerUser$Mb = configuration.application.getSize_per_user();
@@ -76,10 +77,12 @@ public class Configuration {
             driveCount = configuration.server.getDrive_count();
             serverIconPath = configuration.server.getIcon_path();
             clientIconPath = configuration.client.getIcon_path();
-        } catch (IOException e) {
+        } catch (Throwable e) {
             {
+                StringWriter writer = new StringWriter();
+                e.printStackTrace(new PrintWriter(writer));
                 NotificationSender sender = new NotificationSender(new ImageIcon("").getImage(), "edu.jeznach.po2");
-                sender.error("Could not load configuration", e.getMessage());
+                sender.error("Could not load configuration", writer.toString());
                 new Thread() {
                     @Override
                     public void run() {
