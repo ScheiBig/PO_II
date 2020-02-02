@@ -1,22 +1,23 @@
 package edu.jeznach.po2.configuration;
 
-import edu.jeznach.po2.gui.NotificationSender;
+import edu.jeznach.po2.common.gui.NotificationSender;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.yaml.snakeyaml.Yaml;
 
 import javax.swing.*;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.io.Reader;
+import java.io.StringWriter;
 
 /**
  * Used to load and provide at runtime properties that were read from configuration file.
  * Properties in this class are stored in java constants (final fields), and should
  * provide effectively unique names (as those may not be 100% same as those in configuration
  * file).
- *
- * Only configuration constants will provide documentation, as constructors and inner classes
+ * <br><br>
+ * <p>Only configuration constants will provide documentation, as constructors and inner classes
  * are only public so that the parser can access them at runtime.
  */
 public class Configuration {
@@ -57,7 +58,7 @@ public class Configuration {
     @NotNull public static final String CLIENT_ICON_PATH;
     private static final String DEFAULT_CLIENT_ICON_PATH = "";
 
-    private static final String CONF_YML_PATH = "src/main/resources/edu/jeznach/po2/conf.yml";
+    private static final String CONF_YML_PATH = "/edu/jeznach/po2/conf.yml";
 
     static {
         @NotNull Integer threadPerUser;
@@ -68,18 +69,22 @@ public class Configuration {
         @NotNull String clientIconPath;
         try {
             Yaml yaml = new Yaml();
-            InputStream inputStream = new FileInputStream(CONF_YML_PATH);
-            Configuration configuration = yaml.load(inputStream);
+            Reader reader = new InputStreamReader(Configuration.class.getResourceAsStream(CONF_YML_PATH));
+            Configuration configuration = yaml.load(reader);
             threadPerUser = configuration.application.getThread_per_user();
             sizePerUser$Mb = configuration.application.getSize_per_user();
             path = configuration.server.getPath();
             driveCount = configuration.server.getDrive_count();
             serverIconPath = configuration.server.getIcon_path();
             clientIconPath = configuration.client.getIcon_path();
-        } catch (IOException e) {
+        } catch (Throwable e) {
             {
-                NotificationSender sender = new NotificationSender(new ImageIcon("").getImage(), "edu.jeznach.po2");
-                sender.error("Could not load configuration", e.getMessage());
+                StringWriter writer = new StringWriter();
+                e.printStackTrace(new PrintWriter(writer));
+                NotificationSender sender = new NotificationSender(new ImageIcon("").getImage(),
+                                                                   "edu.jeznach.po2",
+                                                                   null);
+                sender.error("Could not load configuration", writer.toString());
                 new Thread() {
                     @Override
                     public void run() {
@@ -132,7 +137,7 @@ public class Configuration {
 
     /**
      * Represents application node.
-     * Hosts configuration shared between server and client.
+     * <br>Hosts configuration shared between server and client.
      */
     public static class Application {
 
@@ -154,7 +159,7 @@ public class Configuration {
 
     /**
      * Represents server node.
-     * Hosts server-specific configuration.
+     * <br>Hosts server-specific configuration.
      */
     public static class Server {
 
@@ -183,7 +188,7 @@ public class Configuration {
 
     /**
      * Represents client node.
-     * Hosts client-specific configuration.
+     * <br>Hosts client-specific configuration.
      */
     public static class Client {
 
