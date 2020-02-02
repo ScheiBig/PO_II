@@ -30,7 +30,7 @@ public class Configuration {
     @NotNull public static final String CLIENT_ICON_PATH;
     private static final String DEFAULT_CLIENT_ICON_PATH = "";
 
-    private static final String CONF_YML_PATH = "src/main/resources/edu/jeznach/po2/confyml";
+    private static final String CONF_YML_PATH = "src/main/resources/edu/jeznach/po2/conf.yml";
 
     static {
         @NotNull Integer threadPerUser;
@@ -82,15 +82,15 @@ public class Configuration {
         CLIENT_ICON_PATH = clientIconPath;
     }
 
-    @NotNull private Application application;
+    @NotNull private Application application = new Application();
     @NotNull public Application getApplication() { return application; }
     public void setApplication(@NotNull Application application) { this.application = application; }
 
-    @NotNull private Server server;
+    @NotNull private Server server = new Server();
     @NotNull public Server getServer() { return server; }
     public void setServer(@NotNull Server server) { this.server = server; }
 
-    @NotNull private Client client;
+    @NotNull private Client client = new Client();
     @NotNull public Client getClient() { return this.client; }
     public void setClient(@NotNull Client client) { this.client = client; }
 
@@ -104,11 +104,11 @@ public class Configuration {
 
     public static class Application {
 
-        @NotNull private Integer thread_per_user;
+        @NotNull private Integer thread_per_user = DEFAULT_THREAD_PER_USER;
         @NotNull public Integer getThread_per_user() { return thread_per_user; }
         public void setThread_per_user(@NotNull Integer thread_per_user) { this.thread_per_user = thread_per_user; }
 
-        @NotNull private Integer size_per_user;
+        @NotNull private Integer size_per_user = DEFAULT_SIZE_PER_USER;
         @NotNull public Integer getSize_per_user() { return size_per_user; }
         public void setSize_per_user(@NotNull Integer size_per_user) { this.size_per_user = size_per_user; }
 
@@ -126,11 +126,11 @@ public class Configuration {
         @Nullable public String getPath() { return path; }
         public void setPath(@Nullable String path) { this.path = path; }
 
-        @NotNull private Integer drive_count;
+        @NotNull private Integer drive_count = DEFAULT_DRIVE_COUNT;
         @NotNull public Integer getDrive_count() { return drive_count; }
         public void setDrive_count(@NotNull Integer drive_count) { this.drive_count = drive_count; }
 
-        @NotNull private String icon_path;
+        @NotNull private String icon_path = DEFAULT_SERVER_ICON_PATH;
         @NotNull public String getIcon_path() { return this.icon_path; }
         public void setIcon_path(@NotNull String icon_path) { this.icon_path = icon_path; }
 
@@ -147,7 +147,7 @@ public class Configuration {
 
     public static class Client {
 
-        @NotNull private String icon_path;
+        @NotNull private String icon_path = DEFAULT_CLIENT_ICON_PATH;
         @NotNull public String getIcon_path() { return this.icon_path; }
         public void setIcon_path(@NotNull String icon_path) { this.icon_path = icon_path; }
 
