@@ -10,23 +10,50 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * Used to load and provide at runtime properties that were read from configuration file.
+ * Properties in this class are stored in java constants (final fields), and should
+ * provide effectively unique names (as those may not be 100% same as those in configuration
+ * file).
+ *
+ * Only configuration constants will provide documentation, as constructors and inner classes
+ * are only public so that the parser can access them at runtime.
+ */
 public class Configuration {
 
+    /**
+     * how many threads user application uses to communicate with server (and server uses vice-versa)
+     */
     @NotNull public static final Integer THREAD_PER_USER;
     private static final Integer DEFAULT_THREAD_PER_USER = 5;
 
+    /**
+     * size limit of storage for each user in megabytes
+     */
     @NotNull public static final Integer SIZE_PER_USER$MB;
     private static final Integer DEFAULT_SIZE_PER_USER = 1024;
 
+    /**
+     * which absolute path should be used for server storage, if null will use project directory
+     */
     @Nullable public static final String PATH;
     private static final String DEFAULT_PATH = null;
 
+    /**
+     * how many different pseudo-drives should server use
+     */
     @NotNull public static final Integer DRIVE_COUNT;
     private static final Integer DEFAULT_DRIVE_COUNT = 5;
 
+    /**
+     * where server icon is located
+     */
     @NotNull public static final String SERVER_ICON_PATH;
     private static final String DEFAULT_SERVER_ICON_PATH = "";
 
+    /**
+     * where client icon is located
+     */
     @NotNull public static final String CLIENT_ICON_PATH;
     private static final String DEFAULT_CLIENT_ICON_PATH = "";
 
@@ -102,6 +129,11 @@ public class Configuration {
         this.server = server;
     }
 
+
+    /**
+     * Represents application node.
+     * Hosts configuration shared between server and client.
+     */
     public static class Application {
 
         @NotNull private Integer thread_per_user = DEFAULT_THREAD_PER_USER;
@@ -120,6 +152,10 @@ public class Configuration {
         }
     }
 
+    /**
+     * Represents server node.
+     * Hosts server-specific configuration.
+     */
     public static class Server {
 
         @Nullable private String path;
@@ -145,6 +181,10 @@ public class Configuration {
         }
     }
 
+    /**
+     * Represents client node.
+     * Hosts client-specific configuration.
+     */
     public static class Client {
 
         @NotNull private String icon_path = DEFAULT_CLIENT_ICON_PATH;
