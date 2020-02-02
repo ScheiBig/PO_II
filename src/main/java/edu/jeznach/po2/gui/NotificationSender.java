@@ -16,13 +16,12 @@ import java.util.Map;
  * Used mode is solely dependent on {@link SystemTray} availability - if while constructing
  * a {@code NotificationSender} object {@link SystemTray#isSupported()} returnes {@code false},
  * then object is launched in <i>Console</i> mode.
- *
- * It is important to be aware, that every instance of NotificationSender will create its own
+ * <p>Every instance of NotificationSender will create its own
  * S{@link TrayIcon}, an by default this icon will be there until application is terminated.
  * If during execution created instance is no longer needed, {@link #disposeTrayIcon()} should
  * be called, to remove icon from{@link SystemTray}.
- *
- * All public method of this class are thread-safe.
+ * <br><br>
+ * <p>All public method of this class are thread-safe.
  */
 public class NotificationSender {
 
@@ -137,8 +136,8 @@ public class NotificationSender {
     /**
      * Removes {@link TrayIcon} created by this {@code NotificationSender} from {@link SystemTray}
      * and switches mode to <i>Console</i>.
-     *
-     * Effects of this call are irreversible and it should be used primarily prior to
+     * <br><br>
+     * <p>Effects of this call are irreversible and it should be used primarily prior to
      * disposing this object before application finishes execution.
      */
     public synchronized void disposeTrayIcon() {
