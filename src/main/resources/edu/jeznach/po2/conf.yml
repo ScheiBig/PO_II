@@ -10,4 +10,9 @@ server:
   path: null
   # how many different pseudo-drives should server use
   drive_count: 5
+  # where server icon is located
+  icon_path: src/main/resources/edu/jeznach/po2/server.png
+client:
+  # where client icon is located
+  icon_path: src/main/resources/edu/jeznach/po2/computer.png
 ...
