@@ -81,7 +81,9 @@ public class Configuration {
             {
                 StringWriter writer = new StringWriter();
                 e.printStackTrace(new PrintWriter(writer));
-                NotificationSender sender = new NotificationSender(new ImageIcon("").getImage(), "edu.jeznach.po2");
+                NotificationSender sender = new NotificationSender(new ImageIcon("").getImage(),
+                                                                   "edu.jeznach.po2",
+                                                                   null);
                 sender.error("Could not load configuration", writer.toString());
                 new Thread() {
                     @Override

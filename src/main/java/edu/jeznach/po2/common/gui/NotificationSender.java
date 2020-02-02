@@ -1,14 +1,18 @@
 package edu.jeznach.po2.common.gui;
 
+import edu.jeznach.po2.common.log.Log;
 import edu.jeznach.po2.util.CollectionAssembler;
+import edu.jeznach.po2.util.Optionals;
 import edu.jeznach.po2.util.Pair;
 import edu.jeznach.po2.util.TriFunction;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.awt.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * Used for sending notifications for user.
@@ -28,6 +32,7 @@ public class NotificationSender {
     private SystemTray tray;
     private TrayIcon trayIcon;
     private TriFunction<String, String, TrayIcon.MessageType, Void> currentSender;
+    private Optional<Log> log;
 
     private enum IconName {
         /** Success */ S,
@@ -46,8 +51,11 @@ public class NotificationSender {
      * {@link SystemTray#isSupported()} result.
      * @param trayIconImage the image that will be used as {@link TrayIcon} icon
      * @param trayIconToolTip the tooltip that will be displayed bu {@link TrayIcon}
+     * @param log the log that should be used to save notifications
      */
-    public NotificationSender(@NotNull Image trayIconImage, @NotNull String trayIconToolTip) {
+    public NotificationSender(@NotNull Image trayIconImage,
+                              @NotNull String trayIconToolTip,
+                              @Nullable Log log) {
         if (SystemTray.isSupported()) {
             tray = SystemTray.getSystemTray();
             trayIcon = new TrayIcon(trayIconImage, trayIconToolTip);
@@ -57,6 +65,7 @@ public class NotificationSender {
         } else {
             this.currentSender = this.sendToConsole;
         }
+        this.log = Optional.ofNullable(log);
     }
 
     /**
@@ -98,20 +107,27 @@ public class NotificationSender {
 
     private TriFunction<String, String, TrayIcon.MessageType, Void> sendToConsole =
             (title, description, messageType) -> {
+        final String message;
         switch (messageType) {
             case ERROR:
-                System.err.println(formatMessage(title, description, IconName.E));
+                message = formatMessage(title, description, IconName.E);
                 break;
             case WARNING:
-                System.err.println(formatMessage(title, description, IconName.W));
+                message = formatMessage(title, description, IconName.W);
                 break;
             case INFO:
-                System.out.println(formatMessage(title, description, IconName.I));
+                message = formatMessage(title, description, IconName.I);
                 break;
             case NONE:
-                System.out.println(formatMessage(title, description, IconName.S));
+                message = formatMessage(title, description, IconName.S);
                 break;
+            default:
+                message = "❓ ??";
         }
+        Optionals.ifPresentOrElse(Log.class,
+                                  log,
+                                  log -> log.debug(message),
+                                  () -> System.out.println(message));
         return null;
     };
 

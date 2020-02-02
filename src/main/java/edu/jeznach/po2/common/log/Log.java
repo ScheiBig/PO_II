@@ -9,6 +9,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.io.Closeable;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -52,8 +53,8 @@ public class Log
      * Creates nes instance of {@code Log} and sets its output file to {@code logFile}, if one is provided.
      * @param logFile the file to use as output of logger
      */
-    public Log(@Nullable String logFile) {
-        this.logStream = Optionals.ofThrowable(() -> new PrintStream(logFile));
+    public Log(@Nullable File logFile) {
+        this.logStream = Optionals.ofThrowable(() -> new PrintStream(new FileOutputStream(logFile, true)));
     }
 
     /**
@@ -185,6 +186,15 @@ public class Log
      */
     public void archive(@Nullable String message) {
         logStream.ifPresent(printStream -> printStream.println(message));
+    }
+
+    /**
+     * Saves {@code message} to log file and displays it.
+     * @param message the message to save
+     */
+    public void debug(@Nullable String message) {
+        logStream.ifPresent(printStream -> printStream.println(message));
+        System.out.println(message);
     }
 
     /**

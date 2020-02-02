@@ -3,6 +3,7 @@ package edu.jeznach.po2.util;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
+import java.util.function.Consumer;
 
 /**
  * Contains utility methods that extend functionality of native {@link Optional}
@@ -24,6 +25,26 @@ public class Optionals {
             return Optional.ofNullable(valueSupplier.get());
         } catch (Exception ignored) {
             return Optional.empty();
+        }
+    }
+
+    /**
+     * If a value is present, performs the given action with the value, otherwise performs the given empty-based action.
+     * <br><br>
+     * <p>This mocks java 9 {@code Optional#ifPresentOrElse(Consumer, Runnable)}
+     * @param optional the optional to perform actions on
+     * @param ifPresent the action to be performed, if a value is present
+     * @param ifEmpty the empty-based action to be performed, if no value is present
+     * @param <T> the class of the value
+     */
+    public static <T> void ifPresentOrElse(Class<T> type,
+                                           Optional<T> optional,
+                                           Consumer<T> ifPresent,
+                                           Runnable ifEmpty) {
+        if (optional.isPresent()) {
+            ifPresent.accept(type.cast(optional.get()));
+        } else {
+            ifEmpty.run();
         }
     }
 
