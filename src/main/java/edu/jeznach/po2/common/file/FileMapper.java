@@ -10,7 +10,7 @@ import java.io.Reader;
 import java.io.Writer;
 
 /**
- * Used to read, save, create and manage indexing and mapping of file structure.
+ * Used to manage indexing and mapping of file structure.
  * <p>Allows to <i>attach</i>, <i>detach</i> and <i>update</i> files.
  * <i>Attach</i> represents that file was created, <i>detach</i> represents
  * that file was deleted and <i>update</i> represents that file contents was
@@ -27,32 +27,26 @@ import java.io.Writer;
  *            as structure {@link Yaml#dump(Object, Writer) dumped} to and
  *            {@link Yaml#load(Reader) loaded} from file
  */
-public interface FileMapper<M> extends Closeable {
+public abstract class FileMapper<M> implements Closeable {
 
     /**
-     * Creates new mapping of file structure and saves its results in file.
+     * Contains factory methods for creating/loading file mapping.
      * <br><br>
-     * <p>If file permissions, especially writing is permitted, then this method
-     * will always {@link Yaml#dump(Object, Writer) dump} its result to specified
-     * path, so it is important to provide file that can be overridden and/or losing
-     * of its current contents is not important anymore.
-     * @param file the file that is to be used to save mapping,
-     *                 if {@code null} then mapping will not be saved to file (runtime only)
-     * @return object containing created mapping
+     * <p>All {@link FileMapper} implementations should hide this field with
+     * instance of its own implementations
      */
-    @NotNull M createStructure(@Nullable File file);
+    @SuppressWarnings({"rawtypes", "NotNullFieldNotInitialized"})
+    @NotNull protected static FileMappingProvider provider;
 
+    @NotNull private M mapping;
     /**
-     * Loads mapping from file.
-     * <br><br>
-     * <p>It would be advised to call this method prior to {@link #createStructure(File)},
-     * and perform some actions based on difference of those two calls, as this would
-     * suggest that modifications to file structure were performed in between execution
-     * of application
-     * @param file the file that is to be used to load mapping
-     * @return object containing loaded mapping
+     * @return the mapping that is maintained by this object
      */
-    @Nullable M loadStructure(@NotNull File file);
+    @NotNull public M getMapping() { return this.mapping; }
+
+    public FileMapper(@NotNull M mapping) {
+        this.mapping = mapping;
+    }
 
     /**
      * Attaches file to mapping
@@ -60,7 +54,7 @@ public interface FileMapper<M> extends Closeable {
      *             prior to this call
      * @return {@code true} if file was attached, {@code false} if this file is already attached
      */
-    boolean attachFile(@NotNull File file);
+    public abstract boolean attachFile(@NotNull File file);
 
     /**
      * Detaches file from mapping
@@ -68,7 +62,7 @@ public interface FileMapper<M> extends Closeable {
      *             call
      * @return {@code true} if file was detached, {@code false} if this file is already detached
      */
-    boolean detachFile(@NotNull File file);
+    public abstract boolean detachFile(@NotNull File file);
 
     /**
      * Updates file in mapping
@@ -76,7 +70,7 @@ public interface FileMapper<M> extends Closeable {
      *             prior to this call
      * @return {@code true} if file was updated, {@code false} if no updates is necessary
      */
-    boolean updateFile(@NotNull File file);
+    public abstract boolean updateFile(@NotNull File file);
 
     /**
      * Shares file to {@code receiver}
@@ -85,5 +79,42 @@ public interface FileMapper<M> extends Closeable {
      * @return {@code true} if file was shared, {@code false} if file is already shared,
      *         {@code null} if sharing functionality is not supported
      */
-    @Nullable Boolean shareFile(@NotNull File file, @NotNull String receiver);
+    @Nullable public abstract Boolean shareFile(@NotNull File file, @NotNull String receiver);
+
+    /**
+     * Represents companion object of {@link FileMapper} stored in {@link FileMapper#provider},
+     * used for creating/loading file mapping via factory methods.
+     * <p>Implementation of this class should be used to pass file mapping to {@link FileMapper}
+     * constructor. It should also be impossible to initialize this class outside of this parent,
+     * as it should only be instantiated as singleton in {@link FileMapper}.
+     * @param <M> the type holding indexed mapping. This should be same as type used by
+     *            {@link FileMapper}, as those implementations should be coupled
+     */
+    protected abstract static class FileMappingProvider<M> {
+
+        /**
+         * Creates new mapping of file structure and saves its results in file.
+         * <br><br>
+         * <p>If file permissions, especially writing is permitted, then this method
+         * will always {@link Yaml#dump(Object, Writer) dump} its result to specified
+         * path, so it is important to provide file that can be overridden and/or losing
+         * of its current contents is not important anymore.
+         * @param file the file that is to be used to save mapping,
+         *                 if {@code null} then mapping will not be saved to file (runtime only)
+         * @return object containing created mapping
+         */
+        @NotNull public abstract M createStructure(@Nullable File file);
+
+        /**
+         * Loads mapping from file.
+         * <br><br>
+         * <p>It would be advised to call this method prior to {@link #createStructure(File)},
+         * and perform some actions based on difference of those two calls, as this would
+         * suggest that modifications to file structure were performed in between execution
+         * of application
+         * @param file the file that is to be used to load mapping
+         * @return object containing loaded mapping
+         */
+        @Nullable public abstract M loadStructure(@NotNull File file);
+    }
 }
