@@ -26,6 +26,7 @@ import java.util.Optional;
 public class Log
         implements Closeable {
 
+    @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
     private Optional<PrintStream> logStream;
 
     private enum IconName {
@@ -53,6 +54,7 @@ public class Log
      * Creates nes instance of {@code Log} and sets its output file to {@code logFile}, if one is provided.
      * @param logFile the file to use as output of logger
      */
+    @SuppressWarnings("ConstantConditions")
     public Log(@Nullable File logFile) {
         this.logStream = Optionals.ofThrowable(() -> new PrintStream(new FileOutputStream(logFile, true)));
     }

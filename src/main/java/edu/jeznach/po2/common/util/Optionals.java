@@ -20,6 +20,7 @@ public class Optionals {
      * @return {@code Optional} with provided value if calling {@code Supplier.get()} produces non-null
      *         value and no {@code Exception}, otherwise an empty {@code Optional}
      */
+    @SuppressWarnings("ConstantConditions")
     public static <T> Optional<T> ofThrowable(@Nullable Supplier<T> valueSupplier) {
         try {
             return Optional.ofNullable(valueSupplier.get());
@@ -37,6 +38,7 @@ public class Optionals {
      * @param ifEmpty the empty-based action to be performed, if no value is present
      * @param <T> the class of the value
      */
+    @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
     public static <T> void ifPresentOrElse(Class<T> type,
                                            Optional<T> optional,
                                            Consumer<T> ifPresent,

@@ -32,6 +32,7 @@ public class NotificationSender {
     private SystemTray tray;
     private TrayIcon trayIcon;
     private TriFunction<String, String, TrayIcon.MessageType, Void> currentSender;
+    @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
     private Optional<Log> log;
 
     private enum IconName {
@@ -131,6 +132,7 @@ public class NotificationSender {
         return null;
     };
 
+    @SuppressWarnings("FieldCanBeLocal")
     private TriFunction<String, String, TrayIcon.MessageType, Void> sendToConsoleAndTray =
             (title, description, messageType) -> {
         if (messageType != TrayIcon.MessageType.NONE)
