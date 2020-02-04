@@ -1,11 +1,13 @@
 ---
-!!edu.jeznach.po2.configuration.Configuration
+!!edu.jeznach.po2.common.configuration.Configuration
 # application node, configuration shared between server and client
 application:
   # how many threads user application uses to communicate with server (and server uses vice-versa)
   thread_per_user: 5
   # size limit of storage for each user in megabytes
   size_per_user: 1024
+  # should console output use color
+  print_color: true
 # server node, server-specific configuration
 server:
   # which absolute path should be used for server storage, if null will use project directory

@@ -1,5 +1,6 @@
 package edu.jeznach.po2.common.gui;
 
+import com.diogonunes.jcdp.color.api.Ansi;
 import edu.jeznach.po2.common.log.Log;
 import edu.jeznach.po2.common.util.CollectionAssembler;
 import edu.jeznach.po2.common.util.Optionals;
@@ -108,26 +109,34 @@ public class NotificationSender {
 
     private TriFunction<String, String, TrayIcon.MessageType, Void> sendToConsole =
             (title, description, messageType) -> {
-        final String message;
+        final Log.Message message;
+        final String icon;
+        final Ansi.FColor color;
         switch (messageType) {
             case ERROR:
-                message = formatMessage(title, description, IconName.E);
+                icon = icons.getOrDefault(IconName.E, "❓");
+                color = Ansi.FColor.RED;
                 break;
             case WARNING:
-                message = formatMessage(title, description, IconName.W);
+                icon = icons.getOrDefault(IconName.W, "❓");
+                color = Ansi.FColor.YELLOW;
                 break;
             case INFO:
-                message = formatMessage(title, description, IconName.I);
+                icon = icons.getOrDefault(IconName.I, "❓");
+                color = Ansi.FColor.BLUE;
                 break;
             case NONE:
-                message = formatMessage(title, description, IconName.S);
+                icon = icons.getOrDefault(IconName.S, "❓");
+                color = Ansi.FColor.GREEN;
                 break;
             default:
-                message = "❓ ??";
+                icon = "❓";
+                color = Ansi.FColor.NONE;
         }
+        message = new Log.Message(getCurrentTime(), icon, title, description);
         Optionals.ifPresentOrElse(Log.class,
                                   log,
-                                  log -> log.debug(message),
+                                  log -> log.debug(message, Ansi.Attribute.BOLD, color),
                                   () -> System.out.println(message));
         return null;
     };
@@ -164,5 +173,9 @@ public class NotificationSender {
     public synchronized void disposeTrayIcon() {
         this.tray.remove(this.trayIcon);
         this.currentSender = this.sendToConsole;
+    }
+
+    private static Long getCurrentTime() {
+        return System.currentTimeMillis();
     }
 }

@@ -1,5 +1,7 @@
 package edu.jeznach.po2.common.log;
 
+import com.diogonunes.jcdp.color.ColoredPrinter;
+import com.diogonunes.jcdp.color.api.Ansi;
 import edu.jeznach.po2.common.configuration.Configuration;
 import edu.jeznach.po2.common.util.CollectionAssembler;
 import edu.jeznach.po2.common.util.Optionals;
@@ -11,10 +13,12 @@ import java.io.Closeable;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
 import java.util.Optional;
+import java.util.TimeZone;
 
 /**
  * Used for logging messages to console and file, if provided.
@@ -28,6 +32,14 @@ public class Log
 
     @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
     private Optional<PrintStream> logStream;
+
+    private ColoredPrinter printer = new ColoredPrinter.Builder(0, false).build();
+    private synchronized void print(String s, Ansi.Attribute attribute, Ansi.FColor color) {
+        printer.print(s, attribute, color, Ansi.BColor.NONE);
+    }
+    private synchronized void println(String s, Ansi.Attribute attribute, Ansi.FColor color) {
+        printer.println(s, attribute, color, Ansi.BColor.NONE);
+    }
 
     private enum IconName {
         /** Create new file */ A,
@@ -67,14 +79,15 @@ public class Log
      * @param usage the value of how much size limit is used by user, in bytes
      */
     public void fileCreated(@NotNull String user, @NotNull File file, @NotNull Long usage) {
-        String message = getCurrentTime() + " -> {\n";
-        message += icons.getOrDefault(IconName.A, "❓") + " ";
-        message += "User " + user + " created file: " + file.getAbsolutePath() + ";\n";
-        message += String.format("File size: %.2fKB, user size usage: %.2f%%",
-                                 file.length() / 1024.0,
-                                 usage / Configuration.SIZE_PER_USER$MB / 1024 / 1024.0) + ";\n}";
-        System.out.println(message);
-        archive(message);
+        Message message = new Message(
+                getCurrentTime(),
+                icons.getOrDefault(IconName.A, "❓"),
+                "User " + user + " created file: " + file.getAbsolutePath(),
+                String.format("File size: %.2fKB, user size usage: %.2f%%",
+                              file.length() / 1024.0,
+                              usage / Configuration.SIZE_PER_USER$MB / 1024 / 1024.0)
+        );
+        debug(message, Ansi.Attribute.NONE, Ansi.FColor.GREEN);
     }
 
     /**
@@ -85,14 +98,15 @@ public class Log
      * @param usage the value of how much size limit is used by user, in bytes
      */
     public void fileDeleted(@NotNull String user, @NotNull File file, @NotNull Long usage) {
-        String message = getCurrentTime() + " -> {\n";
-        message += icons.getOrDefault(IconName.D, "❓") + " ";
-        message += "User " + user + " deleted file: " + file.getAbsolutePath() + ";\n";
-        message += String.format("File size: %.2fKB, user size usage: %.2f%%",
-                                 file.length() / 1024.0,
-                                 usage / Configuration.SIZE_PER_USER$MB / 1024 / 1024.0) + ";\n}";
-        System.out.println(message);
-        archive(message);
+        Message message = new Message(
+                getCurrentTime(),
+                icons.getOrDefault(IconName.D, "❓"),
+                "User " + user + " deleted file: " + file.getAbsolutePath(),
+                String.format("File size: %.2fKB, user size usage: %.2f%%",
+                              file.length() / 1024.0,
+                              usage / Configuration.SIZE_PER_USER$MB / 1024 / 1024.0)
+        );
+        debug(message, Ansi.Attribute.NONE, Ansi.FColor.MAGENTA);
     }
 
     /**
@@ -104,15 +118,16 @@ public class Log
      * @param usage the value of how much size limit is used by user, in bytes
      */
     public void fileUpdated(@NotNull String user, @NotNull File file, @NotNull Long oldSize, @NotNull Long usage) {
-        String message = getCurrentTime() + " -> {\n";
-        message += icons.getOrDefault(IconName.U, "❓") + " ";
-        message += "User " + user + " updated file: " + file.getAbsolutePath() + ";\n";
-        message += String.format("File size: %.2fKB => %.2fKB, user size usage: %.2f%%",
-                                 file.length() / 1024.0,
-                                 oldSize / 1024.0,
-                                 usage / Configuration.SIZE_PER_USER$MB / 1024 / 1024.0) + ";\n}";
-        System.out.println(message);
-        archive(message);
+        Message message = new Message(
+                getCurrentTime(),
+                icons.getOrDefault(IconName.U, "❓"),
+                "User " + user + " updated file: " + file.getAbsolutePath(),
+                String.format("File size: %.2fKB => %.2fKB, user size usage: %.2f%%",
+                              file.length() / 1024.0,
+                              oldSize / 1024.0,
+                              usage / Configuration.SIZE_PER_USER$MB / 1024 / 1024.0)
+        );
+        debug(message, Ansi.Attribute.NONE, Ansi.FColor.CYAN);
     }
 
     /**
@@ -123,11 +138,13 @@ public class Log
      * @param oldPath the old path of renamed file, absolute
      */
     public void fileRenamed(@NotNull String user, @NotNull File file, @NotNull String oldPath) {
-        String message = getCurrentTime() + " -> {\n";
-        message += icons.getOrDefault(IconName.R, "❓") + " ";
-        message += "User " + user + " renamed file: " + oldPath + " => " + file.getAbsolutePath() + ";\n}";
-        System.out.println(message);
-        archive(message);
+        Message message = new Message(
+                getCurrentTime(),
+                icons.getOrDefault(IconName.R, "❓"),
+                "User " + user + " renamed file: " + oldPath + " => " + file.getAbsolutePath(),
+                ""
+        );
+        debug(message, Ansi.Attribute.NONE, Ansi.FColor.BLUE);
     }
 
     /**
@@ -137,11 +154,13 @@ public class Log
      * @param receiver the user that file is shared to
      */
     public void fileShared(@NotNull String user, @NotNull File file, @NotNull String receiver) {
-        String message = getCurrentTime() + " -> {\n";
-        message += icons.getOrDefault(IconName.S, "❓") + " ";
-        message += "User " + user + " shared to user: " + receiver + " file: " + file.getAbsolutePath() + ";\n}";
-        System.out.println(message);
-        archive(message);
+        Message message = new Message(
+                getCurrentTime(),
+                icons.getOrDefault(IconName.S, "❓"),
+                "User " + user + " shared to user: " + receiver + " file: " + file.getAbsolutePath(),
+                ""
+        );
+        debug(message, Ansi.Attribute.NONE, Ansi.FColor.GREEN);
     }
 
     /**
@@ -151,11 +170,14 @@ public class Log
      * @param receiver the user that file is being unshared from
      */
     public void fileUnshared(@NotNull String user, @NotNull File file, @NotNull String receiver) {
-        String message = getCurrentTime() + " -> {\n";
-        message += icons.getOrDefault(IconName.T, "❓") + " ";
-        message += "User " + user + " unshared to user: " + receiver + " file: " + file.getAbsolutePath() + ";\n}";
-        System.out.println(message);
-        archive(message);}
+        Message message = new Message(
+                getCurrentTime(),
+                icons.getOrDefault(IconName.T, "❓"),
+                "User " + user + " unshared to user: " + receiver + " file: " + file.getAbsolutePath(),
+                ""
+        );
+        debug(message, Ansi.Attribute.NONE, Ansi.FColor.YELLOW);
+    }
 
     /**
      * Logs event of file being moved.
@@ -164,11 +186,14 @@ public class Log
      * @param oldPath the old path of moved file, absolute
      */
     public void fileMoved(@NotNull String user, @NotNull File file, @NotNull String oldPath) {
-        String message = getCurrentTime() + " -> {\n";
-        message += icons.getOrDefault(IconName.M, "❓") + " ";
-        message += "User " + user + " moved file: " + oldPath + " => " + file.getAbsolutePath() + ";\n}";
-        System.out.println(message);
-        archive(message);}
+        Message message = new Message(
+                getCurrentTime(),
+                icons.getOrDefault(IconName.M, "❓"),
+                "User " + user + " moved file: " + oldPath + " => " + file.getAbsolutePath(),
+                ""
+        );
+        debug(message, Ansi.Attribute.NONE, Ansi.FColor.BLUE);
+    }
 
     /**
      * Logs event of file being rejected (cannot upload).
@@ -176,33 +201,56 @@ public class Log
      * @param file the file that is being rejected (can be empty, but path should contain abstract directions)
      */
     public void fileRejected(@NotNull String user, @NotNull File file) {
-        String message = getCurrentTime() + " -> {\n";
-        message += icons.getOrDefault(IconName.C, "❓") + " ";
-        message += "File: " + file.getAbsolutePath() + " from user: " + user + " was rejected;\n}";
-        System.out.println(message);
-        archive(message);}
+        Message message = new Message(
+                getCurrentTime(),
+                icons.getOrDefault(IconName.C, "❓"),
+                "File: " + file.getAbsolutePath() + " from user: " + user + " was rejected",
+                ""
+        );
+        debug(message, Ansi.Attribute.NONE, Ansi.FColor.RED);
+    }
 
     /**
      * Saves {@code message} to log file.
      * @param message the message to save
      */
-    public void archive(@Nullable String message) {
+    public void archive(@Nullable Message message) {
         logStream.ifPresent(printStream -> printStream.println(message));
     }
 
     /**
      * Saves {@code message} to log file and displays it.
-     * @param message the message to save
+     * @param message the message to save and print
      */
-    public void debug(@Nullable String message) {
+    public void debug(@NotNull Message message) {
         logStream.ifPresent(printStream -> printStream.println(message));
         System.out.println(message);
     }
 
     /**
+     * Saves {@code message} to log file and displays it in color.
+     * @param message message the message to save and print
+     * @param attribute {@link Ansi.Attribute}
+     * @param color {@link Ansi.FColor}
+     */
+    public void debug(@NotNull Message message, Ansi.Attribute attribute, Ansi.FColor color) {
+        logStream.ifPresent(printStream -> printStream.println(message));
+        if (Configuration.PRINT_COLOR) {
+            String[] splitMessage = message.toStringTuple();
+            print(splitMessage[0], attribute, color);
+            println(splitMessage[1], Ansi.Attribute.NONE, color);
+            print(splitMessage[2], Ansi.Attribute.NONE, Ansi.FColor.NONE);
+            print(splitMessage[3], attribute, Ansi.FColor.NONE);
+            println(splitMessage[4], Ansi.Attribute.NONE, Ansi.FColor.NONE);
+            println(splitMessage[5], Ansi.Attribute.NONE, Ansi.FColor.NONE);
+            println(splitMessage[6], Ansi.Attribute.NONE, color);
+        } else System.out.println(message);
+    }
+
+    /**
      * Closes {@link PrintStream} of log file.
      * <br><br>
-     * <p> After this call all log messages will be only printed to console, and {@link #archive(String)}
+     * <p> After this call all log messages will be only printed to console, and {@link #archive(Message)}
      * will do nothing.
      */
     @Override
@@ -210,9 +258,74 @@ public class Log
         logStream.ifPresent(PrintStream::close);
     }
 
-    private static String getCurrentTime() {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
-        LocalDateTime now = LocalDateTime.now();
-        return dtf.format(now);
+    private static Long getCurrentTime() {
+        return System.currentTimeMillis();
+    }
+
+    /**
+     * Represents loggable message.
+     */
+    public static final class Message {
+
+        /**
+         * Time of message creation.
+         */
+        @NotNull public final Long timestamp;
+        @NotNull public final String date() {
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
+            return dtf.format(LocalDateTime.ofInstant(Instant.ofEpochSecond(timestamp),
+                                                      TimeZone.getDefault().toZoneId()));
+        }
+
+        /**
+         * Emoji icon to represent message.
+         */
+        @NotNull public final String icon;
+
+        /**
+         * Title of message.
+         */
+        @NotNull public final String title;
+
+        /**
+         * Detailed description of message.
+         */
+        @NotNull public final String description;
+
+        /**
+         * Creates message.
+         * @param timestamp the time of message creation
+         * @param icon the icon representing message
+         * @param title the title of message
+         * @param description the description of message
+         */
+        public Message(@NotNull Long timestamp,
+                       @NotNull String icon,
+                       @NotNull String title,
+                       @NotNull String description) {
+            this.timestamp = timestamp;
+            this.icon = icon;
+            this.title = title;
+            this.description = description;
+        }
+
+        @Override
+        @NotNull public String toString() {
+            return date() + " -> {\n" +
+                   icon + " " + title + ":\n" +
+                   description + "\n}";
+        }
+
+        @NotNull public String[] toStringTuple() {
+            return new String[] {
+                    date(),
+                    " -> {",
+                    icon + " ",
+                    title,
+                    ":",
+                    description,
+                    "}"
+            };
+        }
     }
 }
