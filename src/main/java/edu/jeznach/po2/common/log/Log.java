@@ -1,9 +1,9 @@
 package edu.jeznach.po2.common.log;
 
-import edu.jeznach.po2.configuration.Configuration;
-import edu.jeznach.po2.util.CollectionAssembler;
-import edu.jeznach.po2.util.Optionals;
-import edu.jeznach.po2.util.Pair;
+import edu.jeznach.po2.common.configuration.Configuration;
+import edu.jeznach.po2.common.util.CollectionAssembler;
+import edu.jeznach.po2.common.util.Optionals;
+import edu.jeznach.po2.common.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

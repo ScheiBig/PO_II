@@ -1,4 +1,4 @@
-package edu.jeznach.po2.configuration;
+package edu.jeznach.po2.common.configuration;
 
 import edu.jeznach.po2.common.gui.NotificationSender;
 import org.jetbrains.annotations.NotNull;

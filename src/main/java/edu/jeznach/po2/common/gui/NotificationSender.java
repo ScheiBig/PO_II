@@ -1,10 +1,10 @@
 package edu.jeznach.po2.common.gui;
 
 import edu.jeznach.po2.common.log.Log;
-import edu.jeznach.po2.util.CollectionAssembler;
-import edu.jeznach.po2.util.Optionals;
-import edu.jeznach.po2.util.Pair;
-import edu.jeznach.po2.util.TriFunction;
+import edu.jeznach.po2.common.util.CollectionAssembler;
+import edu.jeznach.po2.common.util.Optionals;
+import edu.jeznach.po2.common.util.Pair;
+import edu.jeznach.po2.common.util.TriFunction;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

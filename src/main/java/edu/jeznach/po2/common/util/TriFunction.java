@@ -1,4 +1,4 @@
-package edu.jeznach.po2.util;
+package edu.jeznach.po2.common.util;
 
 
 import java.util.function.BiFunction;
