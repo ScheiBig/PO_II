@@ -35,6 +35,12 @@ public class Configuration {
     private static final Integer DEFAULT_SIZE_PER_USER = 1024;
 
     /**
+     * should console output use color
+     */
+    @NotNull public static final Boolean PRINT_COLOR;
+    private static final Boolean DEFAULT_PRINT_COLOR = false;
+
+    /**
      * which absolute path should be used for server storage, if null will use project directory
      */
     @Nullable public static final String PATH;
@@ -63,6 +69,7 @@ public class Configuration {
     static {
         @NotNull Integer threadPerUser;
         @NotNull Integer sizePerUser$Mb;
+        @NotNull Boolean printColor;
         @Nullable String path;
         @NotNull Integer driveCount;
         @NotNull String serverIconPath;
@@ -73,6 +80,7 @@ public class Configuration {
             Configuration configuration = yaml.load(reader);
             threadPerUser = configuration.application.getThread_per_user();
             sizePerUser$Mb = configuration.application.getSize_per_user();
+            printColor = configuration.application.getPrint_color();
             path = configuration.server.getPath();
             driveCount = configuration.server.getDrive_count();
             serverIconPath = configuration.server.getIcon_path();
@@ -101,6 +109,7 @@ public class Configuration {
             }
             threadPerUser = DEFAULT_THREAD_PER_USER;
             sizePerUser$Mb = DEFAULT_SIZE_PER_USER;
+            printColor = DEFAULT_PRINT_COLOR;
             path = DEFAULT_PATH;
             driveCount = DEFAULT_DRIVE_COUNT;
             serverIconPath = DEFAULT_SERVER_ICON_PATH;
@@ -108,6 +117,7 @@ public class Configuration {
         }
         DRIVE_COUNT = driveCount;
         PATH = path;
+        PRINT_COLOR = printColor;
         SIZE_PER_USER$MB = sizePerUser$Mb;
         THREAD_PER_USER = threadPerUser;
         SERVER_ICON_PATH = serverIconPath;
@@ -149,11 +159,18 @@ public class Configuration {
         @NotNull public Integer getSize_per_user() { return size_per_user; }
         public void setSize_per_user(@NotNull Integer size_per_user) { this.size_per_user = size_per_user; }
 
+        @NotNull private Boolean print_color = DEFAULT_PRINT_COLOR;
+        @NotNull public Boolean getPrint_color() { return this.print_color; }
+        public void setPrint_color(@NotNull Boolean print_color) { this.print_color = print_color; }
+
         public Application() { }
 
-        public Application(@NotNull Integer thread_per_user, @NotNull Integer size_per_user) {
+        public Application(@NotNull Integer thread_per_user,
+                           @NotNull Integer size_per_user,
+                           @NotNull Boolean print_color) {
             this.thread_per_user = thread_per_user;
             this.size_per_user = size_per_user;
+            this.print_color = print_color;
         }
     }
 
