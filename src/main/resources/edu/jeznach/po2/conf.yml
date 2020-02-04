@@ -13,9 +13,9 @@ server:
   # how many different pseudo-drives should server use
   drive_count: 5
   # where server icon is located
-  icon_path: src/main/resources/edu/jeznach/po2/server.png
+  icon_path: /edu/jeznach/po2/server.png
 # client node, client-specific configuration
 client:
   # where client icon is located
-  icon_path: src/main/resources/edu/jeznach/po2/computer.png
+  icon_path: /edu/jeznach/po2/computer.png
 ...
