@@ -1,13 +1,19 @@
 package edu.jeznach.po2.common.file;
 
+import edu.jeznach.po2.common.util.Optionals;
+import edu.jeznach.po2.common.util.Pair;
+import edu.jeznach.po2.server.file.DriveMapping;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.yaml.snakeyaml.Yaml;
+import org.yaml.snakeyaml.error.YAMLException;
 
-import java.io.Closeable;
-import java.io.File;
-import java.io.Reader;
-import java.io.Writer;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * Used to manage indexing and mapping of file structure.
@@ -39,13 +45,21 @@ public abstract class FileMapper<M> implements Closeable {
     @NotNull protected static FileMappingProvider provider;
 
     @NotNull private M mapping;
-    /**
-     * @return the mapping that is maintained by this object
-     */
+    /** @return the mapping that is maintained by this object */
     @NotNull public M getMapping() { return this.mapping; }
 
-    public FileMapper(@NotNull M mapping) {
+    @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
+    @NotNull private Optional<Writer> mappingWriter;
+
+    /**
+     * Creates new file mapper.
+     * @param mapping the mapping object
+     * @param file the file that is used to store mapping
+     */
+    @SuppressWarnings("ConstantConditions")
+    public FileMapper(@NotNull M mapping, @Nullable File file) {
         this.mapping = mapping;
+        this.mappingWriter = Optionals.ofThrowable(() -> new OutputStreamWriter(new FileOutputStream(file)));
     }
 
     /**
@@ -81,6 +95,18 @@ public abstract class FileMapper<M> implements Closeable {
      */
     @Nullable public abstract Boolean shareFile(@NotNull File file, @NotNull String receiver);
 
+
+    /**
+     * Closes stream that is used to update mapping file.
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    public void close() throws IOException {
+        if (this.mappingWriter.isPresent())
+            this.mappingWriter.get().close();
+
+    }
+
     /**
      * Represents companion object of {@link FileMapper} stored in {@link FileMapper#provider},
      * used for creating/loading file mapping via factory methods.
@@ -89,8 +115,9 @@ public abstract class FileMapper<M> implements Closeable {
      * as it should only be instantiated as singleton in {@link FileMapper}.
      * @param <M> the type holding indexed mapping. This should be same as type used by
      *            {@link FileMapper}, as those implementations should be coupled
+     * @param <P> the type wrapping initial parameters of structure
      */
-    protected abstract static class FileMappingProvider<M> {
+    protected abstract static class FileMappingProvider<M, P> {
 
         /**
          * Creates new mapping of file structure and saves its results in file.
@@ -101,20 +128,79 @@ public abstract class FileMapper<M> implements Closeable {
          * of its current contents is not important anymore.
          * @param file the file that is to be used to save mapping,
          *                 if {@code null} then mapping will not be saved to file (runtime only)
-         * @return object containing created mapping
+         * @param parameters the parameters that are being passed to file mapping object constructor
+         * @return {@link Pair} of object containing created mapping and boolean value ({@code true}
+         *         if {@code file} didn't exist prior to call, {@code false} if it did, {@code null}
+         *         if {@code file} was not provided
+         * @throws RuntimeException if exception was thrown while initialising file mapping (optional)
+         * @throws IOException if an I/O exception occurs while creating mapping file
          */
-        @NotNull public abstract M createStructure(@Nullable File file);
+        @NotNull public abstract Pair<M, Boolean> createStructure(@Nullable File file, @NotNull P parameters)
+                throws RuntimeException, IOException;
 
         /**
          * Loads mapping from file.
          * <br><br>
-         * <p>It would be advised to call this method prior to {@link #createStructure(File)},
+         * <p>It would be advised to call this method prior to {@link #createStructure(File, P)},
          * and perform some actions based on difference of those two calls, as this would
          * suggest that modifications to file structure were performed in between execution
          * of application
          * @param file the file that is to be used to load mapping
          * @return object containing loaded mapping
+         * @throws FileNotFoundException if provided {@code file} was not found
+         * @throws YAMLException if parsing {@code file} throws exception
+         * @throws IOException if an I/O exception occurs while closing reading stream
          */
-        @Nullable public abstract M loadStructure(@NotNull File file);
+        @Nullable public abstract M loadStructure(@NotNull File file)
+                throws FileNotFoundException, YAMLException, IOException;
+    }
+
+    /**
+     * Recursively creates list of files.
+     * <p>Mapping of filesystem is resolved i.e.:
+     * <blockquote><pre><code>
+     * 📁 rootDirectory
+     * ├ 📄 file.txt
+     * └ 📁 childDirectory
+     *   └ 📄 anotherFile.txt
+     * </code></pre></blockquote>
+     * into:
+     * <blockquote><pre><code>
+     * files: [
+     *   - pathname: file.txt
+     *   - pathname: childDirectory/anotherFile.txt
+     * ]
+     * </code></pre></blockquote>
+     * @param directory the directory to create list of files of
+     * @param rootDirectory the root directory, it is used cut off this part of path from list of files
+     * @return list of all files contained in {@code directory}, and its subdirectories
+     */
+    public static List<DriveMapping.File> listFiles(File directory, File rootDirectory) {
+        List<DriveMapping.File> ret;
+        File[] nodes = directory.listFiles();
+        if (nodes != null && nodes.length > 0) {
+            ret = Arrays.stream(nodes)
+                        .filter(f -> !f.isDirectory())
+                        .map(f -> {
+                            try {
+                                return new DriveMapping.File(
+                                    f.getPath().substring(rootDirectory.getPath().length() + 1),
+                                    f.length(),
+                                    FileManager.getChecksum(f),
+                                    f.lastModified()
+                                );
+                            } catch (Exception e) {
+                                return new DriveMapping.File(e.getMessage(), -1L, "", -1L);
+                            }
+                        })
+                        .collect(Collectors.toList());
+            List<File> directoryNodes = Arrays.stream(nodes)
+                                              .filter(File::isDirectory)
+                                              .collect(Collectors.toList());
+            for (File directoryNode : directoryNodes) {
+                ret.addAll(listFiles(directoryNode, rootDirectory));
+            }
+            return ret;
+        } else return new ArrayList<>();
     }
 }
