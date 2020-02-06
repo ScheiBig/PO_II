@@ -2,7 +2,6 @@ package edu.jeznach.po2.common.file;
 
 import edu.jeznach.po2.common.util.Optionals;
 import edu.jeznach.po2.common.util.Pair;
-import edu.jeznach.po2.server.file.DriveMapping;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.yaml.snakeyaml.Yaml;
@@ -175,22 +174,22 @@ public abstract class FileMapper<M> implements Closeable {
      * @param rootDirectory the root directory, it is used cut off this part of path from list of files
      * @return list of all files contained in {@code directory}, and its subdirectories
      */
-    public static List<DriveMapping.File> listFiles(File directory, File rootDirectory) {
-        List<DriveMapping.File> ret;
+    public static List<FileMapping> listFiles(File directory, File rootDirectory) {
+        List<FileMapping> ret;
         File[] nodes = directory.listFiles();
         if (nodes != null && nodes.length > 0) {
             ret = Arrays.stream(nodes)
                         .filter(f -> !f.isDirectory())
                         .map(f -> {
                             try {
-                                return new DriveMapping.File(
+                                return new FileMapping(
                                     f.getPath().substring(rootDirectory.getPath().length() + 1),
                                     f.length(),
                                     FileManager.getChecksum(f),
                                     f.lastModified()
                                 );
                             } catch (Exception e) {
-                                return new DriveMapping.File(e.getMessage(), -1L, "", -1L);
+                                return new FileMapping(e.getMessage(), -1L, "", -1L);
                             }
                         })
                         .collect(Collectors.toList());
