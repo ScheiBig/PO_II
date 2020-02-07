@@ -1,6 +1,5 @@
 package edu.jeznach.po2.common.file;
 
-import edu.jeznach.po2.common.util.Optionals;
 import edu.jeznach.po2.common.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -32,7 +31,7 @@ import java.util.stream.Collectors;
  *            as structure {@link Yaml#dump(Object, Writer) dumped} to and
  *            {@link Yaml#load(Reader) loaded} from file
  */
-public abstract class FileMapper<M> implements Closeable {
+public abstract class FileMapper<M> {
 
     /**
      * Contains factory methods for creating/loading file mapping.
@@ -48,17 +47,16 @@ public abstract class FileMapper<M> implements Closeable {
     @NotNull public M getMapping() { return this.mapping; }
 
     @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
-    @NotNull protected Optional<Writer> mappingWriter;
+    @NotNull protected Optional<File> mappingFile;
 
     /**
      * Creates new file mapper.
      * @param mapping the mapping object
      * @param file the file that is used to store mapping
      */
-    @SuppressWarnings("ConstantConditions")
     public FileMapper(@NotNull M mapping, @Nullable File file) {
         this.mapping = mapping;
-        this.mappingWriter = Optionals.ofThrowable(() -> new OutputStreamWriter(new FileOutputStream(file)));
+        this.mappingFile = Optional.ofNullable(file);
     }
 
     /**
@@ -86,7 +84,7 @@ public abstract class FileMapper<M> implements Closeable {
      *             in directory prior to this call
      * @param checksum the checksum calculated for {@code file}
      * @param username the name of user that file belongs to
-     * @return {@code true} if file was updated, {@code false} if no updates is necessary
+     * @return {@code true} if file was updated, {@code false} if no updates is necessary/possible
      */
     public abstract boolean updateFile(@NotNull File file, @NotNull String checksum, @NotNull String username);
 
@@ -111,18 +109,6 @@ public abstract class FileMapper<M> implements Closeable {
      *         {@code null} if sharing functionality is not supported
      */
     @Nullable public abstract Boolean unshareFile(@NotNull File file, @NotNull String username, @NotNull String receiver);
-
-
-    /**
-     * Closes stream that is used to update mapping file.
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    public void close() throws IOException {
-        if (this.mappingWriter.isPresent())
-            this.mappingWriter.get().close();
-
-    }
 
     /**
      * Represents companion object of {@link FileMapper} stored in {@link FileMapper#provider},

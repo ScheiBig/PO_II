@@ -59,7 +59,7 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
                                           checksum,
                                           file.lastModified()));
                 user.setUsed_space_bytes(user.getUsed_space_bytes() + file.length());
-                mappingWriter.ifPresent(mw -> new Yaml().dump(getMapping(), mw));
+                mappingFile.ifPresent(this::dumpToFile);
                 return true;
             }
         } else {
@@ -70,13 +70,7 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
                                                 checksum,
                                                 file.lastModified()));
             user.setUsed_space_bytes(user.getUsed_space_bytes() + file.length());
-            mappingWriter.ifPresent(mw -> {
-                try {
-                    mw.write(new Yaml().dump(getMapping()));
-                } catch (IOException e) {
-                    error(e);
-                }
-            });
+            mappingFile.ifPresent(this::dumpToFile);
             return true;
         }
     }
@@ -104,13 +98,7 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
                                 .setUsed_space_bytes(
                                         optionalUser.get()
                                                     .getUsed_space_bytes() - file.length());
-                    mappingWriter.ifPresent(mw -> {
-                        try {
-                            mw.write(new Yaml().dump(getMapping()));
-                        } catch (IOException e) {
-                            error(e);
-                        }
-                    });
+                    mappingFile.ifPresent(this::dumpToFile);
                     return true;
                 }
             }
@@ -120,6 +108,33 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
 
     @Override
     public boolean updateFile(@NotNull File file, @NotNull String checksum, @NotNull String username) {
+        List<DriveMapping.User> users = getMapping().getUsers();
+        Optional<DriveMapping.User> optionalUser = users.stream()
+                                                        .filter(u -> u.getUsername().equals(username))
+                                                        .findFirst();
+        if (optionalUser.isPresent()) {
+            List<FileMapping> files = optionalUser.get().getFiles();
+            String relativeFilePath = getRelativePath(file,
+                                                      new File(getMapping().getDrive_location()
+                                                               + File.separator + username));
+            if (files != null) {
+                Optional<FileMapping> fileOptional = files.stream()
+                                                          .filter(f -> f.getPathname().equals(relativeFilePath))
+                                                          .findFirst();
+                if (fileOptional.isPresent()) {
+                    FileMapping fileMapping = fileOptional.get();
+                    long oldSize = fileMapping.getSize_bytes();
+                    fileMapping.setChecksum(checksum);
+                    fileMapping.setModification_timestamp(file.lastModified());
+                    fileMapping.setSize_bytes(file.length());
+                    optionalUser.get().setUsed_space_bytes(
+                            optionalUser.get().getUsed_space_bytes() - oldSize + file.length()
+                    );
+                    mappingFile.ifPresent(this::dumpToFile);
+                    return true;
+                }
+            }
+        }
         return false;
     }
 
@@ -143,6 +158,16 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
         e.printStackTrace(new PrintWriter(w));
         sender.error(e.getMessage(), w.toString());
         sender.close();
+    }
+
+    private void dumpToFile(File file) {
+        try {
+            Writer writer = new FileWriter(file);
+            writer.write(new Yaml().dump(getMapping()));
+            writer.close();
+        } catch (IOException e) {
+            error(e);
+        }
     }
 
     public static class DriveFileMappingProvider
