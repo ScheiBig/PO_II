@@ -2,7 +2,9 @@ package edu.jeznach.po2.server.file;
 
 import edu.jeznach.po2.common.file.FileMapper;
 import edu.jeznach.po2.common.file.FileMapping;
+import edu.jeznach.po2.common.log.Log;
 import edu.jeznach.po2.common.util.Pair;
+import edu.jeznach.po2.server.gui.NotificationSender;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.yaml.snakeyaml.Yaml;
@@ -33,19 +35,18 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
     public boolean attachFile(@NotNull File file, @NotNull String checksum, @NotNull String username) {
         List<DriveMapping.User> users = getMapping().getUsers();
         Optional<DriveMapping.User> optionalUser = users.stream()
-                                                               .filter(u -> u.getUsername().equals(username))
-                                                               .findFirst();
-        int index;
+                                                        .filter(u -> u.getUsername().equals(username))
+                                                        .findFirst();
+        DriveMapping.User user;
         if (!optionalUser.isPresent()) {
-            DriveMapping.User user = new DriveMapping.User(username);
-            users.add(user);
-            index = users.indexOf(user);
-        } else index = users.indexOf(optionalUser.get());
-        DriveMapping.User user = users.get(index);
+            DriveMapping.User newUser = new DriveMapping.User(username);
+            users.add(newUser);
+            user = newUser;
+        } else user = optionalUser.get();
         List<FileMapping> files = user.getFiles();
         String relativeFilePath = getRelativePath(file,
                                               new File(getMapping().getDrive_location()
-                                                       + File.pathSeparator + username));
+                                                       + File.separator + username));
         if (files != null) {
             Optional<FileMapping> fileOptional = files.stream()
                                                       .filter(f -> f.getPathname().equals(relativeFilePath))
@@ -57,6 +58,7 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
                                           file.length(),
                                           checksum,
                                           file.lastModified()));
+                user.setUsed_space_bytes(user.getUsed_space_bytes() + file.length());
                 mappingWriter.ifPresent(mw -> new Yaml().dump(getMapping(), mw));
                 return true;
             }
@@ -67,13 +69,52 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
                                                 file.length(),
                                                 checksum,
                                                 file.lastModified()));
-            mappingWriter.ifPresent(mw -> new Yaml().dump(getMapping(), mw));
+            user.setUsed_space_bytes(user.getUsed_space_bytes() + file.length());
+            mappingWriter.ifPresent(mw -> {
+                try {
+                    mw.write(new Yaml().dump(getMapping()));
+                } catch (IOException e) {
+                    error(e);
+                }
+            });
             return true;
         }
     }
 
     @Override
-    public boolean detachFile(@NotNull File file, @NotNull String checksum, @NotNull String username) {
+    public boolean detachFile(@NotNull File file, @NotNull String username) {
+        List<DriveMapping.User> users = getMapping().getUsers();
+        Optional<DriveMapping.User> optionalUser = users.stream()
+                                                        .filter(u -> u.getUsername().equals(username))
+                                                        .findFirst();
+        if (optionalUser.isPresent()) {
+            List<FileMapping> files = optionalUser.get()
+                                                  .getFiles();
+            String relativeFilePath = getRelativePath(file,
+                                                      new File(getMapping().getDrive_location()
+                                                               + File.separator + username));
+            if (files != null) {
+                Optional<FileMapping> fileOptional = files.stream()
+                                                          .filter(f -> f.getPathname()
+                                                                        .equals(relativeFilePath))
+                                                          .findFirst();
+                if (fileOptional.isPresent()) {
+                    files.remove(fileOptional.get());
+                    optionalUser.get()
+                                .setUsed_space_bytes(
+                                        optionalUser.get()
+                                                    .getUsed_space_bytes() - file.length());
+                    mappingWriter.ifPresent(mw -> {
+                        try {
+                            mw.write(new Yaml().dump(getMapping()));
+                        } catch (IOException e) {
+                            error(e);
+                        }
+                    });
+                    return true;
+                }
+            }
+        }
         return false;
     }
 
@@ -90,6 +131,18 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
     @Override
     public @Nullable Boolean unshareFile(@NotNull File file, @NotNull String username, @NotNull String receiver) {
         return null;
+    }
+
+    private void error(Exception e) {
+        NotificationSender sender =
+                new NotificationSender(getMapping().getName(),
+                                       new Log(new File(getMapping().getDrive_location() +
+                                                        File.separator +
+                                                        getMapping().getLog_name())));
+        StringWriter w = new StringWriter();
+        e.printStackTrace(new PrintWriter(w));
+        sender.error(e.getMessage(), w.toString());
+        sender.close();
     }
 
     public static class DriveFileMappingProvider

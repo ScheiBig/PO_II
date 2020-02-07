@@ -75,11 +75,10 @@ public abstract class FileMapper<M> implements Closeable {
      * Detaches file from mapping
      * @param file the {@link File} to be attached to mapping. File still be existing in mapped directory
      *             prior to this call
-     * @param checksum the checksum calculated for {@code file}
      * @param username the name of user that file belongs to
      * @return {@code true} if file was detached, {@code false} if this file is already detached
      */
-    public abstract boolean detachFile(@NotNull File file, @NotNull String checksum, @NotNull String username);
+    public abstract boolean detachFile(@NotNull File file, @NotNull String username);
 
     /**
      * Updates file in mapping
