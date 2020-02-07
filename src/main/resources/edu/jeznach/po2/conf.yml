@@ -8,6 +8,8 @@ application:
   size_per_user: 1024
   # should console output use color
   print_color: true
+  # algorithm used to calculate checksum of files
+  checksum_algorithm: SHA-1
 # server node, server-specific configuration
 server:
   # which absolute path should be used for server storage, if null will use project directory

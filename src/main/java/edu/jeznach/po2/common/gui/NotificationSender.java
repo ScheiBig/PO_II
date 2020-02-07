@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.awt.*;
+import java.io.Closeable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
@@ -24,17 +25,32 @@ import java.util.Optional;
  * <p>Every instance of NotificationSender will create its own
  * S{@link TrayIcon}, an by default this icon will be there until application is terminated.
  * If during execution created instance is no longer needed, {@link #disposeTrayIcon()} should
- * be called, to remove icon from{@link SystemTray}.
+ * be called, to remove icon from {@link SystemTray}. If {@code Log} object was provided,
+ * {@link #close()} will also close Log object.
  * <br><br>
  * <p>All public method of this class are thread-safe.
  */
-public class NotificationSender {
+public class NotificationSender implements Closeable {
 
     private SystemTray tray;
     private TrayIcon trayIcon;
     private TriFunction<String, String, TrayIcon.MessageType, Void> currentSender;
     @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
     private Optional<Log> log;
+
+    /**
+     * Closes/disposes all system resources.
+     * <br><br>
+     * <p>This method closes {@link Log} object, if one was provided, so it only should
+     * be called if {@code log} is no longer needed.
+     */
+    @Override
+    public synchronized void close() {
+        log.ifPresent(Log::close);
+        log = Optional.empty();
+        this.tray.remove(this.trayIcon);
+        this.currentSender = this.sendToConsole;
+    }
 
     private enum IconName {
         /** Success */ S,

@@ -270,27 +270,27 @@ public class Log
         /**
          * Time of message creation.
          */
-        @NotNull public final Long timestamp;
-        @NotNull public final String date() {
+        public final @NotNull Long timestamp;
+        public final @NotNull String date() {
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
-            return dtf.format(LocalDateTime.ofInstant(Instant.ofEpochSecond(timestamp),
+            return dtf.format(LocalDateTime.ofInstant(Instant.ofEpochMilli(timestamp),
                                                       TimeZone.getDefault().toZoneId()));
         }
 
         /**
          * Emoji icon to represent message.
          */
-        @NotNull public final String icon;
+        public final @NotNull String icon;
 
         /**
          * Title of message.
          */
-        @NotNull public final String title;
+        public final @NotNull String title;
 
         /**
          * Detailed description of message.
          */
-        @NotNull public final String description;
+        public final @NotNull String description;
 
         /**
          * Creates message.
@@ -310,13 +310,13 @@ public class Log
         }
 
         @Override
-        @NotNull public String toString() {
+        public @NotNull String toString() {
             return date() + " -> {\n" +
                    icon + " " + title + ":\n" +
                    description + "\n}";
         }
 
-        @NotNull public String[] toStringTuple() {
+        public @NotNull String[] toStringTuple() {
             return new String[] {
                     date(),
                     " -> {",
