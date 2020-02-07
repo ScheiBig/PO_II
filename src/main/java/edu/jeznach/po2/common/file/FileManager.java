@@ -1,6 +1,7 @@
 package edu.jeznach.po2.common.file;
 
 import edu.jeznach.po2.common.configuration.Configuration;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -23,7 +24,7 @@ public class FileManager {
      * @return {@link String} containing checksum in hex format
      * @throws Exception when exception is thrown while calculating checksum
      */
-    public static String getChecksum(File file) throws Exception {
+    public static @NotNull String getChecksum(File file) throws Exception {
         byte[] b = createChecksum(file);
         StringBuilder result = new StringBuilder();
 

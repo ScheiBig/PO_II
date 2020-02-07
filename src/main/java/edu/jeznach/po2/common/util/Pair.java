@@ -1,5 +1,7 @@
 package edu.jeznach.po2.common.util;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Map;
 
 /**
@@ -35,13 +37,13 @@ public class Pair<K, V> {
      * @param value key of this {@code Pair}
      * @return Created {@code Pair}
      */
-    public static <K, V> Pair<K, V> of(K key, V value) { return new Pair<>(key, value); }
+    public static <K, V> @NotNull Pair<K, V> of(K key, V value) { return new Pair<>(key, value); }
 
     /**
      * Transforms this {@code Pair} to {@link Map.Entry}.
      * @return Implementation of {@link Map.Entry} using this {@code Pair} fields as initial values;
      */
-    public Map.Entry<K, V> toMapEntry() {
+    public @NotNull Map.Entry<K, V> toMapEntry() {
         return new Map.Entry<K, V>() {
 
             private K k = key;

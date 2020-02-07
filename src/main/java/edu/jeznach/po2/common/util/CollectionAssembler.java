@@ -22,7 +22,7 @@ public class CollectionAssembler {
      * @throws ValueCastException if a {@link Pair#value value} of one of {@link Pair Pairs} is not instance of class represented by {@code valueClass}
      */
     @SuppressWarnings("unchecked")
-    public static <K, V> Map<K, V> map(@NotNull Class<K> keyClass,
+    public static <K, V> @NotNull Map<K, V> map(@NotNull Class<K> keyClass,
                                        @NotNull Class<V> valueClass,
                                        Pair<?, ?> ... pairs)
             throws KeyCastException, ValueCastException {

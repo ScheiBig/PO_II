@@ -1,5 +1,6 @@
 package edu.jeznach.po2.common.util;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
@@ -21,7 +22,7 @@ public class Optionals {
      *         value and no {@code Exception}, otherwise an empty {@code Optional}
      */
     @SuppressWarnings("ConstantConditions")
-    public static <T> Optional<T> ofThrowable(@Nullable Supplier<T> valueSupplier) {
+    public static <T> @NotNull Optional<T> ofThrowable(@Nullable Supplier<T> valueSupplier) {
         try {
             return Optional.ofNullable(valueSupplier.get());
         } catch (Exception ignored) {

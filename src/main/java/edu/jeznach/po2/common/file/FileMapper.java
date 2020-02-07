@@ -40,7 +40,7 @@ public abstract class FileMapper<M> {
      * instance of its own implementations
      */
     @SuppressWarnings({"rawtypes", "NotNullFieldNotInitialized"})
-    @NotNull protected static FileMappingProvider provider;
+    protected static @NotNull FileMappingProvider provider;
 
     @NotNull private M mapping;
     /** @return the mapping that is maintained by this object */

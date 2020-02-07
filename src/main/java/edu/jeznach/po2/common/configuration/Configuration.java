@@ -20,35 +20,35 @@ import java.io.*;
 public class Configuration {
 
     /** how many threads user application uses to communicate with server (and server uses vice-versa) */
-    @NotNull public static final Integer THREAD_PER_USER;
+    public static final @NotNull Integer THREAD_PER_USER;
     private static final Integer DEFAULT_THREAD_PER_USER = 5;
 
     /** size limit of storage for each user in megabytes */
-    @NotNull public static final Integer SIZE_PER_USER$MB;
+    public static final @NotNull Integer SIZE_PER_USER$MB;
     private static final Integer DEFAULT_SIZE_PER_USER = 1024;
 
     /** should console output use color */
-    @NotNull public static final Boolean PRINT_COLOR;
+    public static final @NotNull Boolean PRINT_COLOR;
     private static final Boolean DEFAULT_PRINT_COLOR = false;
 
     /** algorithm used to calculate checksum of files */
-    @NotNull public static final String CHECKSUM_ALGORITHM;
+    public static final @NotNull String CHECKSUM_ALGORITHM;
     private static final String DEFAULT_CHECKSUM_ALGORITHM = "SHA-1";
 
     /** which absolute path should be used for server storage, if null will use project directory */
-    @Nullable public static final String PATH;
+    public static final @Nullable String PATH;
     private static final String DEFAULT_PATH = null;
 
     /** how many different pseudo-drives should server use */
-    @NotNull public static final Integer DRIVE_COUNT;
+    public static final @NotNull Integer DRIVE_COUNT;
     private static final Integer DEFAULT_DRIVE_COUNT = 5;
 
     /** where server icon is located */
-    @NotNull public static final String SERVER_ICON_PATH;
+    public static final @NotNull String SERVER_ICON_PATH;
     private static final String DEFAULT_SERVER_ICON_PATH = "";
 
     /** where client icon is located */
-    @NotNull public static final String CLIENT_ICON_PATH;
+    public static final @NotNull String CLIENT_ICON_PATH;
     private static final String DEFAULT_CLIENT_ICON_PATH = "";
 
     private static final String CONF_YML_PATH = "/edu/jeznach/po2/conf.yml";
@@ -144,16 +144,16 @@ public class Configuration {
         CLIENT_ICON_PATH = clientIconPath;
     }
 
-    @NotNull private Application application = new Application();
-    @NotNull public Application getApplication() { return application; }
+    private @NotNull Application application = new Application();
+    public @NotNull Application getApplication() { return application; }
     public void setApplication(@NotNull Application application) { this.application = application; }
 
-    @NotNull private Server server = new Server();
-    @NotNull public Server getServer() { return server; }
+    private @NotNull Server server = new Server();
+    public @NotNull Server getServer() { return server; }
     public void setServer(@NotNull Server server) { this.server = server; }
 
-    @NotNull private Client client = new Client();
-    @NotNull public Client getClient() { return this.client; }
+    private @NotNull Client client = new Client();
+    public @NotNull Client getClient() { return this.client; }
     public void setClient(@NotNull Client client) { this.client = client; }
 
     Configuration() { }
@@ -164,20 +164,20 @@ public class Configuration {
      */
     public static class Application {
 
-        @NotNull private Integer thread_per_user = DEFAULT_THREAD_PER_USER;
-        @NotNull public Integer getThread_per_user() { return thread_per_user; }
+        private @NotNull Integer thread_per_user = DEFAULT_THREAD_PER_USER;
+        public @NotNull Integer getThread_per_user() { return thread_per_user; }
         public void setThread_per_user(@NotNull Integer thread_per_user) { this.thread_per_user = thread_per_user; }
 
-        @NotNull private Integer size_per_user = DEFAULT_SIZE_PER_USER;
-        @NotNull public Integer getSize_per_user() { return size_per_user; }
+        private @NotNull Integer size_per_user = DEFAULT_SIZE_PER_USER;
+        public @NotNull Integer getSize_per_user() { return size_per_user; }
         public void setSize_per_user(@NotNull Integer size_per_user) { this.size_per_user = size_per_user; }
 
-        @NotNull private Boolean print_color = DEFAULT_PRINT_COLOR;
-        @NotNull public Boolean getPrint_color() { return this.print_color; }
+        private @NotNull Boolean print_color = DEFAULT_PRINT_COLOR;
+        public @NotNull Boolean getPrint_color() { return this.print_color; }
         public void setPrint_color(@NotNull Boolean print_color) { this.print_color = print_color; }
 
-        @NotNull private String checksum_algorithm = DEFAULT_CHECKSUM_ALGORITHM;
-        @NotNull public String getChecksum_algorithm() { return this.checksum_algorithm; }
+        private @NotNull String checksum_algorithm = DEFAULT_CHECKSUM_ALGORITHM;
+        public @NotNull String getChecksum_algorithm() { return this.checksum_algorithm; }
         public void setChecksum_algorithm(@NotNull String checksum_algorithm) { this.checksum_algorithm = checksum_algorithm; }
 
         Application() { }
@@ -189,16 +189,16 @@ public class Configuration {
      */
     public static class Server {
 
-        @Nullable private String path;
-        @Nullable public String getPath() { return path; }
+        private @Nullable String path;
+        public @Nullable String getPath() { return path; }
         public void setPath(@Nullable String path) { this.path = path; }
 
-        @NotNull private Integer drive_count = DEFAULT_DRIVE_COUNT;
-        @NotNull public Integer getDrive_count() { return drive_count; }
+        private @NotNull Integer drive_count = DEFAULT_DRIVE_COUNT;
+        public @NotNull Integer getDrive_count() { return drive_count; }
         public void setDrive_count(@NotNull Integer drive_count) { this.drive_count = drive_count; }
 
-        @NotNull private String icon_path = DEFAULT_SERVER_ICON_PATH;
-        @NotNull public String getIcon_path() { return this.icon_path; }
+        private @NotNull String icon_path = DEFAULT_SERVER_ICON_PATH;
+        public @NotNull String getIcon_path() { return this.icon_path; }
         public void setIcon_path(@NotNull String icon_path) { this.icon_path = icon_path; }
 
         Server() { }
@@ -210,8 +210,8 @@ public class Configuration {
      */
     public static class Client {
 
-        @NotNull private String icon_path = DEFAULT_CLIENT_ICON_PATH;
-        @NotNull public String getIcon_path() { return this.icon_path; }
+        private @NotNull String icon_path = DEFAULT_CLIENT_ICON_PATH;
+        public @NotNull String getIcon_path() { return this.icon_path; }
         public void setIcon_path(@NotNull String icon_path) { this.icon_path = icon_path; }
 
         Client() { }

@@ -140,12 +140,34 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
 
     @Override
     public @Nullable Boolean shareFile(@NotNull File file, @NotNull String node, @NotNull String receiver) {
-        return null;
+        List<DriveMapping.User> users = getMapping().getUsers();
+        Optional<DriveMapping.User> optionalUser = users.stream()
+                                                        .filter(u -> u.getUsername().equals(node))
+                                                        .findFirst();
+        if (optionalUser.isPresent()) {
+            List<FileMapping> files = optionalUser.get()
+                                                  .getFiles();
+            String relativeFilePath = getRelativePath(file,
+                                                      new File(getMapping().getDrive_location()
+                                                               + File.separator + node));
+        }
+        return false;
     }
 
     @Override
     public @Nullable Boolean unshareFile(@NotNull File file, @NotNull String node, @NotNull String receiver) {
-        return null;
+            List<DriveMapping.User> users = getMapping().getUsers();
+            Optional<DriveMapping.User> optionalUser = users.stream()
+                                                            .filter(u -> u.getUsername().equals(node))
+                                                            .findFirst();
+            if (optionalUser.isPresent()) {
+                List<FileMapping> files = optionalUser.get()
+                                                      .getFiles();
+                String relativeFilePath = getRelativePath(file,
+                                                          new File(getMapping().getDrive_location()
+                                                                   + File.separator + node));
+            }
+            return false;
     }
 
     private void error(Exception e) {
@@ -175,10 +197,9 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
 
         private DriveFileMappingProvider() { }
 
-        @NotNull
         @Override
-        public Pair<DriveMapping, Boolean> createStructure(@Nullable File file,
-                                                           @NotNull DriveMapping.InitParams parameters)
+        public @NotNull Pair<DriveMapping, Boolean> createStructure(@Nullable File file,
+                                                                    @NotNull DriveMapping.InitParams parameters)
                 throws IOException {
                 Yaml yaml = new Yaml();
                 DriveMapping mapping = new DriveMapping(parameters);
@@ -202,9 +223,10 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
         }
 
         @SuppressWarnings("DuplicateThrows")
-        @Nullable
+
         @Override
-        public DriveMapping loadStructure(@NotNull File file) throws FileNotFoundException, YAMLException, IOException {
+        public @Nullable DriveMapping loadStructure(@NotNull File file)
+                throws FileNotFoundException, YAMLException, IOException {
             Yaml yaml = new Yaml();
             try (Reader reader = new InputStreamReader(new FileInputStream(file))) {
                 return yaml.load(reader);
