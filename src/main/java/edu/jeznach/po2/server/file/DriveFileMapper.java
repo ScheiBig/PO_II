@@ -12,6 +12,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class DriveFileMapper extends FileMapper<DriveMapping> {
@@ -24,22 +25,59 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
 
 
     @Override
-    public boolean attachFile(@NotNull File file) {
+    public boolean attachFile(@NotNull File file, @NotNull String checksum, @NotNull String username) {
+        List<DriveMapping.User> users = getMapping().getUsers();
+        Optional<DriveMapping.User> optionalUser = users.stream()
+                                                               .filter(u -> u.getUsername().equals(username))
+                                                               .findFirst();
+        int index;
+        if (!optionalUser.isPresent()) {
+            DriveMapping.User user = new DriveMapping.User(username);
+            users.add(user);
+            index = users.indexOf(user);
+        } else index = users.indexOf(optionalUser.get());
+        DriveMapping.User user = users.get(index);
+        List<FileMapping> files = user.getFiles();
+        if (files != null) {
+            Optional<FileMapping> fileOptional = files.stream()
+                                                      .filter(f -> f.getPathname().equals(file.getPath()))
+                                                      .findFirst();
+            if (fileOptional.isPresent()) {
+                return false;
+            } else {
+                files.add(new FileMapping(file.getName(),
+                                          file.length(),
+                                          checksum,
+                                          file.lastModified()));
+                return true;
+            }
+        } else {
+            user.setFiles(new ArrayList<>());
+            user.getFiles().add(new FileMapping(file.getName(),
+                                                file.length(),
+                                                checksum,
+                                                file.lastModified()));
+            return true;
+        }
+    }
+
+    @Override
+    public boolean detachFile(@NotNull File file, @NotNull String checksum, @NotNull String username) {
         return false;
     }
 
     @Override
-    public boolean detachFile(@NotNull File file) {
+    public boolean updateFile(@NotNull File file, @NotNull String checksum, @NotNull String username) {
         return false;
     }
 
     @Override
-    public boolean updateFile(@NotNull File file) {
-        return false;
+    public @Nullable Boolean shareFile(@NotNull File file, @NotNull String username, @NotNull String receiver) {
+        return null;
     }
 
     @Override
-    public @Nullable Boolean shareFile(@NotNull File file, @NotNull String receiver) {
+    public @Nullable Boolean unshareFile(@NotNull File file, @NotNull String username, @NotNull String receiver) {
         return null;
     }
 
