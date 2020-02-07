@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
  * <br><br>
  * <p>Files are mapped as $filesStorageDirectory$(/$owner$)/$file$, where:
  * <p>- $filesStorageDirectory$ is directory used for storage,
- * <p>- $owner$ is owner of file in multi-ser storage (server),
+ * <p>- $owner$ is owner node (user or type directory) of file,
  * <p>- $file$ is full relative path to file.
  * <p>i.e.: /storage/user1/docs/file.txt.
  * @param <M> the type holding indexed mapping, using to manage at runtime and
@@ -64,51 +64,51 @@ public abstract class FileMapper<M> {
      * @param file the {@link File} to be attached to mapping. File should be already existing
      *             in mapped directory prior to this call
      * @param checksum the checksum calculated for {@code file}
-     * @param username the name of user that file belongs to
+     * @param node the name of node that file belongs to
      * @return {@code true} if file was attached, {@code false} if this file is already attached
      */
-    public abstract boolean attachFile(@NotNull File file, @NotNull String checksum, @NotNull String username);
+    public abstract boolean attachFile(@NotNull File file, @NotNull String checksum, @NotNull String node);
 
     /**
      * Detaches file from mapping
      * @param file the {@link File} to be attached to mapping. File still be existing in mapped directory
      *             prior to this call
-     * @param username the name of user that file belongs to
+     * @param node the name of node that file belongs to
      * @return {@code true} if file was detached, {@code false} if this file is already detached
      */
-    public abstract boolean detachFile(@NotNull File file, @NotNull String username);
+    public abstract boolean detachFile(@NotNull File file, @NotNull String node);
 
     /**
      * Updates file in mapping
      * @param file the {@link File} to be updated in mapping. File should be already updated
      *             in directory prior to this call
      * @param checksum the checksum calculated for {@code file}
-     * @param username the name of user that file belongs to
+     * @param node the name of node that file belongs to
      * @return {@code true} if file was updated, {@code false} if no updates is necessary/possible
      */
-    public abstract boolean updateFile(@NotNull File file, @NotNull String checksum, @NotNull String username);
+    public abstract boolean updateFile(@NotNull File file, @NotNull String checksum, @NotNull String node);
 
     /**
      * Shares file to {@code receiver}
      * @param file the {@link File} to be shared. File should be already existing in directory
      *             prior to this call
-     * @param username the name of user that file belongs to
-     * @param receiver the user that file should be shared to
+     * @param node the name of node that file belongs to
+     * @param receiver the node that file should be shared to
      * @return {@code true} if file was shared, {@code false} if file is already shared,
      *         {@code null} if sharing functionality is not supported
      */
-    @Nullable public abstract Boolean shareFile(@NotNull File file, @NotNull String username, @NotNull String receiver);
+    @Nullable public abstract Boolean shareFile(@NotNull File file, @NotNull String node, @NotNull String receiver);
 
     /**
      * Cancels sharing of file to {@code receiver}
      * @param file the {@link File} that was shared. File should be still existing in directory
      *             prior to this call
-     * @param username the name of user that file belongs to
-     * @param receiver the user that file was shared to
+     * @param node the name of node that file belongs to
+     * @param receiver the node that file was shared to
      * @return {@code true} if file was shared, {@code false} if file is already unshared,
      *         {@code null} if sharing functionality is not supported
      */
-    @Nullable public abstract Boolean unshareFile(@NotNull File file, @NotNull String username, @NotNull String receiver);
+    @Nullable public abstract Boolean unshareFile(@NotNull File file, @NotNull String node, @NotNull String receiver);
 
     /**
      * Represents companion object of {@link FileMapper} stored in {@link FileMapper#provider},

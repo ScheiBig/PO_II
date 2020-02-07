@@ -32,21 +32,21 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
 
 
     @Override
-    public boolean attachFile(@NotNull File file, @NotNull String checksum, @NotNull String username) {
+    public boolean attachFile(@NotNull File file, @NotNull String checksum, @NotNull String node) {
         List<DriveMapping.User> users = getMapping().getUsers();
         Optional<DriveMapping.User> optionalUser = users.stream()
-                                                        .filter(u -> u.getUsername().equals(username))
+                                                        .filter(u -> u.getUsername().equals(node))
                                                         .findFirst();
         DriveMapping.User user;
         if (!optionalUser.isPresent()) {
-            DriveMapping.User newUser = new DriveMapping.User(username);
+            DriveMapping.User newUser = new DriveMapping.User(node);
             users.add(newUser);
             user = newUser;
         } else user = optionalUser.get();
         List<FileMapping> files = user.getFiles();
         String relativeFilePath = getRelativePath(file,
                                               new File(getMapping().getDrive_location()
-                                                       + File.separator + username));
+                                                       + File.separator + node));
         if (files != null) {
             Optional<FileMapping> fileOptional = files.stream()
                                                       .filter(f -> f.getPathname().equals(relativeFilePath))
@@ -76,17 +76,17 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
     }
 
     @Override
-    public boolean detachFile(@NotNull File file, @NotNull String username) {
+    public boolean detachFile(@NotNull File file, @NotNull String node) {
         List<DriveMapping.User> users = getMapping().getUsers();
         Optional<DriveMapping.User> optionalUser = users.stream()
-                                                        .filter(u -> u.getUsername().equals(username))
+                                                        .filter(u -> u.getUsername().equals(node))
                                                         .findFirst();
         if (optionalUser.isPresent()) {
             List<FileMapping> files = optionalUser.get()
                                                   .getFiles();
             String relativeFilePath = getRelativePath(file,
                                                       new File(getMapping().getDrive_location()
-                                                               + File.separator + username));
+                                                               + File.separator + node));
             if (files != null) {
                 Optional<FileMapping> fileOptional = files.stream()
                                                           .filter(f -> f.getPathname()
@@ -107,16 +107,16 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
     }
 
     @Override
-    public boolean updateFile(@NotNull File file, @NotNull String checksum, @NotNull String username) {
+    public boolean updateFile(@NotNull File file, @NotNull String checksum, @NotNull String node) {
         List<DriveMapping.User> users = getMapping().getUsers();
         Optional<DriveMapping.User> optionalUser = users.stream()
-                                                        .filter(u -> u.getUsername().equals(username))
+                                                        .filter(u -> u.getUsername().equals(node))
                                                         .findFirst();
         if (optionalUser.isPresent()) {
             List<FileMapping> files = optionalUser.get().getFiles();
             String relativeFilePath = getRelativePath(file,
                                                       new File(getMapping().getDrive_location()
-                                                               + File.separator + username));
+                                                               + File.separator + node));
             if (files != null) {
                 Optional<FileMapping> fileOptional = files.stream()
                                                           .filter(f -> f.getPathname().equals(relativeFilePath))
@@ -139,12 +139,12 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
     }
 
     @Override
-    public @Nullable Boolean shareFile(@NotNull File file, @NotNull String username, @NotNull String receiver) {
+    public @Nullable Boolean shareFile(@NotNull File file, @NotNull String node, @NotNull String receiver) {
         return null;
     }
 
     @Override
-    public @Nullable Boolean unshareFile(@NotNull File file, @NotNull String username, @NotNull String receiver) {
+    public @Nullable Boolean unshareFile(@NotNull File file, @NotNull String node, @NotNull String receiver) {
         return null;
     }
 
