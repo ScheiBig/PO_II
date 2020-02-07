@@ -91,7 +91,7 @@ public class Configuration {
                                 wait(7500);
                             } catch (InterruptedException ignored) {
                             } finally {
-                                sender.disposeTrayIcon();
+                                sender.close();
                             }
                         }
                     }
