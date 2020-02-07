@@ -1,6 +1,7 @@
 package edu.jeznach.po2.server.file;
 
 import edu.jeznach.po2.common.file.FileMapping;
+import edu.jeznach.po2.common.file.SharedFileMapping;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -46,9 +47,9 @@ public class DriveMapping {
         public @NotNull Long getUsed_space_bytes() { return this.used_space_bytes; }
         public void setUsed_space_bytes(@NotNull Long used_space_bytes) { this.used_space_bytes = used_space_bytes; }
 
-        private @Nullable List<FileMapping> shared_files = new ArrayList<>();
-        public @Nullable List<FileMapping> getShared_files() { return this.shared_files; }
-        public void setShared_files(@Nullable List<FileMapping> shared_files) { this.shared_files = shared_files; }
+        private @Nullable List<SharedFileMapping> shared_files = new ArrayList<>();
+        public @Nullable List<SharedFileMapping> getShared_files() { return this.shared_files; }
+        public void setShared_files(@Nullable List<SharedFileMapping> shared_files) { this.shared_files = shared_files; }
 
         User() {  }
 

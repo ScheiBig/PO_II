@@ -2,6 +2,7 @@ package edu.jeznach.po2.server.file;
 
 import edu.jeznach.po2.common.file.FileMapper;
 import edu.jeznach.po2.common.file.FileMapping;
+import edu.jeznach.po2.common.file.SharedFileMapping;
 import edu.jeznach.po2.common.log.Log;
 import edu.jeznach.po2.common.util.Pair;
 import edu.jeznach.po2.server.gui.NotificationSender;
@@ -144,12 +145,27 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
         Optional<DriveMapping.User> optionalUser = users.stream()
                                                         .filter(u -> u.getUsername().equals(node))
                                                         .findFirst();
-        if (optionalUser.isPresent()) {
+        Optional<DriveMapping.User> optionalReceiver = users.stream()
+                                                        .filter(u -> u.getUsername().equals(receiver))
+                                                        .findFirst();
+        if (optionalUser.isPresent() && optionalReceiver.isPresent()) {
             List<FileMapping> files = optionalUser.get()
                                                   .getFiles();
             String relativeFilePath = getRelativePath(file,
                                                       new File(getMapping().getDrive_location()
                                                                + File.separator + node));
+            if (files != null) {
+                Optional<FileMapping> fileOptional = files.stream()
+                                                          .filter(f -> f.getPathname().equals(relativeFilePath))
+                                                          .findFirst();
+                List<SharedFileMapping> shared_files = optionalReceiver.get().getShared_files();
+                if (fileOptional.isPresent() && shared_files != null) {
+                    SharedFileMapping sharedFileMapping = new SharedFileMapping(fileOptional.get(), node);
+                    shared_files.add(sharedFileMapping);
+                    mappingFile.ifPresent(this::dumpToFile);
+                    return true;
+                }
+            }
         }
         return false;
     }
@@ -160,14 +176,35 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
             Optional<DriveMapping.User> optionalUser = users.stream()
                                                             .filter(u -> u.getUsername().equals(node))
                                                             .findFirst();
-            if (optionalUser.isPresent()) {
-                List<FileMapping> files = optionalUser.get()
-                                                      .getFiles();
-                String relativeFilePath = getRelativePath(file,
-                                                          new File(getMapping().getDrive_location()
-                                                                   + File.separator + node));
+        Optional<DriveMapping.User> optionalReceiver = users.stream()
+                                                            .filter(u -> u.getUsername().equals(receiver))
+                                                            .findFirst();
+        if (optionalUser.isPresent() && optionalReceiver.isPresent()) {
+            List<FileMapping> files = optionalUser.get()
+                                                  .getFiles();
+            String relativeFilePath = getRelativePath(file,
+                                                      new File(getMapping().getDrive_location()
+                                                               + File.separator + node));
+            if (files != null) {
+                Optional<FileMapping> fileOptional = files.stream()
+                                                          .filter(f -> f.getPathname().equals(relativeFilePath))
+                                                          .findFirst();
+                List<SharedFileMapping> shared_files = optionalReceiver.get().getShared_files();
+                if (fileOptional.isPresent() && shared_files != null) {
+                    Optional<SharedFileMapping> sharedFileMapping =
+                            shared_files.stream()
+                                        .filter(f -> f.getOwner().equals(node))
+                                        .filter(f -> f.getPathname().equals(relativeFilePath))
+                                        .findFirst();
+                    if (sharedFileMapping.isPresent()) {
+                        shared_files.remove(sharedFileMapping.get());
+                        mappingFile.ifPresent(this::dumpToFile);
+                        return true;
+                    }
+                }
             }
-            return false;
+        }
+        return false;
     }
 
     private void error(Exception e) {
@@ -223,7 +260,6 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
         }
 
         @SuppressWarnings("DuplicateThrows")
-
         @Override
         public @Nullable DriveMapping loadStructure(@NotNull File file)
                 throws FileNotFoundException, YAMLException, IOException {
