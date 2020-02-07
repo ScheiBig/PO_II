@@ -48,7 +48,7 @@ public abstract class FileMapper<M> implements Closeable {
     @NotNull public M getMapping() { return this.mapping; }
 
     @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
-    @NotNull private Optional<Writer> mappingWriter;
+    @NotNull protected Optional<Writer> mappingWriter;
 
     /**
      * Creates new file mapper.
@@ -64,7 +64,7 @@ public abstract class FileMapper<M> implements Closeable {
     /**
      * Attaches file to mapping
      * @param file the {@link File} to be attached to mapping. File should be already existing
-     *             prior to this call
+     *             in mapped directory prior to this call
      * @param checksum the checksum calculated for {@code file}
      * @param username the name of user that file belongs to
      * @return {@code true} if file was attached, {@code false} if this file is already attached
@@ -73,7 +73,8 @@ public abstract class FileMapper<M> implements Closeable {
 
     /**
      * Detaches file from mapping
-     * @param file the {@link File} to be attached to mapping. File still be existing prior to this call
+     * @param file the {@link File} to be attached to mapping. File still be existing in mapped directory
+     *             prior to this call
      * @param checksum the checksum calculated for {@code file}
      * @param username the name of user that file belongs to
      * @return {@code true} if file was detached, {@code false} if this file is already detached
@@ -83,7 +84,7 @@ public abstract class FileMapper<M> implements Closeable {
     /**
      * Updates file in mapping
      * @param file the {@link File} to be updated in mapping. File should be already updated
-     *             prior to this call
+     *             in directory prior to this call
      * @param checksum the checksum calculated for {@code file}
      * @param username the name of user that file belongs to
      * @return {@code true} if file was updated, {@code false} if no updates is necessary
@@ -92,7 +93,8 @@ public abstract class FileMapper<M> implements Closeable {
 
     /**
      * Shares file to {@code receiver}
-     * @param file the {@link File} to be shared. File should be already existing prior to this call
+     * @param file the {@link File} to be shared. File should be already existing in directory
+     *             prior to this call
      * @param username the name of user that file belongs to
      * @param receiver the user that file should be shared to
      * @return {@code true} if file was shared, {@code false} if file is already shared,
@@ -102,7 +104,8 @@ public abstract class FileMapper<M> implements Closeable {
 
     /**
      * Cancels sharing of file to {@code receiver}
-     * @param file the {@link File} that was shared. File should be still existing prior to this call
+     * @param file the {@link File} that was shared. File should be still existing in directory
+     *             prior to this call
      * @param username the name of user that file belongs to
      * @param receiver the user that file was shared to
      * @return {@code true} if file was shared, {@code false} if file is already unshared,
@@ -199,7 +202,7 @@ public abstract class FileMapper<M> implements Closeable {
                         .map(f -> {
                             try {
                                 return new FileMapping(
-                                    f.getPath().substring(rootDirectory.getPath().length() + 1),
+                                        getRelativePath(f, rootDirectory),
                                     f.length(),
                                     FileManager.getChecksum(f),
                                     f.lastModified()
@@ -217,5 +220,15 @@ public abstract class FileMapper<M> implements Closeable {
             }
             return ret;
         } else return new ArrayList<>();
+    }
+
+    /**
+     * Resolves path of {@code file} relative to {@code rootDirectory}
+     * @param file the file to get path of
+     * @param rootDirectory the directory to create path relative to
+     * @return {@link String} with relative path
+     */
+    @NotNull public static String getRelativePath(@NotNull File file, @NotNull File rootDirectory) {
+        return file.getAbsolutePath().substring(rootDirectory.getAbsolutePath().length() + 1);
     }
 }

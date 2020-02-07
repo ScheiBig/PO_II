@@ -19,6 +19,11 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
 
     public static final DriveFileMappingProvider provider = new DriveFileMappingProvider();
 
+    /**
+     * Creates new file mapper.
+     * @param mapping the mapping object
+     * @param file the file that is used to store mapping
+     */
     public DriveFileMapper(@NotNull DriveMapping mapping, @Nullable File file) {
         super(mapping, file);
     }
@@ -38,25 +43,31 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
         } else index = users.indexOf(optionalUser.get());
         DriveMapping.User user = users.get(index);
         List<FileMapping> files = user.getFiles();
+        String relativeFilePath = getRelativePath(file,
+                                              new File(getMapping().getDrive_location()
+                                                       + File.pathSeparator + username));
         if (files != null) {
             Optional<FileMapping> fileOptional = files.stream()
-                                                      .filter(f -> f.getPathname().equals(file.getPath()))
+                                                      .filter(f -> f.getPathname().equals(relativeFilePath))
                                                       .findFirst();
             if (fileOptional.isPresent()) {
                 return false;
             } else {
-                files.add(new FileMapping(file.getName(),
+                files.add(new FileMapping(relativeFilePath,
                                           file.length(),
                                           checksum,
                                           file.lastModified()));
+                mappingWriter.ifPresent(mw -> new Yaml().dump(getMapping(), mw));
                 return true;
             }
         } else {
             user.setFiles(new ArrayList<>());
-            user.getFiles().add(new FileMapping(file.getName(),
+            //noinspection ConstantConditions
+            user.getFiles().add(new FileMapping(relativeFilePath,
                                                 file.length(),
                                                 checksum,
                                                 file.lastModified()));
+            mappingWriter.ifPresent(mw -> new Yaml().dump(getMapping(), mw));
             return true;
         }
     }

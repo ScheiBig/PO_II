@@ -273,7 +273,7 @@ public class Log
         @NotNull public final Long timestamp;
         @NotNull public final String date() {
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
-            return dtf.format(LocalDateTime.ofInstant(Instant.ofEpochSecond(timestamp),
+            return dtf.format(LocalDateTime.ofInstant(Instant.ofEpochMilli(timestamp),
                                                       TimeZone.getDefault().toZoneId()));
         }
 
