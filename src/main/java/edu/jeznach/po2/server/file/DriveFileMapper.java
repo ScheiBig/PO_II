@@ -242,10 +242,9 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
                 DriveMapping mapping = new DriveMapping(parameters);
                 Boolean fileCreated;
                 if (file != null) {
-                    File drive = new File(parameters.driveLocation);
+                    File drive = parameters.driveLocation;
                     //noinspection ResultOfMethodCallIgnored
                     drive.mkdirs();
-                    mapping.setName(drive.getName());
 
                     File[] driveDirectories = drive.listFiles();
                     mapping.setUsers(listUsers(driveDirectories));

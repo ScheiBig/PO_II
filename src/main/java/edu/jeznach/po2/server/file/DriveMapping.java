@@ -5,6 +5,7 @@ import edu.jeznach.po2.common.file.SharedFileMapping;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +30,8 @@ public class DriveMapping {
     DriveMapping() {  }
 
     public DriveMapping(InitParams params) {
-        this.setDrive_location(new java.io.File(params.driveLocation).getAbsolutePath());
+        this.setDrive_location(params.driveLocation.getAbsolutePath());
+        this.setName(params.driveLocation.getName());
         this.setLog_name(params.logName);
     }
 
@@ -47,7 +49,7 @@ public class DriveMapping {
         public @NotNull Long getUsed_space_bytes() { return this.used_space_bytes; }
         public void setUsed_space_bytes(@NotNull Long used_space_bytes) { this.used_space_bytes = used_space_bytes; }
 
-        private @Nullable List<SharedFileMapping> shared_files = new ArrayList<>();
+        private @Nullable List<SharedFileMapping> shared_files;
         public @Nullable List<SharedFileMapping> getShared_files() { return this.shared_files; }
         public void setShared_files(@Nullable List<SharedFileMapping> shared_files) { this.shared_files = shared_files; }
 
@@ -58,12 +60,30 @@ public class DriveMapping {
         }
     }
 
+    /**
+     * Represents parameters injected to {@link DriveMapping} constructor
+     */
     public static class InitParams {
 
-        public @NotNull final String driveLocation;
+        /**
+         *  Localisation of mapped drive. {@link File#getName() File#name} will represent
+         *  {@link DriveMapping#name DriveMapping#name}, {@link File#getAbsolutePath() File#absolutePath}
+         *  will represent {@link DriveMapping#drive_location DriveMapping#drive_location}.
+         */
+        public @NotNull final File driveLocation;
+        /**
+         * Name that will be used for log file.
+         */
         public @NotNull final String logName;
 
-        public InitParams(@NotNull String driveLocation, @NotNull String logName) {
+        /**
+         * @param driveLocation Localisation of mapped drive. {@link File#getName() File#name} will
+         *                      represent {@link DriveMapping#name DriveMapping#name},
+         *                      {@link File#getAbsolutePath() File#absolutePath} will represent
+         *                      {@link DriveMapping#drive_location DriveMapping#drive_location}
+         * @param logName Name that will be used for log file
+         */
+        public InitParams(@NotNull File driveLocation, @NotNull String logName) {
             this.driveLocation = driveLocation;
             this.logName = logName;
         }
