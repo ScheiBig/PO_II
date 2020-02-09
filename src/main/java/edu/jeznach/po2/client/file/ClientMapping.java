@@ -26,9 +26,9 @@ public class ClientMapping {
     public @NotNull Long getUsed_space_bytes() { return this.used_space_bytes; }
     public void setUsed_space_bytes(@NotNull Long used_space_bytes) { this.used_space_bytes = used_space_bytes; }
 
-    private @Nullable List<FileMapping> files;
-    public @Nullable List<FileMapping> getFiles() { return this.files; }
-    public void setFiles(@Nullable List<FileMapping> files) { this.files = files; }
+    private @Nullable List<ClientFileMapping> files;
+    public @Nullable List<ClientFileMapping> getFiles() { return this.files; }
+    public void setFiles(@Nullable List<ClientFileMapping> files) { this.files = files; }
 
     private @Nullable List<FileMapping> cancelled_files;
     public @Nullable List<FileMapping> getCancelled_files() { return this.cancelled_files; }
@@ -54,5 +54,11 @@ public class ClientMapping {
             this.clientLocation = clientLocation;
             this.logName = logName;
         }
+    }
+
+    public enum Directories {
+        /** Name of directory to hold user owned files */ files,
+        /** Name of directory to hold user files that got cancelled from upload */ cancel,
+        /** Name of directory to hold files shared to user */ shared
     }
 }

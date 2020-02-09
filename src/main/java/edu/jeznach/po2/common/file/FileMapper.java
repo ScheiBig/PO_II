@@ -178,7 +178,7 @@ public abstract class FileMapper<M> {
      * @param rootDirectory the root directory, it is used cut off this part of path from list of files
      * @return list of all files contained in {@code directory}, and its subdirectories
      */
-    public static List<FileMapping> listFiles(File directory, File rootDirectory) {
+    protected static List<FileMapping> listFiles(File directory, File rootDirectory) {
         List<FileMapping> ret;
         File[] nodes = directory.listFiles();
         if (nodes != null && nodes.length > 0) {
