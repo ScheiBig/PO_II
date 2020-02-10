@@ -7,6 +7,7 @@ import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.error.YAMLException;
 
 import java.io.*;
+import java.nio.file.NotDirectoryException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -136,10 +137,13 @@ public abstract class FileMapper<M> {
          *         if {@code file} didn't exist prior to call, {@code false} if it did, {@code null}
          *         if {@code file} was not provided
          * @throws RuntimeException if exception was thrown while initialising file mapping (optional)
+         * @throws FileNotFoundException if provided {@code file} was a directory rather than file
+         * @throws NotDirectoryException if node that should represent file placeholder is not
+         *                               a directory (optional)
          * @throws IOException if an I/O exception occurs while creating mapping file
          */
         @NotNull public abstract Pair<M, Boolean> createStructure(@Nullable File file, @NotNull P parameters)
-                throws RuntimeException, IOException;
+                throws RuntimeException, FileNotFoundException, NotDirectoryException, IOException;
 
         /**
          * Loads mapping from file.
@@ -150,7 +154,8 @@ public abstract class FileMapper<M> {
          * of application
          * @param file the file that is to be used to load mapping
          * @return object containing loaded mapping
-         * @throws FileNotFoundException if provided {@code file} was not found
+         * @throws FileNotFoundException if provided {@code file} was not found,
+         *                               or was a directory rather than file
          * @throws YAMLException if parsing {@code file} throws exception
          * @throws IOException if an I/O exception occurs while closing reading stream
          */
@@ -174,7 +179,7 @@ public abstract class FileMapper<M> {
      *   - pathname: childDirectory/anotherFile.txt
      * ]
      * </code></pre></blockquote>
-     * @param directory the directory to create list of files of
+     * @param directory the directory to create list of files of, usually same as {@code rootDirectory}
      * @param rootDirectory the root directory, it is used cut off this part of path from list of files
      * @return list of all files contained in {@code directory}, and its subdirectories
      */

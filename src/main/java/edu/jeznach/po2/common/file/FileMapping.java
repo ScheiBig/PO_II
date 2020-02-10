@@ -23,11 +23,19 @@ public class FileMapping {
     public FileMapping() { }
 
     public FileMapping(@NotNull String pathname,
-                @NotNull Long size_bytes,
-                @NotNull String checksum, @NotNull Long modification_timestamp) {
+                       @NotNull Long size_bytes,
+                       @NotNull String checksum,
+                       @NotNull Long modification_timestamp) {
         this.pathname = pathname;
         this.size_bytes = size_bytes;
         this.checksum = checksum;
         this.modification_timestamp = modification_timestamp;
+    }
+
+    public FileMapping(@NotNull FileMapping fileMapping) {
+        this(fileMapping.getPathname(),
+             fileMapping.getSize_bytes(),
+             fileMapping.getChecksum(),
+             fileMapping.getModification_timestamp());
     }
 }

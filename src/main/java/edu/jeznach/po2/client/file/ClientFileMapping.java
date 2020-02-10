@@ -21,4 +21,8 @@ public class ClientFileMapping extends FileMapping {
                              @NotNull Long modification_timestamp) {
         super(pathname, size_bytes, checksum, modification_timestamp);
     }
+
+    public ClientFileMapping(@NotNull FileMapping fileMapping) {
+        super(fileMapping);
+    }
 }

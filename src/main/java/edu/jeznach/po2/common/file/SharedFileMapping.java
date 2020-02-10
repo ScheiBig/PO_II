@@ -21,10 +21,7 @@ public class SharedFileMapping extends FileMapping {
 
     public SharedFileMapping(@NotNull FileMapping fileMapping,
                              @NotNull String owner) {
-        this(fileMapping.getPathname(),
-             fileMapping.getSize_bytes(),
-             fileMapping.getChecksum(),
-             fileMapping.getModification_timestamp(),
-             owner);
+        super(fileMapping);
+        this.owner = owner;
     }
 }

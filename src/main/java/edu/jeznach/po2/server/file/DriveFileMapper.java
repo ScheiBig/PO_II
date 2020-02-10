@@ -234,21 +234,20 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
 
         private DriveFileMappingProvider() { }
 
+        @SuppressWarnings("DuplicateThrows")
         @Override
         public @NotNull Pair<DriveMapping, Boolean> createStructure(@Nullable File file,
                                                                     @NotNull DriveMapping.InitParams parameters)
-                throws IOException {
+                throws FileNotFoundException, IOException {
                 Yaml yaml = new Yaml();
                 DriveMapping mapping = new DriveMapping(parameters);
                 Boolean fileCreated;
+                File drive = parameters.driveLocation;
+                //noinspection ResultOfMethodCallIgnored
+                drive.mkdirs();
+                File[] driveDirectories = drive.listFiles();
+                mapping.setUsers(listUsers(driveDirectories));
                 if (file != null) {
-                    File drive = parameters.driveLocation;
-                    //noinspection ResultOfMethodCallIgnored
-                    drive.mkdirs();
-
-                    File[] driveDirectories = drive.listFiles();
-                    mapping.setUsers(listUsers(driveDirectories));
-
                     File fileToCreate = new File(drive.getAbsolutePath() + "/" + file.getPath());
                     fileCreated = fileToCreate.createNewFile();
                     Writer writer = new OutputStreamWriter(new FileOutputStream(fileToCreate));

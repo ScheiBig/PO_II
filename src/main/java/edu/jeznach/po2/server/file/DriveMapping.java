@@ -30,9 +30,9 @@ public class DriveMapping {
     DriveMapping() {  }
 
     public DriveMapping(InitParams params) {
-        this.setDrive_location(params.driveLocation.getAbsolutePath());
         this.setName(params.driveLocation.getName());
         this.setLog_name(params.logName);
+        this.setDrive_location(params.driveLocation.getAbsolutePath());
     }
 
     public static class User {

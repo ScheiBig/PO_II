@@ -41,16 +41,23 @@ public class ClientMapping {
     ClientMapping() {  }
 
     public ClientMapping(@NotNull InitParams params) {
-
+        this.setName(params.clientName);
+        this.setLog_name(params.logName);
+        this.setClient_location(params.clientLocation.getAbsolutePath());
     }
 
     public static class InitParams {
 
-        public @NotNull final File clientLocation;
+        public @NotNull final String clientName;
 
         public @NotNull final String logName;
 
-        public InitParams(@NotNull File clientLocation, @NotNull String logName) {
+        public @NotNull final File clientLocation;
+
+        public InitParams(@NotNull String clientName,
+                          @NotNull File clientLocation,
+                          @NotNull String logName) {
+            this.clientName = clientName;
             this.clientLocation = clientLocation;
             this.logName = logName;
         }
