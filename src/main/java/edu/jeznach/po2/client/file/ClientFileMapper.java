@@ -3,8 +3,6 @@ package edu.jeznach.po2.client.file;
 import edu.jeznach.po2.client.file.ClientMapping.Directories;
 import edu.jeznach.po2.client.gui.NotificationSender;
 import edu.jeznach.po2.common.file.FileMapper;
-import edu.jeznach.po2.common.file.FileMapping;
-import edu.jeznach.po2.common.file.SharedFileMapping;
 import edu.jeznach.po2.common.log.Log;
 import edu.jeznach.po2.common.util.Pair;
 import org.jetbrains.annotations.NotNull;
@@ -198,7 +196,7 @@ public class ClientFileMapper extends FileMapper<ClientMapping> {
                                                                        .filter(f -> f.getOwner().equals(path[0]))
                                                                        .findFirst();
                 if (fileOptional.isPresent()) {
-                    FileMapping fileMapping = fileOptional.get();
+                    SharedFileMapping fileMapping = fileOptional.get();
                     long oldSize = fileMapping.getSize_bytes();
                     fileMapping.setChecksum(checksum);
                     fileMapping.setModification_timestamp(file.lastModified());
@@ -333,7 +331,9 @@ public class ClientFileMapper extends FileMapper<ClientMapping> {
                         if (!listFile.isDirectory())
                             throw new NotDirectoryException("Node: " + name + " is not a directory." +
                                                             " Cannot create mapping");
-                        mapping.setCancelled_files(listFiles(listFile, listFile));
+                        mapping.setCancelled_files(listFiles(listFile, listFile).stream()
+                                                                                .map(FileMapping::new)
+                                                                                .collect(Collectors.toList()));
                     } else if (Directories.shared.toString().equals(name)) {
                         if (!listFile.isDirectory())
                             throw new NotDirectoryException("Node: " + name + " is not a directory." +

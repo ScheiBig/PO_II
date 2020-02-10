@@ -1,16 +1,8 @@
 package edu.jeznach.po2.client.file;
 
-import edu.jeznach.po2.common.file.FileMapping;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
-
-public class ClientFileMapping extends FileMapping {
-
-    private @Nullable List<String> receivers;
-    public @Nullable List<String> getReceivers() { return this.receivers; }
-    void setReceivers(@Nullable List<String> receivers) { this.receivers = receivers; }
+public class FileMapping extends edu.jeznach.po2.common.file.FileMapping {
 
     @Override
     protected void setPathname(@NotNull String pathname) {
@@ -32,17 +24,18 @@ public class ClientFileMapping extends FileMapping {
         super.setModification_timestamp(modification_timestamp);
     }
 
-    public ClientFileMapping() {
+    protected FileMapping() {
+        super();
     }
 
-    public ClientFileMapping(@NotNull String pathname,
-                             @NotNull Long size_bytes,
-                             @NotNull String checksum,
-                             @NotNull Long modification_timestamp) {
+    protected FileMapping(@NotNull String pathname,
+                       @NotNull Long size_bytes,
+                       @NotNull String checksum,
+                       @NotNull Long modification_timestamp) {
         super(pathname, size_bytes, checksum, modification_timestamp);
     }
 
-    public ClientFileMapping(@NotNull FileMapping fileMapping) {
+    protected FileMapping(edu.jeznach.po2.common.file.@NotNull FileMapping fileMapping) {
         super(fileMapping);
     }
 }

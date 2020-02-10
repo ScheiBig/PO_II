@@ -1,8 +1,6 @@
 package edu.jeznach.po2.server.file;
 
 import edu.jeznach.po2.common.file.FileMapper;
-import edu.jeznach.po2.common.file.FileMapping;
-import edu.jeznach.po2.common.file.SharedFileMapping;
 import edu.jeznach.po2.common.log.Log;
 import edu.jeznach.po2.common.util.Pair;
 import edu.jeznach.po2.server.gui.NotificationSender;
@@ -276,7 +274,9 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
                 return Arrays.stream(directories)
                              .filter(File::isDirectory)
                              .map(f -> Pair.of(new DriveMapping.User(f.getName()), f))
-                             .peek(p -> p.key.setFiles(listFiles(p.value, p.value)))
+                             .peek(p -> p.key.setFiles(listFiles(p.value, p.value).stream()
+                                                                                  .map(FileMapping::new)
+                                                                                  .collect(Collectors.toList())))
                              .map(p -> p.key)
                              .peek(user -> {
                                  if (user.getFiles() != null) {

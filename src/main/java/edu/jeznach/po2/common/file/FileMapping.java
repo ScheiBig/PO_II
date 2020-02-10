@@ -6,23 +6,23 @@ public class FileMapping {
 
     private @NotNull String pathname = "";
     public @NotNull String getPathname() { return this.pathname; }
-    public void setPathname(@NotNull String pathname) { this.pathname = pathname; }
+    protected void setPathname(@NotNull String pathname) { this.pathname = pathname; }
 
     private @NotNull Long size_bytes = 0L;
     public @NotNull Long getSize_bytes() { return this.size_bytes; }
-    public void setSize_bytes(@NotNull Long size_bytes) { this.size_bytes = size_bytes; }
+    protected void setSize_bytes(@NotNull Long size_bytes) { this.size_bytes = size_bytes; }
 
     private @NotNull String checksum = "";
     public @NotNull String getChecksum() { return this.checksum; }
-    public void setChecksum(@NotNull String checksum) { this.checksum = checksum; }
+    protected void setChecksum(@NotNull String checksum) { this.checksum = checksum; }
 
     private @NotNull Long modification_timestamp = 0L;
     public @NotNull Long getModification_timestamp() { return this.modification_timestamp; }
-    public void setModification_timestamp(@NotNull Long modification_timestamp) { this.modification_timestamp = modification_timestamp; }
+    protected void setModification_timestamp(@NotNull Long modification_timestamp) { this.modification_timestamp = modification_timestamp; }
 
-    public FileMapping() { }
+    protected FileMapping() { }
 
-    public FileMapping(@NotNull String pathname,
+    protected FileMapping(@NotNull String pathname,
                        @NotNull Long size_bytes,
                        @NotNull String checksum,
                        @NotNull Long modification_timestamp) {
@@ -32,7 +32,7 @@ public class FileMapping {
         this.modification_timestamp = modification_timestamp;
     }
 
-    public FileMapping(@NotNull FileMapping fileMapping) {
+    protected FileMapping(@NotNull FileMapping fileMapping) {
         this(fileMapping.getPathname(),
              fileMapping.getSize_bytes(),
              fileMapping.getChecksum(),

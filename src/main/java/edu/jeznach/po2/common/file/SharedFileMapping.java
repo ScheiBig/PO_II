@@ -6,11 +6,11 @@ public class SharedFileMapping extends FileMapping {
 
     private @NotNull String owner = "";
     public @NotNull String getOwner() { return this.owner; }
-    public void setOwner(@NotNull String owner) { this.owner = owner; }
+    protected void setOwner(@NotNull String owner) { this.owner = owner; }
 
-    public SharedFileMapping() { super(); }
+    protected SharedFileMapping() { super(); }
 
-    public SharedFileMapping(@NotNull String pathname,
+    protected SharedFileMapping(@NotNull String pathname,
                              @NotNull Long size_bytes,
                              @NotNull String checksum,
                              @NotNull Long modification_timestamp,
@@ -19,7 +19,7 @@ public class SharedFileMapping extends FileMapping {
         this.owner = owner;
     }
 
-    public SharedFileMapping(@NotNull FileMapping fileMapping,
+    protected SharedFileMapping(@NotNull FileMapping fileMapping,
                              @NotNull String owner) {
         super(fileMapping);
         this.owner = owner;
