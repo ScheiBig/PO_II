@@ -248,7 +248,7 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
                 File[] driveDirectories = drive.listFiles();
                 mapping.setUsers(listUsers(driveDirectories));
                 if (file != null) {
-                    File fileToCreate = new File(drive.getAbsolutePath() + "/" + file.getPath());
+                    File fileToCreate = new File(drive.getAbsolutePath() + File.separator + file.getPath());
                     fileCreated = fileToCreate.createNewFile();
                     Writer writer = new OutputStreamWriter(new FileOutputStream(fileToCreate));
                     yaml.dump(mapping, writer);

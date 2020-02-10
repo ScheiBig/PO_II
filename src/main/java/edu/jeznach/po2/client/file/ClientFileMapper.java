@@ -13,9 +13,13 @@ import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.error.YAMLException;
 
 import java.io.*;
+import java.nio.file.NotDirectoryException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 /**
  * Represents mapping of client directories structure.
@@ -299,25 +303,80 @@ public class ClientFileMapper extends FileMapper<ClientMapping> {
     }
 
     public static class ClientMappingProvider
-            extends FileMappingProvider<ClientFileMapper, ClientMapping.InitParams> {
+            extends FileMappingProvider<ClientMapping, ClientMapping.InitParams> {
 
         private ClientMappingProvider() {  }
 
+        @SuppressWarnings("DuplicateThrows")
         @Override
-        public @NotNull Pair<ClientFileMapper, Boolean> createStructure(@Nullable File file,
-                                                                        ClientMapping.@NotNull InitParams parameters)
-                throws RuntimeException, IOException {
-            return null;
+        public @NotNull Pair<ClientMapping, Boolean> createStructure(@Nullable File file,
+                                                                     ClientMapping.@NotNull InitParams parameters)
+                throws FileNotFoundException, NotDirectoryException, IOException {
+            Yaml yaml = new Yaml();
+            ClientMapping mapping = new ClientMapping(parameters);
+            Boolean fileCreated;
+            File client = parameters.clientLocation;
+            //noinspection ResultOfMethodCallIgnored
+            client.mkdirs();
+            File[] listFiles = client.listFiles();
+            if (listFiles != null) {
+                for (File listFile : listFiles) {
+                    String name = listFile.getName();
+                    if (Directories.files.toString().equals(name)) {
+                        if (!listFile.isDirectory())
+                            throw new NotDirectoryException("Node: " + name + " is not a directory." +
+                                                            " Cannot create mapping");
+                        mapping.setFiles(listFiles(listFile, listFile).stream()
+                                                                      .map(ClientFileMapping::new)
+                                                                      .collect(Collectors.toList()));
+                    } else if (Directories.cancel.toString().equals(name)) {
+                        if (!listFile.isDirectory())
+                            throw new NotDirectoryException("Node: " + name + " is not a directory." +
+                                                            " Cannot create mapping");
+                        mapping.setCancelled_files(listFiles(listFile, listFile));
+                    } else if (Directories.shared.toString().equals(name)) {
+                        if (!listFile.isDirectory())
+                            throw new NotDirectoryException("Node: " + name + " is not a directory." +
+                                                            " Cannot create mapping");
+                        mapping.setShared_files(listUsers(listFile.listFiles()));
+                    }
+                }
+            }
+            if (file != null) {
+                File fileToCreate = new File(client.getAbsolutePath() + "/" + file.getPath());
+                fileCreated = fileToCreate.createNewFile();
+                Writer writer = new OutputStreamWriter(new FileOutputStream(fileToCreate));
+                yaml.dump(mapping, writer);
+                writer.close();
+            } else fileCreated = null;
+            return Pair.of(mapping, fileCreated);
         }
 
-        @Nullable
+        @SuppressWarnings("DuplicateThrows")
         @Override
-        public ClientFileMapper loadStructure(@NotNull File file)
+        public @Nullable ClientMapping loadStructure(@NotNull File file)
                 throws FileNotFoundException, YAMLException, IOException {
-            return null;
+            Yaml yaml = new Yaml();
+            try (Reader reader = new InputStreamReader(new FileInputStream(file))) {
+                return yaml.load(reader);
+            } catch (YAMLException e) {
+                throw new YAMLException("Exception thrown while parsing file mapping," +
+                                        " try to manually repair file, or delete it to " +
+                                        "create it from files (will remove all sharing links)", e);
+            }
+        }
+
+        private static List<SharedFileMapping> listUsers(File[] directories) {
+            if (directories != null) {
+                return Arrays.stream(directories)
+                             .filter(File::isDirectory)
+                             .map(f -> Pair.of(listFiles(f, f), f.getName()))
+                             .map(fl -> fl.key.stream()
+                                              .map(f -> new SharedFileMapping(f, fl.value))
+                                              .collect(Collectors.toList()))
+                             .flatMap(List::stream)
+                             .collect(Collectors.toList());
+            } else return new ArrayList<>();
         }
     }
-
-
-
 }
