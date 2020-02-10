@@ -16,9 +16,20 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+/**
+ * Manages mapping of server drive structure.
+ * @see FileMapper
+ */
 public class DriveFileMapper extends FileMapper<DriveMapping> {
 
-    public static final DriveFileMappingProvider provider = new DriveFileMappingProvider();
+    /**
+     * Contains factory methods for creating/loading file mapping.
+     * <br><br>
+     * <p>All {@link FileMapper} implementations should hide this field with
+     * instance of its own implementations
+     */
+    public static final DriveFileMappingProvider provider;
+    static { provider = new DriveFileMappingProvider(); }
 
     /**
      * Creates new file mapper.
@@ -227,6 +238,10 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
         }
     }
 
+    /**
+     * Represents companion object of {@link DriveFileMapper} stored in {@link DriveFileMapper#provider},
+     * used for creating/loading file mapping via factory methods.
+     */
     public static class DriveFileMappingProvider
             extends FileMappingProvider<DriveMapping, DriveMapping.InitParams> {
 

@@ -121,7 +121,9 @@ public abstract class FileMapper<M> {
      *            {@link FileMapper}, as those implementations should be coupled
      * @param <P> the type wrapping initial parameters of structure
      */
-    protected abstract static class FileMappingProvider<M, P> {
+    public abstract static class FileMappingProvider<M, P> {
+
+        protected FileMappingProvider() {  }
 
         /**
          * Creates new mapping of file structure and saves its results in file.

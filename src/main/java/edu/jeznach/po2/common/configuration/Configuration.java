@@ -13,11 +13,8 @@ import java.io.*;
  * Properties in this class are stored in java constants (final fields), and should
  * provide effectively unique names (as those may not be 100% same as those in configuration
  * file).
- * <br><br>
- * <p>Only configuration constants will provide documentation, as constructors and inner classes
- * are only public so that the parser can access them at runtime.
  */
-public class Configuration {
+public final class Configuration {
 
     /** how many threads user application uses to communicate with server (and server uses vice-versa) */
     public static final @NotNull Integer THREAD_PER_USER;
@@ -31,7 +28,10 @@ public class Configuration {
     public static final @NotNull Boolean PRINT_COLOR;
     private static final Boolean DEFAULT_PRINT_COLOR = false;
 
-    /** algorithm used to calculate checksum of files */
+    /**
+     * algorithm used to calculate checksum of files
+     * <p>allowed: MD5, SHA-1, SHA-256
+     */
     public static final @NotNull String CHECKSUM_ALGORITHM;
     private static final String DEFAULT_CHECKSUM_ALGORITHM = "SHA-1";
 
@@ -145,16 +145,16 @@ public class Configuration {
     }
 
     private @NotNull Application application = new Application();
-    public @NotNull Application getApplication() { return application; }
-    public void setApplication(@NotNull Application application) { this.application = application; }
+    protected @NotNull Application getApplication() { return application; }
+    protected void setApplication(@NotNull Application application) { this.application = application; }
 
     private @NotNull Server server = new Server();
-    public @NotNull Server getServer() { return server; }
-    public void setServer(@NotNull Server server) { this.server = server; }
+    protected @NotNull Server getServer() { return server; }
+    protected void setServer(@NotNull Server server) { this.server = server; }
 
     private @NotNull Client client = new Client();
-    public @NotNull Client getClient() { return this.client; }
-    public void setClient(@NotNull Client client) { this.client = client; }
+    protected @NotNull Client getClient() { return this.client; }
+    protected void setClient(@NotNull Client client) { this.client = client; }
 
     Configuration() { }
 
@@ -162,23 +162,23 @@ public class Configuration {
      * Represents application node.
      * <br>Hosts configuration shared between server and client.
      */
-    public static class Application {
+    protected static final class Application {
 
         private @NotNull Integer thread_per_user = DEFAULT_THREAD_PER_USER;
-        public @NotNull Integer getThread_per_user() { return thread_per_user; }
-        public void setThread_per_user(@NotNull Integer thread_per_user) { this.thread_per_user = thread_per_user; }
+        protected @NotNull Integer getThread_per_user() { return thread_per_user; }
+        protected void setThread_per_user(@NotNull Integer thread_per_user) { this.thread_per_user = thread_per_user; }
 
         private @NotNull Integer size_per_user = DEFAULT_SIZE_PER_USER;
-        public @NotNull Integer getSize_per_user() { return size_per_user; }
-        public void setSize_per_user(@NotNull Integer size_per_user) { this.size_per_user = size_per_user; }
+        protected @NotNull Integer getSize_per_user() { return size_per_user; }
+        protected void setSize_per_user(@NotNull Integer size_per_user) { this.size_per_user = size_per_user; }
 
         private @NotNull Boolean print_color = DEFAULT_PRINT_COLOR;
-        public @NotNull Boolean getPrint_color() { return this.print_color; }
-        public void setPrint_color(@NotNull Boolean print_color) { this.print_color = print_color; }
+        protected @NotNull Boolean getPrint_color() { return this.print_color; }
+        protected void setPrint_color(@NotNull Boolean print_color) { this.print_color = print_color; }
 
         private @NotNull String checksum_algorithm = DEFAULT_CHECKSUM_ALGORITHM;
-        public @NotNull String getChecksum_algorithm() { return this.checksum_algorithm; }
-        public void setChecksum_algorithm(@NotNull String checksum_algorithm) { this.checksum_algorithm = checksum_algorithm; }
+        protected @NotNull String getChecksum_algorithm() { return this.checksum_algorithm; }
+        protected void setChecksum_algorithm(@NotNull String checksum_algorithm) { this.checksum_algorithm = checksum_algorithm; }
 
         Application() { }
     }
@@ -187,19 +187,19 @@ public class Configuration {
      * Represents server node.
      * <br>Hosts server-specific configuration.
      */
-    public static class Server {
+    protected static final class Server {
 
         private @Nullable String path;
-        public @Nullable String getPath() { return path; }
-        public void setPath(@Nullable String path) { this.path = path; }
+        protected @Nullable String getPath() { return path; }
+        protected void setPath(@Nullable String path) { this.path = path; }
 
         private @NotNull Integer drive_count = DEFAULT_DRIVE_COUNT;
-        public @NotNull Integer getDrive_count() { return drive_count; }
-        public void setDrive_count(@NotNull Integer drive_count) { this.drive_count = drive_count; }
+        protected @NotNull Integer getDrive_count() { return drive_count; }
+        protected void setDrive_count(@NotNull Integer drive_count) { this.drive_count = drive_count; }
 
         private @NotNull String icon_path = DEFAULT_SERVER_ICON_PATH;
-        public @NotNull String getIcon_path() { return this.icon_path; }
-        public void setIcon_path(@NotNull String icon_path) { this.icon_path = icon_path; }
+        protected @NotNull String getIcon_path() { return this.icon_path; }
+        protected void setIcon_path(@NotNull String icon_path) { this.icon_path = icon_path; }
 
         Server() { }
     }
@@ -208,11 +208,11 @@ public class Configuration {
      * Represents client node.
      * <br>Hosts client-specific configuration.
      */
-    public static class Client {
+    protected static final class Client {
 
         private @NotNull String icon_path = DEFAULT_CLIENT_ICON_PATH;
-        public @NotNull String getIcon_path() { return this.icon_path; }
-        public void setIcon_path(@NotNull String icon_path) { this.icon_path = icon_path; }
+        protected @NotNull String getIcon_path() { return this.icon_path; }
+        protected void setIcon_path(@NotNull String icon_path) { this.icon_path = icon_path; }
 
         Client() { }
     }

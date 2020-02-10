@@ -2,9 +2,15 @@ package edu.jeznach.po2.common.file;
 
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Represents mapping of a shared file stored in container directory.
+ */
 public class SharedFileMapping extends FileMapping {
 
     private @NotNull String owner = "";
+    /**
+     * @return the username of owner of this shared file mapping
+     */
     public @NotNull String getOwner() { return this.owner; }
     protected void setOwner(@NotNull String owner) { this.owner = owner; }
 

@@ -5,6 +5,7 @@ import edu.jeznach.po2.client.gui.NotificationSender;
 import edu.jeznach.po2.common.file.FileMapper;
 import edu.jeznach.po2.common.log.Log;
 import edu.jeznach.po2.common.util.Pair;
+import edu.jeznach.po2.server.file.DriveFileMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.yaml.snakeyaml.Yaml;
@@ -20,13 +21,20 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /**
- * Represents mapping of client directories structure.
+ * Manages mapping of client structure.
  * <p>This class only accepts nodes represented by {@link Directories}
  * @see FileMapper
  */
 public class ClientFileMapper extends FileMapper<ClientMapping> {
 
-
+    /**
+     * Contains factory methods for creating/loading file mapping.
+     * <br><br>
+     * <p>All {@link FileMapper} implementations should hide this field with
+     * instance of its own implementations
+     */
+    public static @NotNull ClientMappingProvider provider;
+    static { provider = new ClientMappingProvider(); }
 
     /**
      * Creates new file mapper.
@@ -300,6 +308,10 @@ public class ClientFileMapper extends FileMapper<ClientMapping> {
         }
     }
 
+    /**
+     * Represents companion object of {@link DriveFileMapper} stored in {@link DriveFileMapper#provider},
+     * used for creating/loading file mapping via factory methods.
+     */
     public static class ClientMappingProvider
             extends FileMappingProvider<ClientMapping, ClientMapping.InitParams> {
 

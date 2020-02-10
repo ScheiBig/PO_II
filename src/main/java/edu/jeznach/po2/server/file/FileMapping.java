@@ -2,6 +2,9 @@ package edu.jeznach.po2.server.file;
 
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Represents mapping of a file stored in container directory.
+ */
 public class FileMapping extends edu.jeznach.po2.common.file.FileMapping {
     @Override
     protected void setPathname(@NotNull String pathname) {

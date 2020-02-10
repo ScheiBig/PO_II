@@ -3,6 +3,9 @@ package edu.jeznach.po2.server.file;
 import edu.jeznach.po2.common.file.FileMapping;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Represents mapping of a shared file stored in container directory.
+ */
 public class SharedFileMapping extends edu.jeznach.po2.common.file.SharedFileMapping {
     @Override
     protected void setOwner(@NotNull String owner) {
