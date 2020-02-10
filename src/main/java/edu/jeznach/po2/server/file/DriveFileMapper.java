@@ -1,8 +1,6 @@
 package edu.jeznach.po2.server.file;
 
 import edu.jeznach.po2.common.file.FileMapper;
-import edu.jeznach.po2.common.file.FileMapping;
-import edu.jeznach.po2.common.file.SharedFileMapping;
 import edu.jeznach.po2.common.log.Log;
 import edu.jeznach.po2.common.util.Pair;
 import edu.jeznach.po2.server.gui.NotificationSender;
@@ -18,9 +16,20 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+/**
+ * Manages mapping of server drive structure.
+ * @see FileMapper
+ */
 public class DriveFileMapper extends FileMapper<DriveMapping> {
 
-    public static final DriveFileMappingProvider provider = new DriveFileMappingProvider();
+    /**
+     * Contains factory methods for creating/loading file mapping.
+     * <br><br>
+     * <p>All {@link FileMapper} implementations should hide this field with
+     * instance of its own implementations
+     */
+    public static final DriveFileMappingProvider provider;
+    static { provider = new DriveFileMappingProvider(); }
 
     /**
      * Creates new file mapper.
@@ -229,28 +238,30 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
         }
     }
 
+    /**
+     * Represents companion object of {@link DriveFileMapper} stored in {@link DriveFileMapper#provider},
+     * used for creating/loading file mapping via factory methods.
+     */
     public static class DriveFileMappingProvider
             extends FileMappingProvider<DriveMapping, DriveMapping.InitParams> {
 
         private DriveFileMappingProvider() { }
 
+        @SuppressWarnings("DuplicateThrows")
         @Override
         public @NotNull Pair<DriveMapping, Boolean> createStructure(@Nullable File file,
                                                                     @NotNull DriveMapping.InitParams parameters)
-                throws IOException {
+                throws FileNotFoundException, IOException {
                 Yaml yaml = new Yaml();
                 DriveMapping mapping = new DriveMapping(parameters);
                 Boolean fileCreated;
+                File drive = parameters.driveLocation;
+                //noinspection ResultOfMethodCallIgnored
+                drive.mkdirs();
+                File[] driveDirectories = drive.listFiles();
+                mapping.setUsers(listUsers(driveDirectories));
                 if (file != null) {
-                    File drive = new File(parameters.driveLocation);
-                    //noinspection ResultOfMethodCallIgnored
-                    drive.mkdirs();
-                    mapping.setName(drive.getName());
-
-                    File[] driveDirectories = drive.listFiles();
-                    mapping.setUsers(listUsers(driveDirectories));
-
-                    File fileToCreate = new File(drive.getAbsolutePath() + "/" + file.getPath());
+                    File fileToCreate = new File(drive.getAbsolutePath() + File.separator + file.getPath());
                     fileCreated = fileToCreate.createNewFile();
                     Writer writer = new OutputStreamWriter(new FileOutputStream(fileToCreate));
                     yaml.dump(mapping, writer);
@@ -278,7 +289,9 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
                 return Arrays.stream(directories)
                              .filter(File::isDirectory)
                              .map(f -> Pair.of(new DriveMapping.User(f.getName()), f))
-                             .peek(p -> p.key.setFiles(listFiles(p.value, p.value)))
+                             .peek(p -> p.key.setFiles(listFiles(p.value, p.value).stream()
+                                                                                  .map(FileMapping::new)
+                                                                                  .collect(Collectors.toList())))
                              .map(p -> p.key)
                              .peek(user -> {
                                  if (user.getFiles() != null) {

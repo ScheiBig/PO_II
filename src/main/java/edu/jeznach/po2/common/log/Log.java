@@ -271,6 +271,9 @@ public class Log
          * Time of message creation.
          */
         public final @NotNull Long timestamp;
+        /**
+         * @return the time of creation formatted as date/time string
+         */
         public final @NotNull String date() {
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
             return dtf.format(LocalDateTime.ofInstant(Instant.ofEpochMilli(timestamp),
@@ -316,7 +319,7 @@ public class Log
                    description + "\n}";
         }
 
-        public @NotNull String[] toStringTuple() {
+        private @NotNull String[] toStringTuple() {
             return new String[] {
                     date(),
                     " -> {",
