@@ -2,7 +2,7 @@
 !!edu.jeznach.po2.common.configuration.Configuration
 # application node, configuration shared between server and client
 application:
-  # how many threads user application uses to communicate with server (and server uses vice-versa)
+  # how many threads client application uses to exchange files with server
   thread_per_user: 5
   # size limit of storage for each user in megabytes
   size_per_user: 1024

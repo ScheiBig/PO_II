@@ -16,7 +16,7 @@ import java.io.*;
  */
 public final class Configuration {
 
-    /** how many threads user application uses to communicate with server (and server uses vice-versa) */
+    /** how many threads user application uses to exchange files with server */
     public static final @NotNull Integer THREAD_PER_USER;
     private static final Integer DEFAULT_THREAD_PER_USER = 5;
 
