@@ -18,7 +18,7 @@ import java.util.Optional;
 
 /**
  * Used for sending notifications for user.
- * {@code NotificationSender} can run in two modes - <i>Console</i> or <i>Console & SystemTray</i>.
+ * {@code NotificationSender} can run in two modes - <i>Console</i> or <i>Console &amp; SystemTray</i>.
  * Used mode is solely dependent on {@link SystemTray} availability - if while constructing
  * a {@code NotificationSender} object {@link SystemTray#isSupported()} returnes {@code false},
  * then object is launched in <i>Console</i> mode.

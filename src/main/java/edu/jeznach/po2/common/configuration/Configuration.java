@@ -1,12 +1,14 @@
 package edu.jeznach.po2.common.configuration;
 
 import edu.jeznach.po2.common.gui.NotificationSender;
+import edu.jeznach.po2.common.util.Throwables;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.yaml.snakeyaml.Yaml;
 
 import javax.swing.*;
-import java.io.*;
+import java.io.InputStreamReader;
+import java.io.Reader;
 
 /**
  * Used to load and provide at runtime properties that were read from configuration file.
@@ -16,7 +18,7 @@ import java.io.*;
  */
 public final class Configuration {
 
-    /** how many threads user application uses to communicate with server (and server uses vice-versa) */
+    /** how many threads user application uses to exchange files with server */
     public static final @NotNull Integer THREAD_PER_USER;
     private static final Integer DEFAULT_THREAD_PER_USER = 5;
 
@@ -77,12 +79,10 @@ public final class Configuration {
             reader.close();
         } catch (Throwable e) {
             {
-                StringWriter writer = new StringWriter();
-                e.printStackTrace(new PrintWriter(writer));
                 NotificationSender sender = new NotificationSender(new ImageIcon("").getImage(),
                                                                    "edu.jeznach.po2",
                                                                    null);
-                sender.error("Could not load configuration", writer.toString());
+                sender.error("Could not load configuration", Throwables.getStackTrace(e));
                 new Thread() {
                     @Override
                     public void run() {
@@ -96,7 +96,6 @@ public final class Configuration {
                         }
                     }
                 }.start();
-                try { writer.close(); } catch (IOException ignored) { }
             }
             threadPerUser = DEFAULT_THREAD_PER_USER;
             sizePerUser$Mb = DEFAULT_SIZE_PER_USER;
@@ -145,16 +144,16 @@ public final class Configuration {
     }
 
     private @NotNull Application application = new Application();
-    protected @NotNull Application getApplication() { return application; }
-    protected void setApplication(@NotNull Application application) { this.application = application; }
+    public @NotNull Application getApplication() { return application; }
+    public void setApplication(@NotNull Application application) { this.application = application; }
 
     private @NotNull Server server = new Server();
-    protected @NotNull Server getServer() { return server; }
-    protected void setServer(@NotNull Server server) { this.server = server; }
+    public @NotNull Server getServer() { return server; }
+    public void setServer(@NotNull Server server) { this.server = server; }
 
     private @NotNull Client client = new Client();
-    protected @NotNull Client getClient() { return this.client; }
-    protected void setClient(@NotNull Client client) { this.client = client; }
+    public @NotNull Client getClient() { return this.client; }
+    public void setClient(@NotNull Client client) { this.client = client; }
 
     Configuration() { }
 
@@ -162,23 +161,23 @@ public final class Configuration {
      * Represents application node.
      * <br>Hosts configuration shared between server and client.
      */
-    protected static final class Application {
+    public static final class Application {
 
         private @NotNull Integer thread_per_user = DEFAULT_THREAD_PER_USER;
-        protected @NotNull Integer getThread_per_user() { return thread_per_user; }
-        protected void setThread_per_user(@NotNull Integer thread_per_user) { this.thread_per_user = thread_per_user; }
+        public @NotNull Integer getThread_per_user() { return thread_per_user; }
+        public void setThread_per_user(@NotNull Integer thread_per_user) { this.thread_per_user = thread_per_user; }
 
         private @NotNull Integer size_per_user = DEFAULT_SIZE_PER_USER;
-        protected @NotNull Integer getSize_per_user() { return size_per_user; }
-        protected void setSize_per_user(@NotNull Integer size_per_user) { this.size_per_user = size_per_user; }
+        public @NotNull Integer getSize_per_user() { return size_per_user; }
+        public void setSize_per_user(@NotNull Integer size_per_user) { this.size_per_user = size_per_user; }
 
         private @NotNull Boolean print_color = DEFAULT_PRINT_COLOR;
-        protected @NotNull Boolean getPrint_color() { return this.print_color; }
-        protected void setPrint_color(@NotNull Boolean print_color) { this.print_color = print_color; }
+        public @NotNull Boolean getPrint_color() { return this.print_color; }
+        public void setPrint_color(@NotNull Boolean print_color) { this.print_color = print_color; }
 
         private @NotNull String checksum_algorithm = DEFAULT_CHECKSUM_ALGORITHM;
-        protected @NotNull String getChecksum_algorithm() { return this.checksum_algorithm; }
-        protected void setChecksum_algorithm(@NotNull String checksum_algorithm) { this.checksum_algorithm = checksum_algorithm; }
+        public @NotNull String getChecksum_algorithm() { return this.checksum_algorithm; }
+        public void setChecksum_algorithm(@NotNull String checksum_algorithm) { this.checksum_algorithm = checksum_algorithm; }
 
         Application() { }
     }
@@ -187,19 +186,19 @@ public final class Configuration {
      * Represents server node.
      * <br>Hosts server-specific configuration.
      */
-    protected static final class Server {
+    public static final class Server {
 
         private @Nullable String path;
-        protected @Nullable String getPath() { return path; }
-        protected void setPath(@Nullable String path) { this.path = path; }
+        public @Nullable String getPath() { return path; }
+        public void setPath(@Nullable String path) { this.path = path; }
 
         private @NotNull Integer drive_count = DEFAULT_DRIVE_COUNT;
-        protected @NotNull Integer getDrive_count() { return drive_count; }
-        protected void setDrive_count(@NotNull Integer drive_count) { this.drive_count = drive_count; }
+        public @NotNull Integer getDrive_count() { return drive_count; }
+        public void setDrive_count(@NotNull Integer drive_count) { this.drive_count = drive_count; }
 
         private @NotNull String icon_path = DEFAULT_SERVER_ICON_PATH;
-        protected @NotNull String getIcon_path() { return this.icon_path; }
-        protected void setIcon_path(@NotNull String icon_path) { this.icon_path = icon_path; }
+        public @NotNull String getIcon_path() { return this.icon_path; }
+        public void setIcon_path(@NotNull String icon_path) { this.icon_path = icon_path; }
 
         Server() { }
     }
@@ -208,11 +207,11 @@ public final class Configuration {
      * Represents client node.
      * <br>Hosts client-specific configuration.
      */
-    protected static final class Client {
+    public static final class Client {
 
         private @NotNull String icon_path = DEFAULT_CLIENT_ICON_PATH;
-        protected @NotNull String getIcon_path() { return this.icon_path; }
-        protected void setIcon_path(@NotNull String icon_path) { this.icon_path = icon_path; }
+        public @NotNull String getIcon_path() { return this.icon_path; }
+        public void setIcon_path(@NotNull String icon_path) { this.icon_path = icon_path; }
 
         Client() { }
     }

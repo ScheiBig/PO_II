@@ -26,6 +26,7 @@ public class NotificationSender extends edu.jeznach.po2.common.gui.NotificationS
     /**
      * Creates a new instance of {@code NotificationSender} and sets its mode according to
      * {@link SystemTray#isSupported()} result.
+     * @param trayIconToolTip the string to append to preconfigured tooltip
      * @param log the log that should be used to save notifications
      */
     public NotificationSender(@NotNull String trayIconToolTip, @Nullable Log log) {

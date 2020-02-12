@@ -38,8 +38,8 @@ public class UserMappingCollector {
                                          .map(FileMapper::getMapping)
                                          .map(DriveMapping::getUsers)
                                          .map(l -> l.stream()
-                                                                 .filter(u -> u.getUsername().equals(username))
-                                                                 .findFirst())
+                                                    .filter(u -> u.getUsername().equals(username))
+                                                    .findFirst())
                                          .filter(Optional::isPresent)
                                          .map(Optional::get);
         if (userStream.count() <= 0) return null;

@@ -3,6 +3,7 @@ package edu.jeznach.po2.server.file;
 import edu.jeznach.po2.common.file.FileMapper;
 import edu.jeznach.po2.common.log.Log;
 import edu.jeznach.po2.common.util.Pair;
+import edu.jeznach.po2.common.util.Throwables;
 import edu.jeznach.po2.server.gui.NotificationSender;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -222,9 +223,7 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
                                        new Log(new File(getMapping().getDrive_location() +
                                                         File.separator +
                                                         getMapping().getLog_name())));
-        StringWriter w = new StringWriter();
-        e.printStackTrace(new PrintWriter(w));
-        sender.error(e.getMessage(), w.toString());
+        sender.error(e.getMessage(), Throwables.getStackTrace(e));
         sender.close();
     }
 

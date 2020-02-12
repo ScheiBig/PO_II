@@ -6,13 +6,11 @@ import edu.jeznach.po2.common.configuration.Configuration;
 import edu.jeznach.po2.common.util.CollectionAssembler;
 import edu.jeznach.po2.common.util.Optionals;
 import edu.jeznach.po2.common.util.Pair;
+import edu.jeznach.po2.common.util.Throwables;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.Closeable;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.PrintStream;
+import java.io.*;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -206,6 +204,23 @@ public class Log
                 icons.getOrDefault(IconName.C, "❓"),
                 "File: " + file.getAbsolutePath() + " from user: " + user + " was rejected",
                 ""
+        );
+        debug(message, Ansi.Attribute.NONE, Ansi.FColor.RED);
+    }
+
+    /**
+     * Logs event of IOException being thrown. Due to lazy documentation of those events
+     * by SDK creators and often confusing and hard to follow stack traces of called methods
+     * its usually impossible to properly handle catching of those exceptions, so its easier
+     * to log them for later, that guess their origin during writing code
+     * @param exception the {@link IOException} that should be documented
+     */
+    public void ioException(@NotNull IOException exception) {
+        Message message = new Message(
+                getCurrentTime(),
+                "🧨",
+                exception.toString(),
+                Throwables.getStackTrace(exception)
         );
         debug(message, Ansi.Attribute.NONE, Ansi.FColor.RED);
     }
