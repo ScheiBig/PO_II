@@ -35,6 +35,8 @@ public class Pair<K, V> {
      * Creates pair of given arguments.
      * @param key key of this {@code Pair}
      * @param value key of this {@code Pair}
+     * @param <K> the type of key
+     * @param <V> the type of value
      * @return Created {@code Pair}
      */
     public static <K, V> @NotNull Pair<K, V> of(K key, V value) { return new Pair<>(key, value); }

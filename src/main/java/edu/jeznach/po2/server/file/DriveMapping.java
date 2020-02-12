@@ -12,7 +12,7 @@ import java.util.List;
  * <p>Proper structure is:
  * <blockquote><pre><code>
  * 🖥 server - location of server structure
- * ├ 📁 <b>drive</b>> - location of mapped drive structure
+ * ├ 📁 <b>drive</b> - location of mapped drive structure
  * │ ├ 📁 user - directory containing /user/ files
  * │ │ └ ⸬
  * │ ├ ⸬

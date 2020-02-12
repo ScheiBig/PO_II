@@ -150,7 +150,7 @@ public abstract class FileMapper<M> {
         /**
          * Loads mapping from file.
          * <br><br>
-         * <p>It would be advised to call this method prior to {@link #createStructure(File, P)},
+         * <p>It would be advised to call this method prior to {@link #createStructure(File, Object) createStructure(File, P)},
          * and perform some actions based on difference of those two calls, as this would
          * suggest that modifications to file structure were performed in between execution
          * of application

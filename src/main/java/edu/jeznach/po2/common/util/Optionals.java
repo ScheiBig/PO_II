@@ -34,6 +34,7 @@ public class Optionals {
      * If a value is present, performs the given action with the value, otherwise performs the given empty-based action.
      * <br><br>
      * <p>This mocks java 9 {@code Optional#ifPresentOrElse(Consumer, Runnable)}
+     * @param type the type of value stored in {@code optional}
      * @param optional the optional to perform actions on
      * @param ifPresent the action to be performed, if a value is present
      * @param ifEmpty the empty-based action to be performed, if no value is present
@@ -53,7 +54,7 @@ public class Optionals {
 
     /**
      * Represents a supplier of results.
-     * <p></p>There is no requirement that a new or distinct result be returned each time the supplier is invoked.
+     * <p>There is no requirement that a new or distinct result be returned each time the supplier is invoked.
      * This is a functional interface whose functional method is get() that can throw {@code Exceptions}.
      * @param <T> the type of results supplied by this supplier
      */
