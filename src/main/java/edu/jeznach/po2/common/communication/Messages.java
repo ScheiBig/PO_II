@@ -14,10 +14,15 @@ public class Messages {
     }
 
     /**
+     * Flag used to indicate that sent bytes are part of file
+     */
+    public static final @NotNull String FILE_PART_FLAG = "P=";
+
+    /**
      * Abstract command message
      * <blockquote><code>
      *     $CMD$ $USER$,
-     *     <br>i.e.: {linkplain RequestMapping RequestMapping} User
+     *     <br>i.e.: {@linkplain RequestMapping RequestMapping} User
      * </code></blockquote>
      */
     public static abstract class Msg {
@@ -203,6 +208,7 @@ public class Messages {
      * Command for deleting existing files
      */
     public static class DeleteFile extends FileMsg {
+
         private @NotNull String cmd = this.getClass().getSimpleName();
         @Override public @NotNull String cmd() { return cmd; }
 
@@ -311,6 +317,62 @@ public class Messages {
             if (messageSplit.length != argCount())
                 throw wrongArgumentNumber(cmd(), messageSplit.length, argCount());
             return new UnshareFile(messageSplit[1], messageSplit[2], messageSplit[3]);
+        }
+    }
+
+    public static class RequestFile extends FileMsg {
+
+        private @NotNull String cmd = this.getClass().getSimpleName();
+        @Override public @NotNull String cmd() { return cmd; }
+
+        private @NotNull String user;
+        @Override public @NotNull String user() { return user; }
+
+        private @NotNull String file;
+        @Override public @NotNull String file() { return file; }
+
+        /**
+         * Creates RequestFile command message
+         * @param user the username of user issuing command
+         * @param file the path to related file, relative to mapping node (user)
+         */
+        public RequestFile(@NotNull String user,
+                          @NotNull String file) {
+            this.user = user;
+            this.file = file;
+        }
+
+        @Override
+        protected @NotNull RequestFile parse(String message) {
+            String[] messageSplit = message.split(" ");
+            if (messageSplit.length != argCount())
+                throw wrongArgumentNumber(cmd(), messageSplit.length, argCount());
+            return new RequestFile(messageSplit[1], messageSplit[2]);
+        }
+    }
+
+    public static class RequestMapping extends Msg {
+
+        private @NotNull String cmd = this.getClass().getSimpleName();
+        @Override public @NotNull String cmd() { return cmd; }
+
+        private @NotNull String user;
+        @Override public @NotNull String user() { return user; }
+
+        /**
+         * Creates RequestFile command message
+         * @param user the username of user issuing command
+         */
+        public RequestMapping(@NotNull String user) {
+            this.user = user;
+        }
+
+        @Override
+        protected @NotNull RequestMapping parse(String message) {
+            String[] messageSplit = message.split(" ");
+            if (messageSplit.length != argCount())
+                throw wrongArgumentNumber(cmd(), messageSplit.length, argCount());
+            return new RequestMapping(messageSplit[1]);
         }
     }
 }
