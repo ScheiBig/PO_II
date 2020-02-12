@@ -51,7 +51,7 @@ public class Messages {
      * Abstract file command message
      * <blockquote><code>
      *     $CMD$ $USER$ $FILE$,
-     *     <br>i.e.: {linkplain DeleteFile DeleteFile} User docs/sum.txt
+     *     <br>i.e.: {@linkplain DeleteFile DeleteFile} User docs/sum.txt
      * </code></blockquote>
      */
     public static abstract class FileMsg extends Msg {
@@ -93,11 +93,15 @@ public class Messages {
      * Abstract file sharing command message
      * <blockquote><code>
      *     $CMD$ $USER$ $FILE$ $RECEIVER$,
-     *     <br>i.e.: {linkplain UnshareFile UnshareFile} User docs/sum.txt Client
+     *     <br>i.e.: {@linkplain UnshareFile UnshareFile} User docs/sum.txt Client
      * </code></blockquote>
      */
     public static abstract class ShareFileMsg extends FileMsg {
 
+        /**
+         * Receiver of related file
+         * @return the username of user that is receiver
+         */
         public abstract @NotNull String receiver();
 
         @Override protected short argCount() { return 4; }
@@ -225,6 +229,88 @@ public class Messages {
             if (messageSplit.length != argCount())
                 throw wrongArgumentNumber(cmd(), messageSplit.length, argCount());
             return new DeleteFile(messageSplit[1], messageSplit[2]);
+        }
+    }
+
+    /**
+     * Command for sharing file with receiver
+     */
+    public static class ShareFile extends ShareFileMsg {
+
+        private @NotNull String cmd = this.getClass().getSimpleName();
+        @Override public @NotNull String cmd() { return cmd; }
+
+        private @NotNull String user;
+        @Override public @NotNull String user() { return user; }
+
+        private @NotNull String file;
+        @Override public @NotNull String file() { return file; }
+
+        private @NotNull String receiver;
+        @Override public @NotNull String receiver() { return receiver; }
+
+        /**
+         * Creates ShareFile command message
+         * @param user the username of user issuing command
+         * @param file the path to related file, relative to mapping node (user)
+         * @param receiver the username of user that file is shared with
+         */
+        public ShareFile(@NotNull String user,
+                         @NotNull String file,
+                         @NotNull String receiver) {
+            this.user = user;
+            this.file = file;
+            this.receiver = receiver;
+        }
+
+        @Override
+        protected @NotNull ShareFile parse(String message) {
+            String[] messageSplit = message.split(" ");
+            if (messageSplit.length != argCount())
+                throw wrongArgumentNumber(cmd(), messageSplit.length, argCount());
+            return new ShareFile(messageSplit[1], messageSplit[2], messageSplit[3]);
+        }
+    }
+
+
+
+    /**
+     * Command for sharing file with receiver
+     */
+    public static class UnshareFile extends ShareFileMsg {
+
+        private @NotNull String cmd = this.getClass().getSimpleName();
+        @Override public @NotNull String cmd() { return cmd; }
+
+        private @NotNull String user;
+        @Override public @NotNull String user() { return user; }
+
+        private @NotNull String file;
+        @Override public @NotNull String file() { return file; }
+
+        private @NotNull String receiver;
+        @Override public @NotNull String receiver() { return receiver; }
+
+        /**
+         * Creates UnshareFile command message
+         * @param user the username of user issuing command
+         * @param file the path to related file, relative to mapping node (user)
+         * @param receiver the username of user that file should no longer be shared to
+         */
+        public UnshareFile(@NotNull String user,
+                         @NotNull String file,
+                         @NotNull String receiver) {
+            this.user = user;
+            this.file = file;
+            this.receiver = receiver;
+        }
+
+        @Override
+        protected @NotNull UnshareFile parse(String message) {
+            String[] messageSplit = message.split(" ");
+            if (messageSplit.length != argCount())
+                throw wrongArgumentNumber(cmd(), messageSplit.length, argCount());
+            return new UnshareFile(messageSplit[1], messageSplit[2], messageSplit[3]);
         }
     }
 }
