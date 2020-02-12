@@ -25,9 +25,8 @@ test {
 }
 
 task jarServer(type: Jar) {
-    manifest {
-        attributes 'Main-Class': 'edu.jeznach.po2.server.App'
-    }
+    manifest.attributes 'Main-Class': 'edu.jeznach.po2.server.App'
+
     classifier = 'server'
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
@@ -41,9 +40,8 @@ task jarServer(type: Jar) {
 }
 
 task jarClient(type: Jar) {
-    manifest {
-        attributes 'Main-Class': 'edu.jeznach.po2.client.App'
-    }
+    manifest.attributes 'Main-Class': 'edu.jeznach.po2.client.App'
+
     classifier = 'server'
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
@@ -54,6 +52,17 @@ task jarClient(type: Jar) {
         exclude 'edu/jeznach/po2/server/**'
     }
     with jar
+}
+
+javadoc {
+    options {
+        options.overview = 'src/main/java/overview.html'
+        // encoding used in javadoc comments
+        options.encoding = 'UTF-8'
+        // encoding used in output html
+        options.docEncoding = 'UTF-8'
+        options.memberLevel = JavadocMemberLevel.PUBLIC
+    }
 }
 
 compileJava.options.encoding = 'UTF-8'

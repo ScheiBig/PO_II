@@ -1,12 +1,14 @@
 package edu.jeznach.po2.common.configuration;
 
 import edu.jeznach.po2.common.gui.NotificationSender;
+import edu.jeznach.po2.common.util.Throwables;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.yaml.snakeyaml.Yaml;
 
 import javax.swing.*;
-import java.io.*;
+import java.io.InputStreamReader;
+import java.io.Reader;
 
 /**
  * Used to load and provide at runtime properties that were read from configuration file.
@@ -77,12 +79,10 @@ public final class Configuration {
             reader.close();
         } catch (Throwable e) {
             {
-                StringWriter writer = new StringWriter();
-                e.printStackTrace(new PrintWriter(writer));
                 NotificationSender sender = new NotificationSender(new ImageIcon("").getImage(),
                                                                    "edu.jeznach.po2",
                                                                    null);
-                sender.error("Could not load configuration", writer.toString());
+                sender.error("Could not load configuration", Throwables.getStackTrace(e));
                 new Thread() {
                     @Override
                     public void run() {
@@ -96,7 +96,6 @@ public final class Configuration {
                         }
                     }
                 }.start();
-                try { writer.close(); } catch (IOException ignored) { }
             }
             threadPerUser = DEFAULT_THREAD_PER_USER;
             sizePerUser$Mb = DEFAULT_SIZE_PER_USER;
