@@ -4,13 +4,50 @@ import edu.jeznach.po2.common.configuration.Configuration;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.function.Function;
+
+/**
+ * Contains objects that represents messages used in communication between client and server
+ */
 public class Messages {
 
     private Messages() {  }
 
-    public static @Nullable Msg parseMessage(String message) {
-
-        return null;
+    /**
+     * Tries to parse given message to message object
+     * @param message the String containing message
+     * @return {@code Msg} instance that contains parsed command, {@code null} if
+     * message command is not supported
+     */
+    public static @Nullable Msg parseMessage(@NotNull String message) {
+        String messageIdentifier = message.split(" ")[0];
+        Function<String, Msg> parser;
+        switch (messageIdentifier) {
+            case CreateFile.cmd:
+                parser = CreateFile::parse;
+                break;
+            case UpdateFile.cmd:
+                parser = UpdateFile::parse;
+                break;
+            case DeleteFile.cmd:
+                parser = DeleteFile::parse;
+                break;
+            case ShareFile.cmd:
+                parser = ShareFile::parse;
+                break;
+            case UnshareFile.cmd:
+                parser = UnshareFile::parse;
+                break;
+            case RequestFile.cmd:
+                parser = RequestFile::parse;
+                break;
+            case RequestMapping.cmd:
+                parser = RequestMapping::parse;
+                break;
+            default:
+                return null;
+        }
+        return parser.apply(message);
     }
 
     /**
@@ -28,10 +65,10 @@ public class Messages {
     public static abstract class Msg {
 
         /**
-         * Command name
-         * @return the name of command, should be name of class that represents command
+         * Name of command, should be name of class that represents command
          */
-        public abstract @NotNull String cmd();
+        @SuppressWarnings("ConstantConditions")
+        public static final @NotNull String cmd = null;
 
         /**
          * User issuing command
@@ -40,9 +77,12 @@ public class Messages {
         public abstract @NotNull String user();
 
         /// Allows parsing via reflection
-        protected abstract @NotNull Msg parse(String message);
+        protected static @NotNull Msg parse(String message) {
+            //noinspection ConstantConditions
+            return null;
+        }
 
-        protected short argCount() { return 2; }
+        protected static short argCount() { return 2; }
 
         static IllegalArgumentException wrongArgumentNumber(@NotNull String name,
                                                             @NotNull Integer actual,
@@ -67,7 +107,7 @@ public class Messages {
          */
         public abstract @NotNull String file();
 
-        @Override protected short argCount() { return 3; }
+        protected static short argCount() { return 3; }
     }
 
     /**
@@ -92,7 +132,7 @@ public class Messages {
          */
         public abstract @NotNull String checksum();
 
-        @Override protected short argCount() { return 5; }
+        protected static short argCount() { return 5; }
     }
     /**
      * Abstract file sharing command message
@@ -109,7 +149,7 @@ public class Messages {
          */
         public abstract @NotNull String receiver();
 
-        @Override protected short argCount() { return 4; }
+        protected static short argCount() { return 4; }
     }
 
     /**
@@ -117,8 +157,7 @@ public class Messages {
      */
     public static class CreateFile extends ModFileMsg {
 
-        private @NotNull String cmd = this.getClass().getSimpleName();
-        @Override public @NotNull String cmd() { return cmd; }
+        public static final @NotNull String cmd = "CreateFile";
 
         private @NotNull String user;
         @Override public @NotNull String user() { return user; }
@@ -150,10 +189,14 @@ public class Messages {
         }
 
         @Override
-        protected @NotNull Messages.CreateFile parse(String message) {
+        public String toString() {
+            return String.join(" ", cmd, user, file, size.toString(), checksum);
+        }
+
+        protected static @NotNull CreateFile parse(String message) {
             String[] messageSplit = message.split(" ");
             if (messageSplit.length != argCount())
-                throw wrongArgumentNumber(cmd(), messageSplit.length, argCount());
+                throw wrongArgumentNumber(cmd, messageSplit.length, argCount());
             return new CreateFile(messageSplit[1], messageSplit[2], Long.parseLong(messageSplit[3]), messageSplit[4]);
         }
     }
@@ -163,8 +206,7 @@ public class Messages {
      */
     public static class UpdateFile extends ModFileMsg {
 
-        private @NotNull String cmd = this.getClass().getSimpleName();
-        @Override public @NotNull String cmd() { return cmd; }
+        public static final @NotNull String cmd = "UpdateFile";
 
         private @NotNull String user;
         @Override public @NotNull String user() { return user; }
@@ -196,10 +238,14 @@ public class Messages {
         }
 
         @Override
-        protected @NotNull UpdateFile parse(String message) {
+        public String toString() {
+            return String.join(" ", cmd, user, file, size.toString(), checksum);
+        }
+
+        protected static @NotNull UpdateFile parse(String message) {
             String[] messageSplit = message.split(" ");
             if (messageSplit.length != argCount())
-                throw wrongArgumentNumber(cmd(), messageSplit.length, argCount());
+                throw wrongArgumentNumber(cmd, messageSplit.length, argCount());
             return new UpdateFile(messageSplit[1], messageSplit[2], Long.parseLong(messageSplit[3]), messageSplit[4]);
         }
     }
@@ -209,8 +255,7 @@ public class Messages {
      */
     public static class DeleteFile extends FileMsg {
 
-        private @NotNull String cmd = this.getClass().getSimpleName();
-        @Override public @NotNull String cmd() { return cmd; }
+        public static final @NotNull String cmd = "DeleteFile";
 
         private @NotNull String user;
         @Override public @NotNull String user() { return user; }
@@ -230,10 +275,14 @@ public class Messages {
         }
 
         @Override
-        protected @NotNull DeleteFile parse(String message) {
+        public String toString() {
+            return String.join(" ", cmd, user, file);
+        }
+
+        protected static @NotNull DeleteFile parse(String message) {
             String[] messageSplit = message.split(" ");
             if (messageSplit.length != argCount())
-                throw wrongArgumentNumber(cmd(), messageSplit.length, argCount());
+                throw wrongArgumentNumber(cmd, messageSplit.length, argCount());
             return new DeleteFile(messageSplit[1], messageSplit[2]);
         }
     }
@@ -243,8 +292,7 @@ public class Messages {
      */
     public static class ShareFile extends ShareFileMsg {
 
-        private @NotNull String cmd = this.getClass().getSimpleName();
-        @Override public @NotNull String cmd() { return cmd; }
+        public static final @NotNull String cmd = "ShareFile";
 
         private @NotNull String user;
         @Override public @NotNull String user() { return user; }
@@ -270,10 +318,14 @@ public class Messages {
         }
 
         @Override
-        protected @NotNull ShareFile parse(String message) {
+        public String toString() {
+            return String.join(" ", cmd, user, file, receiver);
+        }
+
+        protected static @NotNull ShareFile parse(String message) {
             String[] messageSplit = message.split(" ");
             if (messageSplit.length != argCount())
-                throw wrongArgumentNumber(cmd(), messageSplit.length, argCount());
+                throw wrongArgumentNumber(cmd, messageSplit.length, argCount());
             return new ShareFile(messageSplit[1], messageSplit[2], messageSplit[3]);
         }
     }
@@ -285,8 +337,7 @@ public class Messages {
      */
     public static class UnshareFile extends ShareFileMsg {
 
-        private @NotNull String cmd = this.getClass().getSimpleName();
-        @Override public @NotNull String cmd() { return cmd; }
+        public static final @NotNull String cmd = "UnshareFile";
 
         private @NotNull String user;
         @Override public @NotNull String user() { return user; }
@@ -312,18 +363,21 @@ public class Messages {
         }
 
         @Override
-        protected @NotNull UnshareFile parse(String message) {
+        public String toString() {
+            return String.join(" ", cmd, user, file, receiver);
+        }
+
+        protected static @NotNull UnshareFile parse(String message) {
             String[] messageSplit = message.split(" ");
             if (messageSplit.length != argCount())
-                throw wrongArgumentNumber(cmd(), messageSplit.length, argCount());
+                throw wrongArgumentNumber(cmd, messageSplit.length, argCount());
             return new UnshareFile(messageSplit[1], messageSplit[2], messageSplit[3]);
         }
     }
 
     public static class RequestFile extends FileMsg {
 
-        private @NotNull String cmd = this.getClass().getSimpleName();
-        @Override public @NotNull String cmd() { return cmd; }
+        public static final @NotNull String cmd = "RequestFile";
 
         private @NotNull String user;
         @Override public @NotNull String user() { return user; }
@@ -343,18 +397,21 @@ public class Messages {
         }
 
         @Override
-        protected @NotNull RequestFile parse(String message) {
+        public String toString() {
+            return String.join(" ", cmd, user, file);
+        }
+
+        protected static @NotNull RequestFile parse(String message) {
             String[] messageSplit = message.split(" ");
             if (messageSplit.length != argCount())
-                throw wrongArgumentNumber(cmd(), messageSplit.length, argCount());
+                throw wrongArgumentNumber(cmd, messageSplit.length, argCount());
             return new RequestFile(messageSplit[1], messageSplit[2]);
         }
     }
 
     public static class RequestMapping extends Msg {
 
-        private @NotNull String cmd = this.getClass().getSimpleName();
-        @Override public @NotNull String cmd() { return cmd; }
+        public static final @NotNull String cmd = "RequestMapping";
 
         private @NotNull String user;
         @Override public @NotNull String user() { return user; }
@@ -368,10 +425,14 @@ public class Messages {
         }
 
         @Override
-        protected @NotNull RequestMapping parse(String message) {
+        public String toString() {
+            return String.join(" ", cmd, user);
+        }
+
+        protected static @NotNull RequestMapping parse(String message) {
             String[] messageSplit = message.split(" ");
             if (messageSplit.length != argCount())
-                throw wrongArgumentNumber(cmd(), messageSplit.length, argCount());
+                throw wrongArgumentNumber(cmd, messageSplit.length, argCount());
             return new RequestMapping(messageSplit[1]);
         }
     }
