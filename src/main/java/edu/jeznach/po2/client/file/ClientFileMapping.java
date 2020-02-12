@@ -16,25 +16,25 @@ public class ClientFileMapping extends FileMapping {
      * @return the list of users names that this mapped file is shared to
      */
     public @Nullable List<String> getReceivers() { return this.receivers; }
-    protected void setReceivers(@Nullable List<String> receivers) { this.receivers = receivers; }
+    public void setReceivers(@Nullable List<String> receivers) { this.receivers = receivers; }
 
     @Override
-    protected void setPathname(@NotNull String pathname) {
+    public void setPathname(@NotNull String pathname) {
         super.setPathname(pathname);
     }
 
     @Override
-    protected void setSize_bytes(@NotNull Long size_bytes) {
+    public void setSize_bytes(@NotNull Long size_bytes) {
         super.setSize_bytes(size_bytes);
     }
 
     @Override
-    protected void setChecksum(@NotNull String checksum) {
+    public void setChecksum(@NotNull String checksum) {
         super.setChecksum(checksum);
     }
 
     @Override
-    protected void setModification_timestamp(@NotNull Long modification_timestamp) {
+    public void setModification_timestamp(@NotNull Long modification_timestamp) {
         super.setModification_timestamp(modification_timestamp);
     }
 

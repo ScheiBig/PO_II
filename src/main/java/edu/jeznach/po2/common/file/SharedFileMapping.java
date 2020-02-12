@@ -12,7 +12,7 @@ public class SharedFileMapping extends FileMapping {
      * @return the username of owner of this shared file mapping
      */
     public @NotNull String getOwner() { return this.owner; }
-    protected void setOwner(@NotNull String owner) { this.owner = owner; }
+    public void setOwner(@NotNull String owner) { this.owner = owner; }
 
     protected SharedFileMapping() { super(); }
 
