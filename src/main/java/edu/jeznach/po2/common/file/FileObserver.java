@@ -58,7 +58,7 @@ public class FileObserver extends Thread {
     }
 
     /**
-     * Shifts element from {@link FileEvent} queue. This method may block if no event
+     * Pops element from {@link FileEvent} queue. This method may block if no event
      * is currently available.
      * <br><br>
      * <p>Thread that makes this call is <b>required</b> to take action that handles returned
@@ -69,13 +69,12 @@ public class FileObserver extends Thread {
      *                              The <i>interrupted status</i> of the current thread is
      *                              cleared when this exception is thrown
      */
-    public @NotNull FileEvent shiftEvent() throws InterruptedException {
+    public @NotNull FileEvent popEvent() throws InterruptedException {
         synchronized (queuedEvents) {
-            if (queuedEvents.isEmpty()) queuedEvents.wait();
-            else {
-                return queuedEvents.poll();
-            }
-            throw new InterruptedException("Moved out of queue scope");
+            if (queuedEvents.isEmpty())
+                queuedEvents.wait();
+            return queuedEvents.pop();
+//            throw new InterruptedException("Moved out of queue scope");
         }
     }
 
@@ -138,12 +137,13 @@ public class FileObserver extends Thread {
                         }
                     }
                 } else if (ENTRY_MODIFY.equals(kind)) {
-                    FileEvent fileEvent = new FileEvent(file, Node_Create);
+                    FileEvent fileEvent = new FileEvent(file, Node_Update);
                     synchronized (queuedEvents) {
                         boolean shouldAdd = true;
                         for (FileEvent queuedEvent : queuedEvents) {
-                            if (queuedEvent.eventType.equals(Node_Create) ||
-                                queuedEvent.eventType.equals(Node_Update)) {
+                            if (queuedEvent.filePath.equals(file) &&
+                                (queuedEvent.eventType.equals(Node_Create) ||
+                                 queuedEvent.eventType.equals(Node_Update))) {
                                 shouldAdd = false;
                                 break;
                             }
@@ -157,8 +157,9 @@ public class FileObserver extends Thread {
                     FileEvent fileEvent = new FileEvent(file, Node_Delete);
                     synchronized (queuedEvents) {
                         queuedEvents.removeIf(
-                                queuedEvent -> queuedEvent.eventType.equals(Node_Create) ||
-                                               queuedEvent.eventType.equals(Node_Update)
+                                queuedEvent -> queuedEvent.filePath.equals(file) &&
+                                               (queuedEvent.eventType.equals(Node_Create) ||
+                                               queuedEvent.eventType.equals(Node_Update))
                         );
                         queuedEvents.add(fileEvent);
                         queuedEvents.notify();
@@ -247,6 +248,11 @@ public class FileObserver extends Thread {
             Node_Update,
             /** Existing File was deleted (and possibly created/updated before) */
             Node_Delete
+        }
+
+        @Override
+        public String toString() {
+            return eventType + ": " + filePath.toString();
         }
     }
 }
