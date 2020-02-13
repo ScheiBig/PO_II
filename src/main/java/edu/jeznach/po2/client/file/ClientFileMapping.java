@@ -42,9 +42,9 @@ public class ClientFileMapping extends FileMapping {
     }
 
     protected ClientFileMapping(@NotNull String pathname,
-                             @NotNull Long size_bytes,
-                             @NotNull String checksum,
-                             @NotNull Long modification_timestamp) {
+                                @NotNull Long size_bytes,
+                                @NotNull String checksum,
+                                @NotNull Long modification_timestamp) {
         super(pathname, size_bytes, checksum, modification_timestamp);
     }
 

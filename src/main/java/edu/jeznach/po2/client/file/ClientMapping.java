@@ -104,7 +104,7 @@ public class ClientMapping {
         /**
          * @param clientName the username of client
          * @param logName the name that will be used for log file
-         * @param clientLocation the name that will be used for log file
+         * @param clientLocation the name that will be used for location
          */
         public InitParams(@NotNull String clientName,
                           @NotNull String logName,

@@ -25,7 +25,7 @@ public class SharedFileMapping extends FileMapping {
         this.owner = owner;
     }
 
-    protected SharedFileMapping(@NotNull FileMapping fileMapping,
+    public SharedFileMapping(@NotNull FileMapping fileMapping,
                              @NotNull String owner) {
         super(fileMapping);
         this.owner = owner;
