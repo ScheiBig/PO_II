@@ -1,0 +1,116 @@
+13.02.2020 13:43:27 -> {
+🧨 java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\files\ert.txt (System nie może odnaleźć określonej ścieżki):
+java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\files\ert.txt (System nie może odnaleźć określonej ścieżki)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at edu.jeznach.po2.common.file.FileManager.createChecksum(FileManager.java:136)
+	at edu.jeznach.po2.common.file.FileManager.getChecksum(FileManager.java:33)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:74)
+
+}
+13.02.2020 14:13:29 -> {
+🧨 java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\files\xs\ss.txt (System nie może odnaleźć określonej ścieżki):
+java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\files\xs\ss.txt (System nie może odnaleźć określonej ścieżki)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at edu.jeznach.po2.common.file.FileManager.createChecksum(FileManager.java:146)
+	at edu.jeznach.po2.common.file.FileManager.getChecksum(FileManager.java:33)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:99)
+
+}
+13.02.2020 14:13:29 -> {
+🧨 java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\user.yaml (Nie można odnaleźć określonego pliku):
+java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\user.yaml (Nie można odnaleźć określonego pliku)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at edu.jeznach.po2.common.file.FileManager.createChecksum(FileManager.java:146)
+	at edu.jeznach.po2.common.file.FileManager.getChecksum(FileManager.java:33)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:99)
+
+}
+13.02.2020 14:13:29 -> {
+🧨 java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\files\keke.txt (System nie może odnaleźć określonej ścieżki):
+java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\files\keke.txt (System nie może odnaleźć określonej ścieżki)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at edu.jeznach.po2.common.file.FileManager.createChecksum(FileManager.java:146)
+	at edu.jeznach.po2.common.file.FileManager.getChecksum(FileManager.java:33)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:99)
+
+}
+13.02.2020 14:13:29 -> {
+🧨 java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\user.yaml (Nie można odnaleźć określonego pliku):
+java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\user.yaml (Nie można odnaleźć określonego pliku)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at edu.jeznach.po2.common.file.FileManager.createChecksum(FileManager.java:146)
+	at edu.jeznach.po2.common.file.FileManager.getChecksum(FileManager.java:33)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:99)
+
+}
+13.02.2020 14:13:32 -> {
+🧨 java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\files\xs\ss.txt (System nie może odnaleźć określonej ścieżki):
+java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\files\xs\ss.txt (System nie może odnaleźć określonej ścieżki)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at edu.jeznach.po2.common.file.FileManager.createChecksum(FileManager.java:146)
+	at edu.jeznach.po2.common.file.FileManager.getChecksum(FileManager.java:33)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:99)
+
+}
+13.02.2020 14:18:07 -> {
+🧨 java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\files\tat.t (System nie może odnaleźć określonej ścieżki):
+java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\files\tat.t (System nie może odnaleźć określonej ścieżki)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at edu.jeznach.po2.common.file.FileManager.createChecksum(FileManager.java:146)
+	at edu.jeznach.po2.common.file.FileManager.getChecksum(FileManager.java:33)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:77)
+
+}
+13.02.2020 14:22:12 -> {
+🧨 java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\xs (Odmowa dostępu):
+java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\xs (Odmowa dostępu)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at edu.jeznach.po2.common.file.FileManager.createChecksum(FileManager.java:146)
+	at edu.jeznach.po2.common.file.FileManager.getChecksum(FileManager.java:33)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:99)
+
+}
+13.02.2020 14:22:57 -> {
+🧨 java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\Nowy dokument tekstowy.txt (Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces):
+java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\Nowy dokument tekstowy.txt (Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at edu.jeznach.po2.common.file.FileManager.createChecksum(FileManager.java:146)
+	at edu.jeznach.po2.common.file.FileManager.getChecksum(FileManager.java:33)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:77)
+
+}
+13.02.2020 14:23:56 -> {
+🧨 java.net.SocketException: Software caused connection abort: socket write error:
+java.net.SocketException: Software caused connection abort: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:111)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at edu.jeznach.po2.common.file.FileManager.sendFile(FileManager.java:123)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:132)
+
+}
+13.02.2020 14:25:10 -> {
+🧨 java.net.SocketException: Socket is closed:
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:960)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:124)
+
+}

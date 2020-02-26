@@ -6,7 +6,9 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Represents mapping of a shared file stored in container directory.
  */
-public class SharedFileMapping extends edu.jeznach.po2.common.file.SharedFileMapping {
+@SuppressWarnings({"serial", "SpellCheckingInspection"})
+public class ServSharedFileMapping
+        extends edu.jeznach.po2.common.file.SharedFileMapping {
     @Override
     public void setOwner(@NotNull String owner) {
         super.setOwner(owner);
@@ -32,19 +34,19 @@ public class SharedFileMapping extends edu.jeznach.po2.common.file.SharedFileMap
         super.setModification_timestamp(modification_timestamp);
     }
 
-    protected SharedFileMapping() {
+    protected ServSharedFileMapping() {
         super();
     }
 
-    protected SharedFileMapping(@NotNull String pathname,
-                                @NotNull Long size_bytes,
-                                @NotNull String checksum,
-                                @NotNull Long modification_timestamp,
-                                @NotNull String owner) {
+    protected ServSharedFileMapping(@NotNull String pathname,
+                                    @NotNull Long size_bytes,
+                                    @NotNull String checksum,
+                                    @NotNull Long modification_timestamp,
+                                    @NotNull String owner) {
         super(pathname, size_bytes, checksum, modification_timestamp, owner);
     }
 
-    protected SharedFileMapping(@NotNull FileMapping fileMapping, @NotNull String owner) {
+    protected ServSharedFileMapping(@NotNull FileMapping fileMapping, @NotNull String owner) {
         super(fileMapping, owner);
     }
 }

@@ -18,8 +18,8 @@ public class CollectionAssembler {
      * @param <K> the type of a {@link Map} key
      * @param <V> the type of a {@link Map} value
      * @return Assembled {@link Map} object
-     * @throws KeyCastException if a {@link Pair#key key} of one of {@link Pair Pairs} is not instance of class represented by {@code keyClass}
-     * @throws ValueCastException if a {@link Pair#value value} of one of {@link Pair Pairs} is not instance of class represented by {@code valueClass}
+     * @throws KeyCastException if a {@link Pair#key() key} of one of {@link Pair Pairs} is not instance of class represented by {@code keyClass}
+     * @throws ValueCastException if a {@link Pair#value() value} of one of {@link Pair Pairs} is not instance of class represented by {@code valueClass}
      */
     @SuppressWarnings("unchecked")
     public static <K, V> @NotNull Map<K, V> map(@NotNull Class<K> keyClass,
@@ -28,19 +28,21 @@ public class CollectionAssembler {
             throws KeyCastException, ValueCastException {
         Map<K, V> ret = new HashMap<>();
         for (Pair<?, ?> pair : pairs) {
-            if (!keyClass.isInstance(pair.key)) throw new KeyCastException();
-            if (!valueClass.isInstance(pair.value)) throw new ValueCastException();
-            ret.put((K)pair.key, (V)pair.value);
+            if (!keyClass.isInstance(pair.key())) throw new KeyCastException();
+            if (!valueClass.isInstance(pair.value())) throw new ValueCastException();
+            ret.put((K)pair.key(), (V)pair.value());
         }
         return ret;
     }
 
     /**
-     * Used to indicate that vararg parameter {@link Pair#key key} failed type-safe instance check
+     * Used to indicate that vararg parameter {@link Pair#key() key} failed type-safe instance check
      */
+    @SuppressWarnings("serial")
     public static class KeyCastException extends ClassCastException {}
     /**
-     * Used to indicate that vararg parameter {@link Pair#value value} failed type-safe instance check
+     * Used to indicate that vararg parameter {@link Pair#value() value} failed type-safe instance check
      */
+    @SuppressWarnings("serial")
     public static class ValueCastException extends ClassCastException {}
 }

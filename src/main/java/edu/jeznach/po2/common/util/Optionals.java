@@ -2,6 +2,7 @@ package edu.jeznach.po2.common.util;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import edu.jeznach.po2.common.util.Throwables.Funcionables.Supplier;
 
 import java.util.Optional;
 import java.util.function.Consumer;
@@ -50,21 +51,5 @@ public class Optionals {
         } else {
             ifEmpty.run();
         }
-    }
-
-    /**
-     * Represents a supplier of results.
-     * <p>There is no requirement that a new or distinct result be returned each time the supplier is invoked.
-     * This is a functional interface whose functional method is get() that can throw {@code Exceptions}.
-     * @param <T> the type of results supplied by this supplier
-     */
-    public interface Supplier<T>{
-
-        /**
-         * Gets a result.
-         * @return a results
-         * @throws Exception when unhandled {@code Exception} is thrown in this method
-         */
-        @Nullable T get() throws Exception;
     }
 }

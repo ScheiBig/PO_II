@@ -1,0 +1,29 @@
+!!edu.jeznach.po2.server.file.DriveMapping
+drive_location: C:\GitHub\PO_II\serversA\drive
+log_name: drive.log
+name: drive
+users:
+- files:
+  - {checksum: 6b4d920ca7f0b30d266e934cb7f6ca06caea983d, modification_timestamp: 1581107090378,
+    pathname: bek.txt, size_bytes: 74}
+  shared_files: []
+  used_space_bytes: 74
+  username: Examination
+- files:
+  - {checksum: 4b292ecf931428fb632fe863bb8c9549aecc576b, modification_timestamp: 1580971526791,
+    pathname: fsf.tr, size_bytes: 274}
+  - {checksum: bd2e5d480434295fbcf859300075ea01d34dc136, modification_timestamp: 1580971549095,
+    pathname: w\kek.txt, size_bytes: 220}
+  - {checksum: 2d4432b615a639b45df0c89f94b8604da86940ff, modification_timestamp: 1580972152725,
+    pathname: w\strs\sgsgf, size_bytes: 50}
+  shared_files: []
+  used_space_bytes: 544
+  username: Experiment
+- files:
+  - {checksum: d3486ae9136e7856bc42212385ea797094475802, modification_timestamp: 1581082028893,
+    pathname: bek.txt, size_bytes: 12}
+  - {checksum: 675203073769eb907638494d74d82aefbb705e10, modification_timestamp: 1580971499039,
+    pathname: x\kek, size_bytes: 186}
+  shared_files: []
+  used_space_bytes: 198
+  username: Test

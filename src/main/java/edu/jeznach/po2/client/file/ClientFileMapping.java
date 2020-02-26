@@ -9,6 +9,7 @@ import java.util.List;
 /**
  * Represents mapping of a shareable file stored in container directory.
  */
+@SuppressWarnings("serial")
 public class ClientFileMapping extends FileMapping {
 
     private @Nullable List<String> receivers;
@@ -38,8 +39,7 @@ public class ClientFileMapping extends FileMapping {
         super.setModification_timestamp(modification_timestamp);
     }
 
-    protected ClientFileMapping() {
-    }
+    protected ClientFileMapping() {  }
 
     protected ClientFileMapping(@NotNull String pathname,
                                 @NotNull Long size_bytes,
@@ -48,7 +48,7 @@ public class ClientFileMapping extends FileMapping {
         super(pathname, size_bytes, checksum, modification_timestamp);
     }
 
-    protected ClientFileMapping(@NotNull FileMapping fileMapping) {
+    public ClientFileMapping(@NotNull FileMapping fileMapping) {
         super(fileMapping);
     }
 }

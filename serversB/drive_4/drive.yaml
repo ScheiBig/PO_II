@@ -1,0 +1,17 @@
+!!edu.jeznach.po2.server.file.DriveMapping
+drive_location: C:\GitHub\PO_II\serversB\drive_4
+log_name: log.txt
+name: drive_4
+users:
+- files:
+  - {checksum: da39a3ee5e6b4b0d3255bfef95601890afd80709, drive: drive_4, modification_timestamp: 1582598839076,
+    pathname: tetm.txt, size_bytes: 0}
+  shared_files: null
+  used_space_bytes: 0
+  username: Other
+- files:
+  - {checksum: da39a3ee5e6b4b0d3255bfef95601890afd80709, drive: drive_4, modification_timestamp: 1582598287396,
+    pathname: keke.txt, size_bytes: 0}
+  shared_files: null
+  used_space_bytes: 0
+  username: Test

@@ -2,6 +2,8 @@ package edu.jeznach.po2.client.file;
 
 import edu.jeznach.po2.client.file.ClientMapping.Directories;
 import edu.jeznach.po2.client.gui.NotificationSender;
+import edu.jeznach.po2.common.configuration.Configuration;
+import edu.jeznach.po2.common.file.FileManager;
 import edu.jeznach.po2.common.file.FileMapper;
 import edu.jeznach.po2.common.log.Log;
 import edu.jeznach.po2.common.util.Pair;
@@ -48,9 +50,8 @@ public class ClientFileMapper extends FileMapper<ClientMapping> {
     @Override
     public boolean attachFile(@NotNull File file, @NotNull String checksum, @NotNull String node) {
         checkNode(node);
-        String relativeFilePath = getRelativePath(file,
-                                                  new File(getMapping().getClient_location()
-                                                           + File.separator + node));
+        String relativeFilePath = FileManager.getRelativePath(getMapping().getClient_location()
+                                                              + File.separator + node, file.getPath());
         if (Directories.files.toString().equals(node)) {
             if (getMapping().getFiles() == null) getMapping().setFiles(new ArrayList<>());
             Optional<ClientFileMapping> fileOptional = getMapping().getFiles()
@@ -103,9 +104,8 @@ public class ClientFileMapper extends FileMapper<ClientMapping> {
     @Override
     public boolean detachFile(@NotNull File file, @NotNull String node) {
         checkNode(node);
-        String relativeFilePath = getRelativePath(file,
-                                                  new File(getMapping().getClient_location()
-                                                           + File.separator + node));
+        String relativeFilePath = FileManager.getRelativePath(getMapping().getClient_location()
+                                                           + File.separator + node, file.getPath());
         if (Directories.files.toString().equals(node)) {
             if (getMapping().getFiles() != null) {
                 Optional<ClientFileMapping> fileOptional = getMapping().getFiles()
@@ -153,9 +153,8 @@ public class ClientFileMapper extends FileMapper<ClientMapping> {
     @Override
     public boolean updateFile(@NotNull File file, @NotNull String checksum, @NotNull String node) {
         checkNode(node);
-        String relativeFilePath = getRelativePath(file,
-                                                  new File(getMapping().getClient_location()
-                                                           + File.separator + node));
+        String relativeFilePath = FileManager.getRelativePath(getMapping().getClient_location()
+                                                              + File.separator + node, file.getPath());
         if (Directories.files.toString().equals(node)) {
             if (getMapping().getFiles() != null) {
                 Optional<ClientFileMapping> fileOptional = getMapping().getFiles()
@@ -226,9 +225,8 @@ public class ClientFileMapper extends FileMapper<ClientMapping> {
         checkNode(node);
         if (!node.equals(Directories.files.toString())) return null;
         if (getMapping().getFiles() != null) {
-            String relativeFilePath = getRelativePath(file,
-                                                      new File(getMapping().getClient_location()
-                                                      + File.separator + node));
+            String relativeFilePath = FileManager.getRelativePath(getMapping().getClient_location()
+                                                                  + File.separator + node, file.getPath());
             Optional<ClientFileMapping> fileOptional = getMapping().getFiles()
                                                                    .stream()
                                                                    .filter(f -> f.getPathname().equals(relativeFilePath))
@@ -256,9 +254,8 @@ public class ClientFileMapper extends FileMapper<ClientMapping> {
         checkNode(node);
         if (!node.equals(Directories.files.toString())) return null;
         if (getMapping().getFiles() != null) {
-            String relativeFilePath = getRelativePath(file,
-                                                      new File(getMapping().getClient_location()
-                                                               + File.separator + node));
+            String relativeFilePath = FileManager.getRelativePath(getMapping().getClient_location()
+                                                                  + File.separator + node, file.getPath());
             Optional<ClientFileMapping> fileOptional = getMapping().getFiles()
                                                                    .stream()
                                                                    .filter(f -> f.getPathname().equals(relativeFilePath))
@@ -382,8 +379,8 @@ public class ClientFileMapper extends FileMapper<ClientMapping> {
                 return Arrays.stream(directories)
                              .filter(File::isDirectory)
                              .map(f -> Pair.of(listFiles(f, f), f.getName()))
-                             .map(fl -> fl.key.stream()
-                                              .map(f -> new SharedFileMapping(f, fl.value))
+                             .map(fl -> fl.key().stream()
+                                              .map(f -> new SharedFileMapping(f, fl.value()))
                                               .collect(Collectors.toList()))
                              .flatMap(List::stream)
                              .collect(Collectors.toList());

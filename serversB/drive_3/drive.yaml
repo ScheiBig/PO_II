@@ -1,0 +1,17 @@
+!!edu.jeznach.po2.server.file.DriveMapping
+drive_location: C:\GitHub\PO_II\serversB\drive_3
+log_name: log.txt
+name: drive_3
+users:
+- files: []
+  shared_files: null
+  used_space_bytes: 0
+  username: Other
+- files:
+  - {checksum: da39a3ee5e6b4b0d3255bfef95601890afd80709, drive: drive_3, modification_timestamp: 1582598287397,
+    pathname: ert.txt, size_bytes: 0}
+  - {checksum: a6dad92eb45641ba12ce7cd078adb04bfc209d2d, drive: drive_3, modification_timestamp: 1582561430004,
+    pathname: ojj.txt, size_bytes: 6660}
+  shared_files: null
+  used_space_bytes: 6660
+  username: Test

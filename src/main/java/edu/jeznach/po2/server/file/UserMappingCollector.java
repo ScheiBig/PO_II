@@ -5,11 +5,11 @@ import edu.jeznach.po2.server.file.DriveMapping.User;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 
 /**
@@ -34,16 +34,18 @@ public class UserMappingCollector {
      *         is not yet <i>"registered"</i> on server
      */
     public @Nullable User collectUserMapping(@NotNull String username) {
-        Stream<User> userStream = mappers.stream()
+        List<User> userStream = mappers.stream()
                                          .map(FileMapper::getMapping)
                                          .map(DriveMapping::getUsers)
                                          .map(l -> l.stream()
                                                     .filter(u -> u.getUsername().equals(username))
                                                     .findFirst())
                                          .filter(Optional::isPresent)
-                                         .map(Optional::get);
-        if (userStream.count() <= 0) return null;
-        return userStream.map(u -> new User[] { u })
+                                         .map(Optional::get)
+                                         .collect(Collectors.toList());
+        if (userStream.size() <= 0) return null;
+        return userStream.stream()
+                         .map(u -> new User[] { u })
                          .collect(UserMappingCollector.merging());
     }
 
@@ -51,19 +53,19 @@ public class UserMappingCollector {
      * Collects list of names of all <i>"registered"</i> users in managed mappers.
      * @return list of username strings
      */
-    public @NotNull List<String> collectUserNames() {
+    public @NotNull ArrayList<String> collectUserNames() {
         return mappers.stream()
                       .map(FileMapper::getMapping)
                       .map(DriveMapping::getUsers)
                       .flatMap(List::stream)
                       .map(User::getUsername)
                       .distinct()
-                      .collect(Collectors.toList());
+                      .collect(Collectors.toCollection(ArrayList::new));
     }
 
     static Collector<User[], User[], User> merging() {
         return Collector.of(
-                () -> new User[1],
+                () -> new User[] { new User() },
                 UserMappingCollector::mergeUsers,
                 UserMappingCollector::mergeUsers,
                 u -> u[0]

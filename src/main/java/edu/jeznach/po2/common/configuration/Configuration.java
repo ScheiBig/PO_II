@@ -1,6 +1,7 @@
 package edu.jeznach.po2.common.configuration;
 
 import edu.jeznach.po2.common.gui.NotificationSender;
+import edu.jeznach.po2.common.util.Pair;
 import edu.jeznach.po2.common.util.Throwables;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -16,6 +17,7 @@ import java.io.Reader;
  * provide effectively unique names (as those may not be 100% same as those in configuration
  * file).
  */
+@SuppressWarnings("unused")
 public final class Configuration {
 
     /** how many threads user application uses to exchange files with server */
@@ -37,6 +39,12 @@ public final class Configuration {
     public static final @NotNull String CHECKSUM_ALGORITHM;
     private static final String DEFAULT_CHECKSUM_ALGORITHM = "SHA-1";
 
+    public static final @NotNull String TEMP_EXTENSION = "~temp~";
+
+    public static final @NotNull Short BUFFER_SIZE = 256;
+
+    public static final @NotNull Pair<Short, Short> ARTIFICIAL_INPUT_LAG = Pair.of(((short) 500), ((short) 5000));
+
     /** which absolute path should be used for server storage, if null will use project directory */
     public static final @Nullable String PATH;
     private static final String DEFAULT_PATH = null;
@@ -48,6 +56,14 @@ public final class Configuration {
     /** where server icon is located */
     public static final @NotNull String SERVER_ICON_PATH;
     private static final String DEFAULT_SERVER_ICON_PATH = "";
+
+    public static final @NotNull String SERVER_ADDRESS;
+    private static final String DEFAULT_SERVER_ADDRESS = "127.0.0.1";
+
+    public static final @NotNull Integer SERVER_PORT;
+    private static final Integer DEFAULT_SERVER_PORT = 420;
+
+    public static final @NotNull Integer COMMUNICATION_PORT = 421;
 
     /** where client icon is located */
     public static final @NotNull String CLIENT_ICON_PATH;
@@ -63,6 +79,8 @@ public final class Configuration {
         @NotNull String checksumAlgorithm;
         @NotNull Integer driveCount;
         @NotNull String serverIconPath;
+        @NotNull String serverAddress;
+        @NotNull Integer serverPort;
         @NotNull String clientIconPath;
         try {
             Yaml yaml = new Yaml();
@@ -74,7 +92,10 @@ public final class Configuration {
             checksumAlgorithm = configuration.application.getChecksum_algorithm();
             path = configuration.server.getPath();
             driveCount = configuration.server.getDrive_count();
+            serverAddress = configuration.server.getAddress();
+            serverPort = configuration.server.getPort();
             serverIconPath = configuration.server.getIcon_path();
+
             clientIconPath = configuration.client.getIcon_path();
             reader.close();
         } catch (Throwable e) {
@@ -99,11 +120,14 @@ public final class Configuration {
             }
             threadPerUser = DEFAULT_THREAD_PER_USER;
             sizePerUser$Mb = DEFAULT_SIZE_PER_USER;
+            //noinspection ConstantConditions
             printColor = DEFAULT_PRINT_COLOR;
             path = DEFAULT_PATH;
             checksumAlgorithm = DEFAULT_CHECKSUM_ALGORITHM;
             driveCount = DEFAULT_DRIVE_COUNT;
             serverIconPath = DEFAULT_SERVER_ICON_PATH;
+            serverAddress = DEFAULT_SERVER_ADDRESS;
+            serverPort = DEFAULT_SERVER_PORT;
             clientIconPath = DEFAULT_CLIENT_ICON_PATH;
         }
         THREAD_PER_USER = threadPerUser;
@@ -140,6 +164,8 @@ public final class Configuration {
         PRINT_COLOR = printColor;
         SIZE_PER_USER$MB = sizePerUser$Mb;
         SERVER_ICON_PATH = serverIconPath;
+        SERVER_ADDRESS = serverAddress;
+        SERVER_PORT = serverPort;
         CLIENT_ICON_PATH = clientIconPath;
     }
 
@@ -199,6 +225,14 @@ public final class Configuration {
         private @NotNull String icon_path = DEFAULT_SERVER_ICON_PATH;
         public @NotNull String getIcon_path() { return this.icon_path; }
         public void setIcon_path(@NotNull String icon_path) { this.icon_path = icon_path; }
+
+        private @NotNull String address = DEFAULT_SERVER_ADDRESS;
+        public @NotNull String getAddress() { return this.address; }
+        public void setAddress(@NotNull String address) { this.address = address; }
+
+        private @NotNull Integer port = DEFAULT_SERVER_PORT;
+        public @NotNull Integer getPort() { return this.port; }
+        public void setPort(@NotNull Integer port) { this.port = port; }
 
         Server() { }
     }

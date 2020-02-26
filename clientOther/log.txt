@@ -1,0 +1,262 @@
+24.02.2020 17:28:42 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:129)
+	at edu.jeznach.po2.client.App.main(App.java:276)
+
+}
+24.02.2020 22:35:07 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:160)
+	at edu.jeznach.po2.client.App.main(App.java:307)
+
+}
+24.02.2020 22:37:55 -> {
+🧨 Cannot receive user list: java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at edu.jeznach.po2.common.file.FileManager.receiveString(FileManager.java:114)
+	at edu.jeznach.po2.client.communication.Messenger.lambda$requestUsers$9(Messenger.java:99)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.communication.Messenger.requestUsers(Messenger.java:99)
+	at edu.jeznach.po2.client.App$1.mouseClicked(App.java:89)
+	at java.awt.AWTEventMulticaster.mouseClicked(AWTEventMulticaster.java:270)
+	at java.awt.Component.processMouseEvent(Component.java:6542)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6304)
+	at java.awt.Container.processEvent(Container.java:2239)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2297)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4544)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+	at java.awt.Container.dispatchEventImpl(Container.java:2283)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+	at java.awt.EventQueue$4.run(EventQueue.java:733)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+}
+25.02.2020 03:19:25 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:159)
+	at edu.jeznach.po2.client.App.main(App.java:306)
+
+}
+25.02.2020 03:22:32 -> {
+🧨 Cannot calculate Checksum: java.io.FileNotFoundException: C:\GitHub\PO_II\clientOther\files\rem.txt~ (Nie można odnaleźć określonego pliku):
+java.io.FileNotFoundException: C:\GitHub\PO_II\clientOther\files\rem.txt~ (Nie można odnaleźć określonego pliku)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at edu.jeznach.po2.common.file.FileManager.createChecksum(FileManager.java:238)
+	at edu.jeznach.po2.common.file.FileManager.getChecksum(FileManager.java:37)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$7(FileEventWorker.java:362)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:362)
+
+}
+25.02.2020 03:22:32 -> {
+🧨 Cannot calculate Checksum: java.io.FileNotFoundException: C:\GitHub\PO_II\clientOther\files\rem.txt~ (Nie można odnaleźć określonego pliku):
+java.io.FileNotFoundException: C:\GitHub\PO_II\clientOther\files\rem.txt~ (Nie można odnaleźć określonego pliku)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at edu.jeznach.po2.common.file.FileManager.createChecksum(FileManager.java:238)
+	at edu.jeznach.po2.common.file.FileManager.getChecksum(FileManager.java:37)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$1(FileEventWorker.java:304)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:304)
+
+}
+25.02.2020 03:22:41 -> {
+🧨 Server not responding: java.net.SocketException: Software caused connection abort: recv failed:
+java.net.SocketException: Software caused connection abort: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$13(FileEventWorker.java:416)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:416)
+
+}
+25.02.2020 03:23:38 -> {
+🧨 Cannot receive user list: java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at edu.jeznach.po2.common.file.FileManager.receiveString(FileManager.java:114)
+	at edu.jeznach.po2.client.communication.Messenger.lambda$requestUsers$9(Messenger.java:99)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.communication.Messenger.requestUsers(Messenger.java:99)
+	at edu.jeznach.po2.client.App$1.mouseClicked(App.java:77)
+	at java.awt.AWTEventMulticaster.mouseClicked(AWTEventMulticaster.java:270)
+	at java.awt.Component.processMouseEvent(Component.java:6542)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6304)
+	at java.awt.Container.processEvent(Container.java:2239)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2297)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4544)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+	at java.awt.Container.dispatchEventImpl(Container.java:2283)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+	at java.awt.EventQueue$4.run(EventQueue.java:733)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+}
+25.02.2020 03:25:09 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:159)
+	at edu.jeznach.po2.client.App.main(App.java:306)
+
+}
+25.02.2020 03:25:20 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+25.02.2020 03:33:28 -> {
+🧨 Server not responding: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.client.communication.Messenger.lambda$requestUsers$6(Messenger.java:83)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.communication.Messenger.requestUsers(Messenger.java:83)
+	at edu.jeznach.po2.client.App$1.mouseClicked(App.java:77)
+	at java.awt.AWTEventMulticaster.mouseClicked(AWTEventMulticaster.java:270)
+	at java.awt.Component.processMouseEvent(Component.java:6542)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6304)
+	at java.awt.Container.processEvent(Container.java:2239)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2297)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4544)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+	at java.awt.Container.dispatchEventImpl(Container.java:2283)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+	at java.awt.EventQueue$4.run(EventQueue.java:733)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+}
+25.02.2020 03:35:52 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:159)
+	at edu.jeznach.po2.client.App.main(App.java:307)
+
+}
+25.02.2020 03:36:16 -> {
+🧨 Cannot receive mapping: java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at edu.jeznach.po2.common.file.FileManager.receiveString(FileManager.java:114)
+	at edu.jeznach.po2.client.communication.Messenger.lambda$requestMapping$3(Messenger.java:65)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.communication.Messenger.requestMapping(Messenger.java:65)
+	at edu.jeznach.po2.client.App.<init>(App.java:189)
+	at edu.jeznach.po2.client.App.main(App.java:307)
+
+}
+25.02.2020 03:36:16 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+25.02.2020 03:36:16 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+25.02.2020 03:47:08 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:159)
+	at edu.jeznach.po2.client.App.main(App.java:313)
+
+}

@@ -168,6 +168,10 @@ public class SVGIcon extends UserAgentAdapter implements Icon {
         g.drawImage(bufferedImage, x, y, null);
     }
 
+    public Image getImage() {
+        return this.bufferedImage;
+    }
+
     // UserAgent /////////////////////////////////////////////////////////////
 
     /**

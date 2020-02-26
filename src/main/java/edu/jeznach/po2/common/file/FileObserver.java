@@ -1,6 +1,7 @@
 package edu.jeznach.po2.common.file;
 
 import com.diogonunes.jcdp.color.api.Ansi;
+import edu.jeznach.po2.common.configuration.Configuration;
 import edu.jeznach.po2.common.log.Log;
 import edu.jeznach.po2.common.util.ExtendedLinkedList;
 import org.jetbrains.annotations.NotNull;
@@ -11,6 +12,7 @@ import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 import static edu.jeznach.po2.common.file.FileObserver.FileEvent.Type.*;
 import static java.nio.file.LinkOption.NOFOLLOW_LINKS;
@@ -31,9 +33,10 @@ public class FileObserver extends Thread {
     private final @NotNull Path rootPath;
     private final @NotNull WatchService watchService;
     private final @NotNull Map<@NotNull WatchKey, @NotNull Path> registeredKeys;
-    @SuppressWarnings("UnusedAssignment") private boolean trace = false;
+    private boolean trace = false;
     private final @NotNull ExtendedLinkedList<FileEvent> queuedEvents;
     private final @NotNull Log log;
+    private boolean watching = false;
 
     /**
      * Creates new FileObserver for {@code rootDirectory} and all of its current and future
@@ -43,11 +46,11 @@ public class FileObserver extends Thread {
      * they won't contain any duplicated subdirectories.
      * @param rootDirectory the root of directory tree to observe
      * @param log the {@link Log} object used for logging important events
-     * @throws IOException if an I/O error occurs <i>(very thoughtful of JDK developers
-     *                     to not specify what error)</i>
+     * @throws IOException if an I/O error occurs
      */
     public FileObserver(@NotNull Path rootDirectory,
                         @NotNull Log log) throws IOException {
+        System.out.println(rootDirectory.toString());
         this.rootPath = rootDirectory;
         this.log = log;
         this.watchService = FileSystems.getDefault().newWatchService();
@@ -55,6 +58,21 @@ public class FileObserver extends Thread {
         registerAll(rootDirectory);
         this.trace = true;
         this.queuedEvents = new ExtendedLinkedList<>();
+        this.watching = true;
+    }
+    /**
+     * Creates new FileObserver without watched directory.
+     * <p>No-directory FileObserver still can be used to manage queue of file events.
+     * @param log the {@link Log} object used for logging important events
+     */
+    @SuppressWarnings("ConstantConditions")
+    public FileObserver(@NotNull Log log) {
+        this.rootPath = null;
+        this.watchService = null;
+        this.registeredKeys = null;
+        this.log = log;
+        this.queuedEvents = new ExtendedLinkedList<>();
+        this.watching = false;
     }
 
     /**
@@ -74,8 +92,59 @@ public class FileObserver extends Thread {
             if (queuedEvents.isEmpty())
                 queuedEvents.wait();
             return queuedEvents.pop();
-//            throw new InterruptedException("Moved out of queue scope");
         }
+    }
+
+    /**
+     * Adds new {@link FileEvent} to end of queue, with regard to its uniqueness.
+     * @param filePath the relative (to storage root directory) path to file related to event
+     * @param type the type of this event
+     * @return created {@link FileEvent}, or the identical one that already exists
+     */
+    @SuppressWarnings("UnusedReturnValue")
+    public @NotNull FileEvent addEvent(@NotNull Path filePath, @NotNull FileEvent.Type type) {
+        FileEvent fileEvent = new FileEvent(filePath, type);
+        synchronized (queuedEvents) {
+            if (queuedEvents.contains(fileEvent)) return fileEvent;
+            queuedEvents.add(fileEvent);
+            queuedEvents.notify();
+        }
+        return fileEvent;
+    }
+
+
+    /**
+     * Adds new {@link FileEvent} to end of queue, with regard to its uniqueness.
+     * @param filePath the relative (to storage root directory) path to file related to event
+     * @param type the type of this event
+     * @param meta the additional metadata related to this event
+     * @return created {@link FileEvent}, or the identical one that already exists
+     */
+    @SuppressWarnings("UnusedReturnValue")
+    public @NotNull FileEvent addEvent(@NotNull Path filePath, @NotNull FileEvent.Type type, @NotNull String meta) {
+        FileEvent fileEvent = new FileEvent(filePath, type, meta);
+        synchronized (queuedEvents) {
+            if (queuedEvents.contains(fileEvent)) return fileEvent;
+            queuedEvents.add(fileEvent);
+            queuedEvents.notify();
+        }
+        return fileEvent;
+    }
+
+
+    /**
+     * Adds new {@link FileEvent} to front of queue.
+     * @param filePath the relative (to storage root directory) path to file related to event
+     * @param type the type of this event
+     * @return created {@link FileEvent}, or the identical one that already exists
+     */
+    public @NotNull FileEvent pushEvent(@NotNull Path filePath, @NotNull FileEvent.Type type) {
+        FileEvent fileEvent = new FileEvent(filePath, type);
+        synchronized (queuedEvents) {
+            queuedEvents.push(fileEvent);
+            queuedEvents.notify();
+        }
+        return fileEvent;
     }
 
     /**
@@ -86,88 +155,96 @@ public class FileObserver extends Thread {
      */
     @Override
     public void run() {
-        while (true) {
-            WatchKey key;
-            try {
-                key = watchService.take();
-            } catch (InterruptedException e) {
-                return;
-            }
+        if (watching) {
+            while (true) {
+                WatchKey key;
+                try {
+                    key = watchService.take();
+                } catch (InterruptedException e) {
+                    return;
+                }
 
-            Path eventDir = registeredKeys.get(key);
-            if (eventDir == null) {
-                log.debug(new Log.Message(
-                        System.currentTimeMillis(),
-                        "🔕",
-                        "Directory unregistered!",
-                        "Could not find directory associated with retrieved WatchKey"
-                ), Ansi.Attribute.NONE, Ansi.FColor.RED);
-                continue;
-            }
-
-            for (WatchEvent<?> event : key.pollEvents()) {
-                WatchEvent.Kind<?> kind = event.kind();
-
-                if (kind == OVERFLOW) {
+                Path eventDir = registeredKeys.get(key);
+                if (eventDir == null) {
                     log.debug(new Log.Message(
                             System.currentTimeMillis(),
-                            "📚",
-                            "Event overflow!",
-                            "FileEvents may have been lost or discarded due to slow processing"
+                            "🔕",
+                            "Directory unregistered!",
+                            "Could not find directory associated with retrieved WatchKey"
                     ), Ansi.Attribute.NONE, Ansi.FColor.RED);
                     continue;
                 }
 
-                WatchEvent<Path> entryEvent = cast(event);
-                Path name = entryEvent.context();
-                Path child = eventDir.resolve(name);
-                Path file = rootPath.relativize(child);
-                if (ENTRY_CREATE.equals(kind)) {
-                    if (Files.isDirectory(child, NOFOLLOW_LINKS)) {
-                        try {
-                            registerAll(child);
-                        } catch (IOException e) {
-                            log.ioException(e);
-                        }
-                    } else {
-                        FileEvent fileEvent = new FileEvent(file, Node_Create);
-                        synchronized (queuedEvents) {
-                            queuedEvents.add(fileEvent);
-                            queuedEvents.notify();
-                        }
+                for (WatchEvent<?> event : key.pollEvents()) {
+                    WatchEvent.Kind<?> kind = event.kind();
+
+                    if (kind == OVERFLOW) {
+                        log.debug(new Log.Message(
+                                System.currentTimeMillis(),
+                                "📚",
+                                "Event overflow!",
+                                "FileEvents may have been lost or discarded due to slow processing"
+                        ), Ansi.Attribute.NONE, Ansi.FColor.RED);
+                        continue;
                     }
-                } else if (ENTRY_MODIFY.equals(kind)) {
-                    FileEvent fileEvent = new FileEvent(file, Node_Update);
-                    synchronized (queuedEvents) {
-                        boolean shouldAdd = true;
-                        for (FileEvent queuedEvent : queuedEvents) {
-                            if (queuedEvent.filePath.equals(file) &&
-                                (queuedEvent.eventType.equals(Node_Create) ||
-                                 queuedEvent.eventType.equals(Node_Update))) {
-                                shouldAdd = false;
-                                break;
+
+                    WatchEvent<Path> entryEvent = cast(event);
+                    Path name = entryEvent.context();
+                    if (name.toString().endsWith(Configuration.TEMP_EXTENSION)) continue;
+                    Path child = eventDir.resolve(name);
+                    Path file = rootPath.relativize(child);
+                    check: {
+                        if (ENTRY_CREATE.equals(kind)) {
+                            if (Files.isDirectory(child, NOFOLLOW_LINKS)) {
+                                try {
+                                    registerAll(child);
+                                } catch (IOException e) {
+                                    log.exception(e);
+                                }
+                            } else {
+                                FileEvent fileEvent = new FileEvent(file, Create_Node);
+                                synchronized (queuedEvents) {
+                                    queuedEvents.add(fileEvent);
+                                    queuedEvents.notify();
+                                }
+                            }
+                        } else if (ENTRY_MODIFY.equals(kind)) {
+                            if (Files.isDirectory(child, NOFOLLOW_LINKS)) break check;
+                            FileEvent fileEvent = new FileEvent(file, Update_Node);
+                            synchronized (queuedEvents) {
+                                boolean shouldAdd = true;
+                                for (FileEvent queuedEvent : queuedEvents) {
+                                    if (queuedEvent.filePath.equals(file) &&
+                                        (queuedEvent.eventType.equals(Create_Node) ||
+                                         queuedEvent.eventType.equals(Update_Node))) {
+                                        shouldAdd = false;
+                                        break;
+                                    }
+                                }
+                                if (shouldAdd) {
+                                    queuedEvents.add(fileEvent);
+                                    queuedEvents.notify();
+                                }
+                            }
+                        } else if (ENTRY_DELETE.equals(kind)) {
+                            if (Files.isDirectory(child, NOFOLLOW_LINKS)) break check;
+                            FileEvent fileEvent = new FileEvent(file, Delete_Node);
+                            synchronized (queuedEvents) {
+                                queuedEvents.removeIf(
+                                        queuedEvent -> queuedEvent.filePath.equals(file) &&
+                                                       (queuedEvent.eventType.equals(Create_Node) ||
+                                                        queuedEvent.eventType.equals(Update_Node))
+                                );
+                                queuedEvents.add(fileEvent);
+                                queuedEvents.notify();
                             }
                         }
-                        if (shouldAdd) {
-                            queuedEvents.add(fileEvent);
-                            queuedEvents.notify();
-                        }
                     }
-                } else if (ENTRY_DELETE.equals(kind)) {
-                    FileEvent fileEvent = new FileEvent(file, Node_Delete);
-                    synchronized (queuedEvents) {
-                        queuedEvents.removeIf(
-                                queuedEvent -> queuedEvent.filePath.equals(file) &&
-                                               (queuedEvent.eventType.equals(Node_Create) ||
-                                               queuedEvent.eventType.equals(Node_Update))
-                        );
-                        queuedEvents.add(fileEvent);
-                        queuedEvents.notify();
-                    }
-                }
 
-                boolean valid = key.reset();
-                if (!valid) registeredKeys.remove(key);
+                    boolean valid = key.reset();
+                    if (!valid) registeredKeys.remove(key);
+                    System.err.println(queuedEvents.toString());
+                }
             }
         }
     }
@@ -223,6 +300,14 @@ public class FileObserver extends Thread {
          */
         public final @NotNull Type eventType;
 
+        private @Nullable String meta;
+
+        /**
+         * Additional metadata related to this event
+         * @return additional metadata related to this event
+         */
+        public final @Nullable String meta() { return meta; }
+
         /**
          * Creates new {@code FileEvent} identifier
          * @param filePath the relative (to watched root directory) path to file related to event
@@ -234,6 +319,19 @@ public class FileObserver extends Thread {
             this.eventType = eventType;
         }
 
+        /**
+         * Creates new {@code FileEvent} identifier with additional metadata
+         * @param filePath the relative (to watched root directory) path to file related to event
+         * @param eventType the type of this event
+         * @param meta the additional metadata related to this event
+         */
+        public FileEvent(@NotNull Path filePath,
+                         @NotNull Type eventType,
+                         @NotNull String meta) {
+            this.filePath = filePath;
+            this.eventType = eventType;
+            this.meta = meta;
+        }
 
         /**
          * Represents type of event. Event type may represent single event (file deleted,
@@ -243,16 +341,48 @@ public class FileObserver extends Thread {
          */
         public enum Type {
             /** New File was created (and possibly already updated) */
-            Node_Create,
-            /** Existing File was updated (and possibly multiple times) */
-            Node_Update,
+            Create_Node,
+            /** Existing File was updated (on client, and possibly multiple times) */
+            Update_Node,
             /** Existing File was deleted (and possibly created/updated before) */
-            Node_Delete
+            Delete_Node,
+            /** Share file to receiver */
+            Assign_Node,
+            /** Reject sharing file to receiver */
+            Refuse_Node,
+            /** New file contents must be downloaded */
+            Devour_Node,
+            /** Existing file must be updated */
+            Revise_Node,
+            /** Existing file must be deleted */
+            Remove_Node,
+            /** Existing file was shared to user */
+            Couple_Node,
+            /** Existing file is no longer shared */
+            Unlink_Node
         }
 
         @Override
         public String toString() {
-            return eventType + ": " + filePath.toString();
+            return eventType + ": " + filePath.toString() +
+                   (meta != null ?
+                           (" (" + meta + ")") :
+                           "");
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            FileEvent event = (FileEvent) o;
+            return filePath.equals(event.filePath) &&
+                   eventType == event.eventType &&
+                   Objects.equals(meta, event.meta);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(filePath, eventType, meta);
         }
     }
 }

@@ -1,0 +1,13 @@
+!!edu.jeznach.po2.server.file.DriveMapping
+drive_location: C:\GitHub\PO_II\serversA\drive_3
+log_name: log.txt
+name: drive_3
+users:
+- files:
+  - {checksum: da39a3ee5e6b4b0d3255bfef95601890afd80709, drive: drive_3, modification_timestamp: 1581600097802,
+    pathname: tat.t, size_bytes: 0}
+  - {checksum: da39a3ee5e6b4b0d3255bfef95601890afd80709, drive: drive_3, modification_timestamp: 1581600132285,
+    pathname: xs\w, size_bytes: 0}
+  shared_files: null
+  used_space_bytes: 0
+  username: Test

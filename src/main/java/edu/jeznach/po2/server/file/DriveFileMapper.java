@@ -1,5 +1,7 @@
 package edu.jeznach.po2.server.file;
 
+import edu.jeznach.po2.common.configuration.Configuration;
+import edu.jeznach.po2.common.file.FileManager;
 import edu.jeznach.po2.common.file.FileMapper;
 import edu.jeznach.po2.common.log.Log;
 import edu.jeznach.po2.common.util.Pair;
@@ -33,17 +35,19 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
     static { provider = new DriveFileMappingProvider(); }
 
     /**
-     * Creates new file mapper.
+     * Creates new file mapper and attempts to store given mapping.
      * @param mapping the mapping object
      * @param file the file that is used to store mapping
      */
     public DriveFileMapper(@NotNull DriveMapping mapping, @Nullable File file) {
         super(mapping, file);
+        mappingFile.ifPresent(this::dumpToFile);
     }
 
 
     @Override
-    public boolean attachFile(@NotNull File file, @NotNull String checksum, @NotNull String node) {
+    public synchronized boolean attachFile(@NotNull File file, @NotNull String checksum, @NotNull String node) {
+        String attach = "ATTACH " + getMapping().getName() + ": " + file.getName();
         List<DriveMapping.User> users = getMapping().getUsers();
         Optional<DriveMapping.User> optionalUser = users.stream()
                                                         .filter(u -> u.getUsername().equals(node))
@@ -53,56 +57,62 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
             DriveMapping.User newUser = new DriveMapping.User(node);
             users.add(newUser);
             user = newUser;
+            attach += " create user";
         } else user = optionalUser.get();
-        List<FileMapping> files = user.getFiles();
-        String relativeFilePath = getRelativePath(file,
-                                              new File(getMapping().getDrive_location()
-                                                       + File.separator + node));
+        List<ServFileMapping> files = user.getFiles();
+        String relativeFilePath = FileManager.getRelativePath(getMapping().getDrive_location()
+                                                              + File.separator + node, file.getPath());
         if (files != null) {
-            Optional<FileMapping> fileOptional = files.stream()
-                                                      .filter(f -> f.getPathname().equals(relativeFilePath))
-                                                      .findFirst();
+            Optional<ServFileMapping> fileOptional = files.stream()
+                                                          .filter(f -> f.getPathname().equals(relativeFilePath))
+                                                          .findFirst();
             if (fileOptional.isPresent()) {
+                System.out.println(attach);
                 return false;
             } else {
-                files.add(new FileMapping(relativeFilePath,
-                                          file.length(),
-                                          checksum,
-                                          file.lastModified()));
+                attach += " add file";
+                files.add(new ServFileMapping(relativeFilePath,
+                                              file.length(),
+                                              checksum,
+                                              file.lastModified(),
+                                              getMapping().getName()));
                 user.setUsed_space_bytes(user.getUsed_space_bytes() + file.length());
                 mappingFile.ifPresent(this::dumpToFile);
+                System.out.println(attach);
                 return true;
             }
         } else {
+            attach += " create files";
             user.setFiles(new ArrayList<>());
             //noinspection ConstantConditions
-            user.getFiles().add(new FileMapping(relativeFilePath,
-                                                file.length(),
-                                                checksum,
-                                                file.lastModified()));
+            user.getFiles().add(new ServFileMapping(relativeFilePath,
+                                                    file.length(),
+                                                    checksum,
+                                                    file.lastModified(),
+                                                    getMapping().getName()));
             user.setUsed_space_bytes(user.getUsed_space_bytes() + file.length());
             mappingFile.ifPresent(this::dumpToFile);
+            System.out.println(attach);
             return true;
         }
     }
 
     @Override
-    public boolean detachFile(@NotNull File file, @NotNull String node) {
+    public synchronized boolean detachFile(@NotNull File file, @NotNull String node) {
         List<DriveMapping.User> users = getMapping().getUsers();
         Optional<DriveMapping.User> optionalUser = users.stream()
                                                         .filter(u -> u.getUsername().equals(node))
                                                         .findFirst();
         if (optionalUser.isPresent()) {
-            List<FileMapping> files = optionalUser.get()
-                                                  .getFiles();
-            String relativeFilePath = getRelativePath(file,
-                                                      new File(getMapping().getDrive_location()
-                                                               + File.separator + node));
+            List<ServFileMapping> files = optionalUser.get()
+                                                      .getFiles();
+            String relativeFilePath = FileManager.getRelativePath(getMapping().getDrive_location()
+                                                                  + File.separator + node, file.getPath());
             if (files != null) {
-                Optional<FileMapping> fileOptional = files.stream()
-                                                          .filter(f -> f.getPathname()
+                Optional<ServFileMapping> fileOptional = files.stream()
+                                                              .filter(f -> f.getPathname()
                                                                         .equals(relativeFilePath))
-                                                          .findFirst();
+                                                              .findFirst();
                 if (fileOptional.isPresent()) {
                     files.remove(fileOptional.get());
                     optionalUser.get()
@@ -118,22 +128,21 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
     }
 
     @Override
-    public boolean updateFile(@NotNull File file, @NotNull String checksum, @NotNull String node) {
+    public synchronized boolean updateFile(@NotNull File file, @NotNull String checksum, @NotNull String node) {
         List<DriveMapping.User> users = getMapping().getUsers();
         Optional<DriveMapping.User> optionalUser = users.stream()
                                                         .filter(u -> u.getUsername().equals(node))
                                                         .findFirst();
         if (optionalUser.isPresent()) {
-            List<FileMapping> files = optionalUser.get().getFiles();
-            String relativeFilePath = getRelativePath(file,
-                                                      new File(getMapping().getDrive_location()
-                                                               + File.separator + node));
+            List<ServFileMapping> files = optionalUser.get().getFiles();
+            String relativeFilePath = FileManager.getRelativePath(getMapping().getDrive_location()
+                                                                  + File.separator + node, file.getPath());
             if (files != null) {
-                Optional<FileMapping> fileOptional = files.stream()
-                                                          .filter(f -> f.getPathname().equals(relativeFilePath))
-                                                          .findFirst();
+                Optional<ServFileMapping> fileOptional = files.stream()
+                                                              .filter(f -> f.getPathname().equals(relativeFilePath))
+                                                              .findFirst();
                 if (fileOptional.isPresent()) {
-                    FileMapping fileMapping = fileOptional.get();
+                    ServFileMapping fileMapping = fileOptional.get();
                     long oldSize = fileMapping.getSize_bytes();
                     fileMapping.setChecksum(checksum);
                     fileMapping.setModification_timestamp(file.lastModified());
@@ -150,7 +159,8 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
     }
 
     @Override
-    public @Nullable Boolean shareFile(@NotNull File file, @NotNull String node, @NotNull String receiver) {
+    public synchronized @Nullable Boolean shareFile(@NotNull File file, @NotNull String node, @NotNull String receiver) {
+        System.out.println("share");
         List<DriveMapping.User> users = getMapping().getUsers();
         Optional<DriveMapping.User> optionalUser = users.stream()
                                                         .filter(u -> u.getUsername().equals(node))
@@ -159,18 +169,21 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
                                                         .filter(u -> u.getUsername().equals(receiver))
                                                         .findFirst();
         if (optionalUser.isPresent() && optionalReceiver.isPresent()) {
-            List<FileMapping> files = optionalUser.get()
-                                                  .getFiles();
-            String relativeFilePath = getRelativePath(file,
-                                                      new File(getMapping().getDrive_location()
-                                                               + File.separator + node));
+            List<ServFileMapping> files = optionalUser.get()
+                                                      .getFiles();
+            String relativeFilePath = FileManager.getRelativePath(getMapping().getDrive_location()
+                                                                  + File.separator + node, file.getPath());
             if (files != null) {
-                Optional<FileMapping> fileOptional = files.stream()
-                                                          .filter(f -> f.getPathname().equals(relativeFilePath))
-                                                          .findFirst();
-                List<SharedFileMapping> shared_files = optionalReceiver.get().getShared_files();
-                if (fileOptional.isPresent() && shared_files != null) {
-                    SharedFileMapping sharedFileMapping = new SharedFileMapping(fileOptional.get(), node);
+                Optional<ServFileMapping> fileOptional = files.stream()
+                                                              .filter(f -> f.getPathname().equals(relativeFilePath))
+                                                              .findFirst();
+                List<ServSharedFileMapping> shared_files = optionalReceiver.get().getShared_files();
+                if (fileOptional.isPresent()) {
+                    if (shared_files == null) {
+                        optionalReceiver.get().setShared_files(new ArrayList<>());
+                        shared_files = optionalReceiver.get().getShared_files();
+                    }
+                    ServSharedFileMapping sharedFileMapping = new ServSharedFileMapping(fileOptional.get(), node);
                     shared_files.add(sharedFileMapping);
                     mappingFile.ifPresent(this::dumpToFile);
                     return true;
@@ -181,7 +194,7 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
     }
 
     @Override
-    public @Nullable Boolean unshareFile(@NotNull File file, @NotNull String node, @NotNull String receiver) {
+    public synchronized @Nullable Boolean unshareFile(@NotNull File file, @NotNull String node, @NotNull String receiver) {
             List<DriveMapping.User> users = getMapping().getUsers();
             Optional<DriveMapping.User> optionalUser = users.stream()
                                                             .filter(u -> u.getUsername().equals(node))
@@ -190,18 +203,17 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
                                                             .filter(u -> u.getUsername().equals(receiver))
                                                             .findFirst();
         if (optionalUser.isPresent() && optionalReceiver.isPresent()) {
-            List<FileMapping> files = optionalUser.get()
-                                                  .getFiles();
-            String relativeFilePath = getRelativePath(file,
-                                                      new File(getMapping().getDrive_location()
-                                                               + File.separator + node));
+            List<ServFileMapping> files = optionalUser.get()
+                                                      .getFiles();
+            String relativeFilePath = FileManager.getRelativePath(getMapping().getDrive_location()
+                                                                  + File.separator + node, file.getPath());
             if (files != null) {
-                Optional<FileMapping> fileOptional = files.stream()
-                                                          .filter(f -> f.getPathname().equals(relativeFilePath))
-                                                          .findFirst();
-                List<SharedFileMapping> shared_files = optionalReceiver.get().getShared_files();
+                Optional<ServFileMapping> fileOptional = files.stream()
+                                                              .filter(f -> f.getPathname().equals(relativeFilePath))
+                                                              .findFirst();
+                List<ServSharedFileMapping> shared_files = optionalReceiver.get().getShared_files();
                 if (fileOptional.isPresent() && shared_files != null) {
-                    Optional<SharedFileMapping> sharedFileMapping =
+                    Optional<ServSharedFileMapping> sharedFileMapping =
                             shared_files.stream()
                                         .filter(f -> f.getOwner().equals(node))
                                         .filter(f -> f.getPathname().equals(relativeFilePath))
@@ -258,7 +270,7 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
                 //noinspection ResultOfMethodCallIgnored
                 drive.mkdirs();
                 File[] driveDirectories = drive.listFiles();
-                mapping.setUsers(listUsers(driveDirectories));
+                mapping.setUsers(listUsers(driveDirectories, mapping.getName()));
                 if (file != null) {
                     File fileToCreate = new File(drive.getAbsolutePath() + File.separator + file.getPath());
                     fileCreated = fileToCreate.createNewFile();
@@ -283,21 +295,23 @@ public class DriveFileMapper extends FileMapper<DriveMapping> {
             }
         }
 
-        private static List<DriveMapping.User> listUsers(File[] directories) {
+        private static List<DriveMapping.User> listUsers(File[] directories, String drive) {
             if (directories != null) {
                 return Arrays.stream(directories)
                              .filter(File::isDirectory)
+                             .filter(f -> !f.getName().endsWith(Configuration.TEMP_EXTENSION))
                              .map(f -> Pair.of(new DriveMapping.User(f.getName()), f))
-                             .peek(p -> p.key.setFiles(listFiles(p.value, p.value).stream()
-                                                                                  .map(FileMapping::new)
-                                                                                  .collect(Collectors.toList())))
-                             .map(p -> p.key)
+                             .peek(p -> p.key().setFiles(listFiles(p.value(), p.value())
+                                                                 .stream()
+                                                                 .map(f -> new ServFileMapping(f, drive))
+                                                                 .collect(Collectors.toList())))
+                             .map(Pair::key)
                              .peek(user -> {
                                  if (user.getFiles() != null) {
                                      user.setUsed_space_bytes(
                                              user.getFiles()
                                                  .stream()
-                                                 .map(FileMapping::getSize_bytes)
+                                                 .map(ServFileMapping::getSize_bytes)
                                                  .reduce(0L, Long::sum)
                                      );
                                  }

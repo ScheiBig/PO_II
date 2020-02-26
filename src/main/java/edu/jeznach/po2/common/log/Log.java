@@ -203,23 +203,50 @@ public class Log
                 getCurrentTime(),
                 icons.getOrDefault(IconName.C, "❓"),
                 "File: " + file.getAbsolutePath() + " from user: " + user + " was rejected",
-                ""
+                "Sending file could exceed storage limit"
+        );
+        debug(message, Ansi.Attribute.NONE, Ansi.FColor.RED);
+    }
+
+    public static Message fileRejectedMsg(@NotNull String user, @NotNull File file) {
+        return new Message(
+                getCurrentTime(),
+                icons.getOrDefault(IconName.C, "❓"),
+                "File: " + file.getAbsolutePath() + " from user: " + user + " was rejected",
+                "Sending file could exceed storage limit"
+        );
+    }
+
+    /**
+     * Logs event of <s>IOException</s> Exception being thrown. Due to lazy documentation of
+     * some events by SDK creators and often confusing and hard to follow stack traces of called
+     * methods its usually impossible to properly handle catching of those exceptions, so its easier
+     * to log them for later, that guess their origin during writing code
+     * @param exception the {@link Exception} that should be documented
+     */
+    public void exception(@NotNull Exception exception) {
+        Message message = new Message(
+                getCurrentTime(),
+                "🧨",
+                exception.toString(),
+                Throwables.getStackTrace(exception)
         );
         debug(message, Ansi.Attribute.NONE, Ansi.FColor.RED);
     }
 
     /**
-     * Logs event of IOException being thrown. Due to lazy documentation of those events
-     * by SDK creators and often confusing and hard to follow stack traces of called methods
-     * its usually impossible to properly handle catching of those exceptions, so its easier
+     * Logs event of <s>IOException</s> Exception being thrown. Due to lazy documentation of
+     * some events by SDK creators and often confusing and hard to follow stack traces of called
+     * methods its usually impossible to properly handle catching of those exceptions, so its easier
      * to log them for later, that guess their origin during writing code
-     * @param exception the {@link IOException} that should be documented
+     * @param info the additional information on possible exception cause
+     * @param exception the {@link Exception} that should be documented
      */
-    public void ioException(@NotNull IOException exception) {
+    public void exception(@NotNull String info, @NotNull Exception exception) {
         Message message = new Message(
                 getCurrentTime(),
                 "🧨",
-                exception.toString(),
+                info + ": " + exception.toString(),
                 Throwables.getStackTrace(exception)
         );
         debug(message, Ansi.Attribute.NONE, Ansi.FColor.RED);

@@ -1,5 +1,6 @@
 package edu.jeznach.po2.common.file;
 
+import edu.jeznach.po2.common.configuration.Configuration;
 import edu.jeznach.po2.common.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -40,7 +41,7 @@ public abstract class FileMapper<M> {
      * <p>All {@link FileMapper} implementations should hide this field with
      * instance of its own implementations
      */
-    @SuppressWarnings({"rawtypes", "NotNullFieldNotInitialized"})
+    @SuppressWarnings({"rawtypes", "NotNullFieldNotInitialized", "unused"})
     protected static @NotNull FileMappingProvider provider;
 
     @NotNull private M mapping;
@@ -191,10 +192,12 @@ public abstract class FileMapper<M> {
         if (nodes != null && nodes.length > 0) {
             ret = Arrays.stream(nodes)
                         .filter(f -> !f.isDirectory())
+                        .filter(f -> !f.getName().endsWith(Configuration.TEMP_EXTENSION))
                         .map(f -> {
                             try {
                                 return new FileMapping(
-                                        getRelativePath(f, rootDirectory),
+                                        FileManager.getRelativePath(rootDirectory.getAbsolutePath(),
+                                                                    f.getAbsolutePath()),
                                     f.length(),
                                     FileManager.getChecksum(f),
                                     f.lastModified()
@@ -212,15 +215,5 @@ public abstract class FileMapper<M> {
             }
             return ret;
         } else return new ArrayList<>();
-    }
-
-    /**
-     * Resolves path of {@code file} relative to {@code rootDirectory}
-     * @param file the file to get path of
-     * @param rootDirectory the directory to create path relative to
-     * @return {@link String} with relative path
-     */
-    @NotNull public static String getRelativePath(@NotNull File file, @NotNull File rootDirectory) {
-        return file.getAbsolutePath().substring(rootDirectory.getAbsolutePath().length() + 1);
     }
 }

@@ -1,0 +1,2435 @@
+13.02.2020 16:28:16 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:57)
+
+}
+13.02.2020 16:28:16 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:57)
+
+}
+17.02.2020 12:53:10 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:57)
+
+}
+17.02.2020 12:53:10 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:57)
+
+}
+17.02.2020 12:53:10 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:57)
+
+}
+17.02.2020 12:53:10 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:57)
+
+}
+17.02.2020 12:53:10 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:57)
+
+}
+17.02.2020 12:53:10 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:57)
+
+}
+17.02.2020 12:55:55 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:57)
+
+}
+17.02.2020 13:30:34 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:57)
+
+}
+17.02.2020 13:30:34 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:57)
+
+}
+17.02.2020 13:30:34 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:57)
+
+}
+17.02.2020 13:30:34 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:57)
+
+}
+17.02.2020 13:30:34 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:57)
+
+}
+17.02.2020 13:30:34 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:57)
+
+}
+17.02.2020 14:14:12 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at java.io.FilterInputStream.read(FilterInputStream.java:107)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:85)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:110)
+
+}
+17.02.2020 14:14:12 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at java.io.FilterInputStream.read(FilterInputStream.java:107)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:85)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:110)
+
+}
+17.02.2020 14:14:12 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at java.io.FilterInputStream.read(FilterInputStream.java:107)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:85)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:110)
+
+}
+17.02.2020 14:14:12 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:57)
+
+}
+17.02.2020 14:14:12 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at java.io.FilterInputStream.read(FilterInputStream.java:107)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:85)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:110)
+
+}
+17.02.2020 14:14:12 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at java.io.FilterInputStream.read(FilterInputStream.java:107)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:85)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:110)
+
+}
+17.02.2020 14:21:40 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:57)
+
+}
+17.02.2020 14:21:40 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:57)
+
+}
+17.02.2020 14:21:40 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:57)
+
+}
+17.02.2020 14:21:40 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:57)
+
+}
+17.02.2020 14:21:40 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:57)
+
+}
+17.02.2020 14:21:40 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:57)
+
+}
+17.02.2020 18:54:40 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:56)
+
+}
+17.02.2020 18:54:40 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:56)
+
+}
+17.02.2020 18:54:40 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:56)
+
+}
+17.02.2020 18:54:40 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:56)
+
+}
+17.02.2020 18:54:40 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:56)
+
+}
+17.02.2020 18:54:40 -> {
+🧨 java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:56)
+
+}
+21.02.2020 00:06:25 -> {
+🧨 Cannot create result file: java.io.IOException: System nie może odnaleźć określonej ścieżki:
+java.io.IOException: System nie może odnaleźć określonej ścieżki
+	at java.io.WinNTFileSystem.createFileExclusively(Native Method)
+	at java.io.File.createNewFile(File.java:1012)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:80)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:416)
+
+}
+21.02.2020 00:06:25 -> {
+🧨 Cannot create result file: java.io.IOException: System nie może odnaleźć określonej ścieżki:
+java.io.IOException: System nie może odnaleźć określonej ścieżki
+	at java.io.WinNTFileSystem.createFileExclusively(Native Method)
+	at java.io.File.createNewFile(File.java:1012)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:80)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:416)
+
+}
+21.02.2020 00:06:28 -> {
+🧨 Cannot create result file: java.io.IOException: System nie może odnaleźć określonej ścieżki:
+java.io.IOException: System nie może odnaleźć określonej ścieżki
+	at java.io.WinNTFileSystem.createFileExclusively(Native Method)
+	at java.io.File.createNewFile(File.java:1012)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:80)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:416)
+
+}
+21.02.2020 00:12:18 -> {
+🧨 Cannot create result file: java.io.IOException: System nie może odnaleźć określonej ścieżki:
+java.io.IOException: System nie może odnaleźć określonej ścieżki
+	at java.io.WinNTFileSystem.createFileExclusively(Native Method)
+	at java.io.File.createNewFile(File.java:1012)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:80)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:418)
+
+}
+21.02.2020 00:12:18 -> {
+🧨 Cannot create result file: java.io.IOException: System nie może odnaleźć określonej ścieżki:
+java.io.IOException: System nie może odnaleźć określonej ścieżki
+	at java.io.WinNTFileSystem.createFileExclusively(Native Method)
+	at java.io.File.createNewFile(File.java:1012)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:80)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:418)
+
+}
+21.02.2020 00:12:18 -> {
+🧨 Cannot create result file: java.io.IOException: System nie może odnaleźć określonej ścieżki:
+java.io.IOException: System nie może odnaleźć określonej ścieżki
+	at java.io.WinNTFileSystem.createFileExclusively(Native Method)
+	at java.io.File.createNewFile(File.java:1012)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:80)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:418)
+
+}
+21.02.2020 00:12:18 -> {
+🧨 Cannot create result file: java.io.IOException: System nie może odnaleźć określonej ścieżki:
+java.io.IOException: System nie może odnaleźć określonej ścieżki
+	at java.io.WinNTFileSystem.createFileExclusively(Native Method)
+	at java.io.File.createNewFile(File.java:1012)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:80)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:418)
+
+}
+21.02.2020 00:12:18 -> {
+🧨 Cannot create result file: java.io.IOException: System nie może odnaleźć określonej ścieżki:
+java.io.IOException: System nie może odnaleźć określonej ścieżki
+	at java.io.WinNTFileSystem.createFileExclusively(Native Method)
+	at java.io.File.createNewFile(File.java:1012)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:80)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:418)
+
+}
+21.02.2020 01:02:02 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 01:02:02 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 01:10:26 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 01:10:26 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 01:10:26 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 01:10:26 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 01:10:26 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 01:10:26 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 01:14:03 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 01:14:03 -> {
+🧨 Cannot receive file: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:82)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$run$7(FileEventWorker.java:442)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper$LogHelperWrappersWrapper.finalize(LogHelper.java:131)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:453)
+
+}
+21.02.2020 01:14:03 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 01:14:03 -> {
+🧨 Cannot receive file: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:82)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$run$7(FileEventWorker.java:442)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper$LogHelperWrappersWrapper.finalize(LogHelper.java:131)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:453)
+
+}
+21.02.2020 01:14:03 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 01:14:03 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 01:14:03 -> {
+🧨 Cannot dispose files: java.nio.file.FileSystemException: C:\GitHub\PO_II\serversB\drive_4\Test\ojj.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+:
+java.nio.file.FileSystemException: C:\GitHub\PO_II\serversB\drive_4\Test\ojj.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:86)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:269)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$null$8(FileEventWorker.java:451)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$run$9(FileEventWorker.java:449)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper$LogHelperWrappersWrapper.finalize(LogHelper.java:135)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:453)
+
+}
+21.02.2020 01:14:03 -> {
+🧨 Cannot dispose files: java.nio.file.FileSystemException: C:\GitHub\PO_II\serversB\drive_1\Test\ojj.txt~temp~~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+:
+java.nio.file.FileSystemException: C:\GitHub\PO_II\serversB\drive_1\Test\ojj.txt~temp~~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:86)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:269)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$null$8(FileEventWorker.java:451)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$run$9(FileEventWorker.java:449)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper$LogHelperWrappersWrapper.finalize(LogHelper.java:135)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:453)
+
+}
+21.02.2020 01:16:45 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 01:16:45 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 01:16:45 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 01:16:45 -> {
+🧨 Cannot receive file: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:82)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$run$7(FileEventWorker.java:442)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper$LogHelperWrappersWrapper.finalize(LogHelper.java:131)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:453)
+
+}
+21.02.2020 01:16:45 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 01:16:45 -> {
+🧨 Cannot receive file: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:82)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$run$7(FileEventWorker.java:442)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper$LogHelperWrappersWrapper.finalize(LogHelper.java:131)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:453)
+
+}
+21.02.2020 01:16:45 -> {
+🧨 Cannot dispose files: java.nio.file.FileSystemException: C:\GitHub\PO_II\serversB\drive_4\Test\ojj.txt~temp~~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+:
+java.nio.file.FileSystemException: C:\GitHub\PO_II\serversB\drive_4\Test\ojj.txt~temp~~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:86)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:269)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$null$8(FileEventWorker.java:451)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$run$9(FileEventWorker.java:449)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper$LogHelperWrappersWrapper.finalize(LogHelper.java:135)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:453)
+
+}
+21.02.2020 01:16:45 -> {
+🧨 Cannot dispose files: java.nio.file.FileSystemException: C:\GitHub\PO_II\serversB\drive_0\Test\ojj.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+:
+java.nio.file.FileSystemException: C:\GitHub\PO_II\serversB\drive_0\Test\ojj.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:86)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:269)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$null$8(FileEventWorker.java:451)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$run$9(FileEventWorker.java:449)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper$LogHelperWrappersWrapper.finalize(LogHelper.java:135)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:453)
+
+}
+21.02.2020 01:18:53 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 01:18:53 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 01:18:53 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 01:18:53 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 01:18:53 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 01:18:53 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 15:36:51 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 15:36:51 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 15:36:51 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 15:36:51 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 15:36:51 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 15:36:51 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 15:39:40 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 15:39:40 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 15:39:40 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 15:39:40 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 15:39:40 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 15:39:40 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 15:41:40 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 15:54:06 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 15:54:06 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 15:54:06 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 15:54:06 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 15:54:06 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 16:05:50 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 16:05:50 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 16:05:50 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 16:05:50 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 16:05:50 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 16:28:10 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 16:28:10 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 16:28:10 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 16:28:10 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 16:28:10 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 16:28:10 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 17:56:04 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 18:17:03 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 21:33:23 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 21:33:23 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 21:33:23 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 21:33:23 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 21:33:23 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+21.02.2020 21:34:28 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+24.02.2020 17:22:09 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+24.02.2020 17:22:09 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+24.02.2020 17:22:09 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+24.02.2020 17:22:09 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+24.02.2020 17:22:09 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+24.02.2020 17:22:09 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+24.02.2020 22:34:55 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+24.02.2020 22:34:55 -> {
+🧨 Cannot read message: java.net.SocketException: Unrecognized Windows Sockets error: 0: recv failed:
+java.net.SocketException: Unrecognized Windows Sockets error: 0: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:189)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+24.02.2020 22:34:55 -> {
+🧨 Cannot read message: java.net.SocketException: Unrecognized Windows Sockets error: 0: recv failed:
+java.net.SocketException: Unrecognized Windows Sockets error: 0: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:189)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+24.02.2020 22:34:55 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+24.02.2020 22:34:55 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+24.02.2020 22:34:55 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:19:13 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:19:13 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:19:13 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:19:13 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:19:13 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:19:13 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:22:36 -> {
+🧨 Cannot replace file: java.nio.file.FileSystemException: C:\GitHub\PO_II\serversB\drive_0\Other\rem.txt~temp~ -> C:\GitHub\PO_II\serversB\drive_0\Other\rem.txt: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+:
+java.nio.file.FileSystemException: C:\GitHub\PO_II\serversB\drive_0\Other\rem.txt~temp~ -> C:\GitHub\PO_II\serversB\drive_0\Other\rem.txt: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:86)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsFileCopy.move(WindowsFileCopy.java:387)
+	at sun.nio.fs.WindowsFileSystemProvider.move(WindowsFileSystemProvider.java:287)
+	at java.nio.file.Files.move(Files.java:1395)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$run$20(FileEventWorker.java:528)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper$LogHelperWrappersWrapper.finalize(LogHelper.java:131)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:533)
+
+}
+25.02.2020 03:22:36 -> {
+🧨 Cannot dispose files: java.nio.file.NoSuchFileException: C:\GitHub\PO_II\serversB\drive_0\Other\rem.txt:
+java.nio.file.NoSuchFileException: C:\GitHub\PO_II\serversB\drive_0\Other\rem.txt
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:79)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:269)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$null$21(FileEventWorker.java:531)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$run$22(FileEventWorker.java:530)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper$LogHelperWrappersWrapper.finalize(LogHelper.java:135)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:533)
+
+}
+25.02.2020 03:22:38 -> {
+🧨 Cannot replace file: java.nio.file.FileSystemException: C:\GitHub\PO_II\serversB\drive_0\Other\rem.txt~temp~ -> C:\GitHub\PO_II\serversB\drive_0\Other\rem.txt: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+:
+java.nio.file.FileSystemException: C:\GitHub\PO_II\serversB\drive_0\Other\rem.txt~temp~ -> C:\GitHub\PO_II\serversB\drive_0\Other\rem.txt: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:86)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsFileCopy.move(WindowsFileCopy.java:387)
+	at sun.nio.fs.WindowsFileSystemProvider.move(WindowsFileSystemProvider.java:287)
+	at java.nio.file.Files.move(Files.java:1395)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$run$20(FileEventWorker.java:528)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper$LogHelperWrappersWrapper.finalize(LogHelper.java:131)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:533)
+
+}
+25.02.2020 03:22:38 -> {
+🧨 Cannot dispose files: java.nio.file.NoSuchFileException: C:\GitHub\PO_II\serversB\drive_0\Other\rem.txt:
+java.nio.file.NoSuchFileException: C:\GitHub\PO_II\serversB\drive_0\Other\rem.txt
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:79)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:269)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$null$21(FileEventWorker.java:531)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$run$22(FileEventWorker.java:530)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper$LogHelperWrappersWrapper.finalize(LogHelper.java:135)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:533)
+
+}
+25.02.2020 03:24:53 -> {
+🧨 Cannot read message: java.net.SocketException: Unrecognized Windows Sockets error: 0: recv failed:
+java.net.SocketException: Unrecognized Windows Sockets error: 0: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:24:53 -> {
+🧨 Cannot read message: java.net.SocketException: Unrecognized Windows Sockets error: 0: recv failed:
+java.net.SocketException: Unrecognized Windows Sockets error: 0: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:26:31 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:26:33 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:26:33 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:26:33 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:26:33 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:26:33 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:27:50 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:34:34 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:34:34 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:34:34 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:34:34 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:34:34 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:34:34 -> {
+🧨 Cannot receive file: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:82)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$run$17(FileEventWorker.java:517)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:80)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:520)
+
+}
+25.02.2020 03:34:34 -> {
+🧨 Cannot dispose files: java.nio.file.FileSystemException: C:\GitHub\PO_II\serversB\drive_3\Test\ojj.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+:
+java.nio.file.FileSystemException: C:\GitHub\PO_II\serversB\drive_3\Test\ojj.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:86)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:269)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$null$18(FileEventWorker.java:522)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$run$19(FileEventWorker.java:522)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:84)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:520)
+
+}
+25.02.2020 03:36:45 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:36:45 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:36:45 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:36:45 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:36:47 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:36:47 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:36:47 -> {
+🧨 Cannot receive file: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:82)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$run$17(FileEventWorker.java:517)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:80)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:520)
+
+}
+25.02.2020 03:36:47 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:36:47 -> {
+🧨 Cannot dispose files: java.nio.file.FileSystemException: C:\GitHub\PO_II\serversB\drive_3\Test\ojj.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+:
+java.nio.file.FileSystemException: C:\GitHub\PO_II\serversB\drive_3\Test\ojj.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:86)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:269)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$null$18(FileEventWorker.java:522)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$run$19(FileEventWorker.java:522)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:84)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:520)
+
+}
+25.02.2020 03:37:07 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:38:19 -> {
+🧨 Cannot receive file: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:82)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$run$17(FileEventWorker.java:517)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:80)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:520)
+
+}
+25.02.2020 03:38:19 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:38:19 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:38:19 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:38:19 -> {
+🧨 Cannot dispose files: java.nio.file.FileSystemException: C:\GitHub\PO_II\serversB\drive_3\Test\ojj.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+:
+java.nio.file.FileSystemException: C:\GitHub\PO_II\serversB\drive_3\Test\ojj.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:86)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:269)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$null$18(FileEventWorker.java:522)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$run$19(FileEventWorker.java:522)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:84)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:520)
+
+}
+25.02.2020 03:39:19 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:40:30 -> {
+🧨 Cannot read message: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:46:17 -> {
+🧨 Cannot read message: java.net.SocketException: Unrecognized Windows Sockets error: 0: recv failed:
+java.net.SocketException: Unrecognized Windows Sockets error: 0: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:376)
+
+}
+25.02.2020 03:47:43 -> {
+🧨 Cannot replace file: java.nio.file.FileSystemException: C:\GitHub\PO_II\serversB\drive_3\Test\ojj.txt~temp~ -> C:\GitHub\PO_II\serversB\drive_3\Test\ojj.txt: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+:
+java.nio.file.FileSystemException: C:\GitHub\PO_II\serversB\drive_3\Test\ojj.txt~temp~ -> C:\GitHub\PO_II\serversB\drive_3\Test\ojj.txt: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:86)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsFileCopy.move(WindowsFileCopy.java:387)
+	at sun.nio.fs.WindowsFileSystemProvider.move(WindowsFileSystemProvider.java:287)
+	at java.nio.file.Files.move(Files.java:1395)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$run$20(FileEventWorker.java:528)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper$LogHelperWrappersWrapper.finalize(LogHelper.java:131)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:533)
+
+}
+25.02.2020 03:47:43 -> {
+🧨 Cannot dispose files: java.nio.file.NoSuchFileException: C:\GitHub\PO_II\serversB\drive_3\Test\ojj.txt:
+java.nio.file.NoSuchFileException: C:\GitHub\PO_II\serversB\drive_3\Test\ojj.txt
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:79)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:269)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$null$21(FileEventWorker.java:531)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.server.work.FileEventWorker.lambda$run$22(FileEventWorker.java:530)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper$LogHelperWrappersWrapper.finalize(LogHelper.java:135)
+	at edu.jeznach.po2.server.work.FileEventWorker.run(FileEventWorker.java:533)
+
+}

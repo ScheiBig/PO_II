@@ -4,6 +4,7 @@ import edu.jeznach.po2.common.configuration.Configuration;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Base64;
 import java.util.function.Function;
 
 /**
@@ -44,16 +45,24 @@ public class Messages {
             case RequestMapping.cmd:
                 parser = RequestMapping::parse;
                 break;
+            case RequestUsers.cmd:
+                parser = RequestUsers::parse;
+                break;
+            case RequestReceivers.cmd:
+                parser = RequestReceivers::parse;
+                break;
+            case FinishConnection.cmd:
+                parser = FinishConnection::parse;
+                break;
             default:
                 return null;
         }
         return parser.apply(message);
     }
 
-    /**
-     * Flag used to indicate that sent bytes are part of file
-     */
-    public static final @NotNull String FILE_PART_FLAG = "P=";
+    public static final @NotNull String OK = "OK";
+    public static final @NotNull String NO = "NO";
+    public static final @NotNull String NO_USER = "NONE";
 
     /**
      * Abstract command message
@@ -67,7 +76,7 @@ public class Messages {
         /**
          * Name of command, should be name of class that represents command
          */
-        @SuppressWarnings("ConstantConditions")
+        @SuppressWarnings({"ConstantConditions", "unused"})
         public static final @NotNull String cmd = null;
 
         /**
@@ -76,7 +85,10 @@ public class Messages {
          */
         public abstract @NotNull String user();
 
+        public abstract @NotNull String toProperString();
+
         /// Allows parsing via reflection
+        @SuppressWarnings("unused")
         protected static @NotNull Msg parse(String message) {
             //noinspection ConstantConditions
             return null;
@@ -190,6 +202,11 @@ public class Messages {
 
         @Override
         public String toString() {
+            return String.join(" ", cmd, user, Base64.getEncoder().encodeToString(file.getBytes()), size.toString(), checksum);
+        }
+
+        @Override
+        public @NotNull String toProperString() {
             return String.join(" ", cmd, user, file, size.toString(), checksum);
         }
 
@@ -197,7 +214,7 @@ public class Messages {
             String[] messageSplit = message.split(" ");
             if (messageSplit.length != argCount())
                 throw wrongArgumentNumber(cmd, messageSplit.length, argCount());
-            return new CreateFile(messageSplit[1], messageSplit[2], Long.parseLong(messageSplit[3]), messageSplit[4]);
+            return new CreateFile(messageSplit[1], new String(Base64.getDecoder().decode(messageSplit[2].getBytes())), Long.parseLong(messageSplit[3]), messageSplit[4]);
         }
     }
 
@@ -239,6 +256,11 @@ public class Messages {
 
         @Override
         public String toString() {
+            return String.join(" ", cmd, user, Base64.getEncoder().encodeToString(file.getBytes()), size.toString(), checksum);
+        }
+
+        @Override
+        public @NotNull String toProperString() {
             return String.join(" ", cmd, user, file, size.toString(), checksum);
         }
 
@@ -246,7 +268,7 @@ public class Messages {
             String[] messageSplit = message.split(" ");
             if (messageSplit.length != argCount())
                 throw wrongArgumentNumber(cmd, messageSplit.length, argCount());
-            return new UpdateFile(messageSplit[1], messageSplit[2], Long.parseLong(messageSplit[3]), messageSplit[4]);
+            return new UpdateFile(messageSplit[1], new String(Base64.getDecoder().decode(messageSplit[2].getBytes())), Long.parseLong(messageSplit[3]), messageSplit[4]);
         }
     }
 
@@ -276,6 +298,11 @@ public class Messages {
 
         @Override
         public String toString() {
+            return String.join(" ", cmd, user, Base64.getEncoder().encodeToString(file.getBytes()));
+        }
+
+        @Override
+        public @NotNull String toProperString() {
             return String.join(" ", cmd, user, file);
         }
 
@@ -283,7 +310,7 @@ public class Messages {
             String[] messageSplit = message.split(" ");
             if (messageSplit.length != argCount())
                 throw wrongArgumentNumber(cmd, messageSplit.length, argCount());
-            return new DeleteFile(messageSplit[1], messageSplit[2]);
+            return new DeleteFile(messageSplit[1], new String(Base64.getDecoder().decode(messageSplit[2].getBytes())));
         }
     }
 
@@ -319,6 +346,11 @@ public class Messages {
 
         @Override
         public String toString() {
+            return String.join(" ", cmd, user, Base64.getEncoder().encodeToString(file.getBytes()), receiver);
+        }
+
+        @Override
+        public @NotNull String toProperString() {
             return String.join(" ", cmd, user, file, receiver);
         }
 
@@ -326,7 +358,7 @@ public class Messages {
             String[] messageSplit = message.split(" ");
             if (messageSplit.length != argCount())
                 throw wrongArgumentNumber(cmd, messageSplit.length, argCount());
-            return new ShareFile(messageSplit[1], messageSplit[2], messageSplit[3]);
+            return new ShareFile(messageSplit[1], new String(Base64.getDecoder().decode(messageSplit[2].getBytes())), messageSplit[3]);
         }
     }
 
@@ -364,6 +396,11 @@ public class Messages {
 
         @Override
         public String toString() {
+            return String.join(" ", cmd, user, Base64.getEncoder().encodeToString(file.getBytes()), receiver);
+        }
+
+        @Override
+        public @NotNull String toProperString() {
             return String.join(" ", cmd, user, file, receiver);
         }
 
@@ -371,7 +408,7 @@ public class Messages {
             String[] messageSplit = message.split(" ");
             if (messageSplit.length != argCount())
                 throw wrongArgumentNumber(cmd, messageSplit.length, argCount());
-            return new UnshareFile(messageSplit[1], messageSplit[2], messageSplit[3]);
+            return new UnshareFile(messageSplit[1], new String(Base64.getDecoder().decode(messageSplit[2].getBytes())), messageSplit[3]);
         }
     }
 
@@ -398,6 +435,11 @@ public class Messages {
 
         @Override
         public String toString() {
+            return String.join(" ", cmd, user, Base64.getEncoder().encodeToString(file.getBytes()));
+        }
+
+        @Override
+        public @NotNull String toProperString() {
             return String.join(" ", cmd, user, file);
         }
 
@@ -405,7 +447,7 @@ public class Messages {
             String[] messageSplit = message.split(" ");
             if (messageSplit.length != argCount())
                 throw wrongArgumentNumber(cmd, messageSplit.length, argCount());
-            return new RequestFile(messageSplit[1], messageSplit[2]);
+            return new RequestFile(messageSplit[1], new String(Base64.getDecoder().decode(messageSplit[2].getBytes())));
         }
     }
 
@@ -429,11 +471,116 @@ public class Messages {
             return String.join(" ", cmd, user);
         }
 
+        @Override
+        public @NotNull String toProperString() {
+            return toString();
+        }
+
         protected static @NotNull RequestMapping parse(String message) {
             String[] messageSplit = message.split(" ");
             if (messageSplit.length != argCount())
                 throw wrongArgumentNumber(cmd, messageSplit.length, argCount());
             return new RequestMapping(messageSplit[1]);
+        }
+    }
+
+    public static class RequestUsers extends Msg {
+
+        public static final @NotNull String cmd = "RequestUsers";
+
+        private @NotNull String user;
+        @Override public @NotNull String user() { return user; }
+
+        /**
+         * Creates RequestFile command message
+         * @param user the username of user issuing command
+         */
+        public RequestUsers(@NotNull String user) {
+            this.user = user;
+        }
+
+        @Override
+        public String toString() {
+            return String.join(" ", cmd, user);
+        }
+
+        @Override
+        public @NotNull String toProperString() {
+            return toString();
+        }
+
+        protected static @NotNull RequestUsers parse(String message) {
+            String[] messageSplit = message.split(" ");
+            if (messageSplit.length != argCount())
+                throw wrongArgumentNumber(cmd, messageSplit.length, argCount());
+            return new RequestUsers(messageSplit[1]);
+        }
+
+    }
+
+    public static class RequestReceivers extends FileMsg {
+
+        public static final @NotNull String cmd = "RequestReceivers";
+
+        private @NotNull String user;
+        @Override public @NotNull String user() { return user; }
+
+        private @NotNull String file;
+        @Override public @NotNull String file() { return file; }
+
+        public RequestReceivers(@NotNull String user, @NotNull String file) {
+            this.user = user;
+            this.file = file;
+        }
+
+        @Override
+        public String toString() {
+            return String.join(" ", cmd, user, Base64.getEncoder().encodeToString(file.getBytes()));
+        }
+
+        @Override
+        public @NotNull String toProperString() {
+            return String.join(" ", cmd, user, file);
+        }
+
+        protected static @NotNull RequestReceivers parse(String message) {
+            String[] messageSplit = message.split(" ");
+            if (messageSplit.length != argCount())
+                throw wrongArgumentNumber(cmd, messageSplit.length, argCount());
+            return new RequestReceivers(messageSplit[1], new String(Base64.getDecoder().decode(messageSplit[2].getBytes())));
+        }
+    }
+
+    public static class FinishConnection extends Msg {
+
+        public static final @NotNull String cmd = "FinishConnection";
+
+        private @NotNull String user;
+        @Override public @NotNull String user() { return user; }
+
+        /**
+         * Creates RequestFile command message
+         * @param user the username of user issuing command
+         */
+        public FinishConnection(@NotNull String user) {
+            this.user = user;
+        }
+
+        @Override
+        public String toString() {
+            return String.join(" ", cmd, user);
+        }
+
+        @Override
+        public @NotNull String toProperString() {
+            return toString();
+        }
+
+        protected static @NotNull FinishConnection parse(String message) {
+            String[] messageSplit = message.split(" ");
+            if (messageSplit.length != argCount())
+                throw wrongArgumentNumber(cmd, messageSplit.length, argCount());
+            return new FinishConnection(messageSplit[1]);
         }
     }
 }

@@ -1,0 +1,24 @@
+!!edu.jeznach.po2.client.file.ClientMapping
+cancelled_files: []
+client_location: C:\GitHub\PO_II\clientA
+files:
+- {checksum: d3486ae9136e7856bc42212385ea797094475802, modification_timestamp: 1581082028893,
+  pathname: bek.txt, receivers: null, size_bytes: 12}
+- {checksum: 075f08bf0affabe4f22c398e5e2b3b79eb04c44b, modification_timestamp: 1581597807039,
+  pathname: ert.txt, receivers: null, size_bytes: 6}
+- {checksum: 780d78494ebce2263d49b9d119ca432f712da117, modification_timestamp: 1581600286786,
+  pathname: f.txt, receivers: null, size_bytes: 21}
+- {checksum: da39a3ee5e6b4b0d3255bfef95601890afd80709, modification_timestamp: 1581599609208,
+  pathname: keke.txt, receivers: null, size_bytes: 0}
+- {checksum: a5f951ebe1780445da2cac341f643e7c2be8dafe, modification_timestamp: 1581600725958,
+  pathname: tat.t, receivers: null, size_bytes: 72}
+- {checksum: 675203073769eb907638494d74d82aefbb705e10, modification_timestamp: 1580971499039,
+  pathname: x\kek, receivers: null, size_bytes: 186}
+- {checksum: bf9661defa3daecacfde5bde0214c4a439351d4d, modification_timestamp: 1581599609209,
+  pathname: xs\ss.txt, receivers: null, size_bytes: 3}
+- {checksum: da39a3ee5e6b4b0d3255bfef95601890afd80709, modification_timestamp: 1581600268006,
+  pathname: xs\w, receivers: null, size_bytes: 0}
+log_name: log.txt
+name: Test
+shared_files: []
+used_space_bytes: 0

@@ -71,12 +71,12 @@ public class DriveMapping {
         public @NotNull String getUsername() { return this.username; }
         public void setUsername(@NotNull String username) { this.username = username; }
 
-        private @Nullable List<FileMapping> files = new ArrayList<>();
+        private @Nullable List<ServFileMapping> files = new ArrayList<>();
         /**
          * @return the list of mappings of files, that client stores on this server drive
          */
-        public @Nullable List<FileMapping> getFiles() { return this.files; }
-        public void setFiles(@Nullable List<FileMapping> files) { this.files = files; }
+        public @Nullable List<ServFileMapping> getFiles() { return this.files; }
+        public void setFiles(@Nullable List<ServFileMapping> files) { this.files = files; }
 
         private @NotNull Long used_space_bytes = 0L;
         /**
@@ -85,16 +85,16 @@ public class DriveMapping {
         public @NotNull Long getUsed_space_bytes() { return this.used_space_bytes; }
         public void setUsed_space_bytes(@NotNull Long used_space_bytes) { this.used_space_bytes = used_space_bytes; }
 
-        private @Nullable List<SharedFileMapping> shared_files;
+        private @Nullable List<ServSharedFileMapping> shared_files;
         /**
          * @return the list of mappings of files, that were shared to client
          */
-        public @Nullable List<SharedFileMapping> getShared_files() { return this.shared_files; }
-        public void setShared_files(@Nullable List<SharedFileMapping> shared_files) { this.shared_files = shared_files; }
+        public @Nullable List<ServSharedFileMapping> getShared_files() { return this.shared_files; }
+        public void setShared_files(@Nullable List<ServSharedFileMapping> shared_files) { this.shared_files = shared_files; }
 
         protected User() {  }
 
-        protected User(@NotNull String username) {
+        public User(@NotNull String username) {
             this.username = username;
         }
     }

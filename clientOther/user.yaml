@@ -1,0 +1,14 @@
+!!edu.jeznach.po2.client.file.ClientMapping
+cancelled_files: null
+client_location: C:\GitHub\PO_II\clientOther
+files:
+- {checksum: 591379bea92677ee6587b44fc938974c90f2da50, modification_timestamp: 1582597527733,
+  pathname: rem.txt, receivers: null, size_bytes: 688}
+- {checksum: da39a3ee5e6b4b0d3255bfef95601890afd80709, modification_timestamp: 1582598839161,
+  pathname: setm.txt, receivers: null, size_bytes: 0}
+- {checksum: da39a3ee5e6b4b0d3255bfef95601890afd80709, modification_timestamp: 1582597520623,
+  pathname: tetm.txt, receivers: null, size_bytes: 0}
+log_name: log.txt
+name: Other
+shared_files: null
+used_space_bytes: 0

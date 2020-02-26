@@ -43,7 +43,7 @@ task jarServer(type: Jar) {
 task jarClient(type: Jar) {
     manifest.attributes 'Main-Class': 'edu.jeznach.po2.client.App'
 
-    classifier = 'server'
+    classifier = 'client'
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     } {
@@ -66,5 +66,7 @@ javadoc {
     }
 }
 
+
+compileJava.options.compilerArgs << '-Xlint:unchecked'
 compileJava.options.encoding = 'UTF-8'
 compileTestJava.options.encoding = 'UTF-8'

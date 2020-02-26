@@ -1,0 +1,27 @@
+!!edu.jeznach.po2.server.file.DriveMapping
+drive_location: C:\GitHub\PO_II\serversB\drive_2
+log_name: log.txt
+name: drive_2
+users:
+- files:
+  - {checksum: da39a3ee5e6b4b0d3255bfef95601890afd80709, drive: drive_2, modification_timestamp: 1582598287440,
+    pathname: kekekeke kk.txt, size_bytes: 0}
+  - {checksum: da39a3ee5e6b4b0d3255bfef95601890afd80709, drive: drive_2, modification_timestamp: 1582598287471,
+    pathname: tat.t, size_bytes: 0}
+  - {checksum: 7ba81b92152a19191b8c0e354cd4f9c6fe6998de, drive: drive_2, modification_timestamp: 1582598793903,
+    pathname: xs\ss.txt, size_bytes: 10}
+  - {checksum: da39a3ee5e6b4b0d3255bfef95601890afd80709, drive: drive_2, modification_timestamp: 1582598287505,
+    pathname: xs\w, size_bytes: 0}
+  - {checksum: da39a3ee5e6b4b0d3255bfef95601890afd80709, drive: drive_2, modification_timestamp: 1582598292309,
+    pathname: x\kek, size_bytes: 0}
+  - {checksum: da39a3ee5e6b4b0d3255bfef95601890afd80709, drive: drive_2, modification_timestamp: 1582598292338,
+    pathname: xs\kekesd.txt, size_bytes: 0}
+  shared_files: null
+  used_space_bytes: 10
+  username: Test
+- files:
+  - {checksum: da39a3ee5e6b4b0d3255bfef95601890afd80709, drive: drive_2, modification_timestamp: 1582598176382,
+    pathname: setm.txt, size_bytes: 0}
+  shared_files: null
+  used_space_bytes: 0
+  username: Other

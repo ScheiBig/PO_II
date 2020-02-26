@@ -1,0 +1,17 @@
+!!edu.jeznach.po2.server.file.DriveMapping
+drive_location: C:\GitHub\PO_II\serversB\drive_0
+log_name: log.txt
+name: drive_0
+users:
+- files:
+  - {checksum: 591379bea92677ee6587b44fc938974c90f2da50, drive: drive_0, modification_timestamp: 1582598843385,
+    pathname: rem.txt, size_bytes: 688}
+  shared_files: null
+  used_space_bytes: 688
+  username: Other
+- files:
+  - {checksum: 7ba81b92152a19191b8c0e354cd4f9c6fe6998de, drive: drive_0, modification_timestamp: 1582598793820,
+    pathname: f.txt, size_bytes: 10}
+  shared_files: null
+  used_space_bytes: 10
+  username: Test

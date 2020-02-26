@@ -6,13 +6,14 @@ import org.apache.batik.transcoder.TranscoderException;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
-import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeCellRenderer;
 import java.awt.*;
+import java.awt.event.MouseListener;
 import java.io.File;
 import java.util.List;
 import java.util.*;
+import java.util.function.BiFunction;
 import java.util.regex.Pattern;
 
 public class FileTree extends JPanel {
@@ -22,34 +23,59 @@ public class FileTree extends JPanel {
     public static final String userIcon = "/edu/jeznach/po2/user.svg";
     public static final String driveIcon = "/edu/jeznach/po2/drive.svg";
     public static final String shareIcon = "/edu/jeznach/po2/share.svg";
+    private final MouseListener listener;
+    private final BiFunction<List<? extends FileMapping>, String, DefaultMutableTreeNode> creator;
+    private JTree tree;
+    private DefaultMutableTreeNode root;
 
     @SuppressWarnings("unchecked")
-    public FileTree(List<? extends FileMapping> files, String nodeName, Type mappingType, TreeSelectionListener listener) {
+    public FileTree(List<? extends FileMapping> files, String nodeName, Type mappingType, ObjectMouseAdapter<JTree> listener) {
         setLayout(new BorderLayout());
 
-        JTree tree;
 
         switch (mappingType) {
             case userDirectory:
-                tree = new JTree(setUserMapping(((List<FileMapping>) files), nodeName));
+                creator = (f, u) -> setUserMapping((List<FileMapping>) f, u);
                 break;
             case sharedDirectory:
-                tree = new JTree(setSharedMapping(((List<SharedFileMapping>) files), nodeName));
+                creator = (f, u) -> setSharedMapping((List<SharedFileMapping>) f, u);
                 break;
             case driveDirectory:
-                tree = new JTree(setDriveMapping(((List<SharedFileMapping>) files), nodeName));
+                creator = (f, u) -> setDriveMapping((List<SharedFileMapping>) f, u);
                 break;
             default:
-                tree = new JTree();
+                throw new UnsupportedOperationException();
         }
 
-        tree.addTreeSelectionListener(listener);
+        this.root = creator.apply(files, nodeName);
+        this.tree = new JTree(this.root);
+        tree.setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
+        for (int i = 0; i < tree.getRowCount(); i++) {
+            tree.expandRow(i);
+        }
+        if (listener != null) listener.setObject(tree);
+        this.listener = listener;
+        tree.addMouseListener(listener);
         tree.setCellRenderer(new IconLabelTreeCellRenderer());
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.getViewport().add(tree);
         add(BorderLayout.CENTER, scrollPane);
+    }
 
+    public synchronized void reload(List<? extends FileMapping> files, String nodeName) {
 
+        this.root = creator.apply(files, nodeName);
+        this.tree = new JTree(this.root);
+        tree.setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
+        for (int i = 0; i < tree.getRowCount(); i++) {
+            tree.expandRow(i);
+        }
+        tree.addMouseListener(listener);
+        tree.setCellRenderer(new IconLabelTreeCellRenderer());
+        JScrollPane scrollPane = new JScrollPane();
+        scrollPane.getViewport().add(tree);
+        add(BorderLayout.CENTER, scrollPane);
+        revalidate();
     }
 
     DefaultMutableTreeNode setUserMapping(@NotNull List<FileMapping> files, @NotNull String username) {
@@ -176,12 +202,12 @@ public class FileTree extends JPanel {
 
     @Override
     public Dimension getMinimumSize() {
-        return new Dimension(300, 580);
+        return new Dimension(300, 450);
     }
 
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(300, 580);
+        return new Dimension(300, 450);
     }
 
     static class TreeIconLabelObject {
@@ -197,6 +223,31 @@ public class FileTree extends JPanel {
         @Override
         public int hashCode() {
             return Objects.hash(label);
+        }
+
+        @Override
+        public String toString() {
+            String i;
+            switch (imagePath) {
+                case directoryIcon:
+                    i = "d:";
+                    break;
+                case fileIcon:
+                    i = "f:";
+                    break;
+                case userIcon:
+                    i = "u:";
+                    break;
+                case driveIcon:
+                    i = "h:";
+                    break;
+                case shareIcon:
+                    i = "s:";
+                    break;
+                default:
+                    return "?:" + label;
+            }
+            return i + label;
         }
     }
 

@@ -2,6 +2,10 @@ package edu.jeznach.po2.common.util;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.Map;
 
 /**
@@ -9,16 +13,22 @@ import java.util.Map;
  * @param <K> the type of key
  * @param <V> the type of value
  */
-public class Pair<K, V> {
+public class Pair<K, V> implements Serializable {
+
+    private static final long serialVersionUID = 3970960580147845169L;
 
     /**
      * Key of this {@code Pair}
      */
-    public final K key;
+    public K key() { return key; }
+    private K key;
     /**
      * Value of this {@code Pair}
      */
-    public final V value;
+    public V value() { return value; }
+    private V value;
+
+    protected Pair() { }
 
     /**
      * Creates pair of given arguments.
@@ -48,8 +58,8 @@ public class Pair<K, V> {
     public @NotNull Map.Entry<K, V> toMapEntry() {
         return new Map.Entry<K, V>() {
 
-            private K k = key;
-            private V v = value;
+            private K k = key();
+            private V v = value();
 
             @Override
             public K getKey() {
@@ -68,5 +78,21 @@ public class Pair<K, V> {
                 return t;
             }
         };
+    }
+
+    private void writeObject(ObjectOutputStream stream) throws IOException {
+        stream.defaultWriteObject();
+    }
+
+    private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
+        stream.defaultReadObject();
+    }
+
+    @Override
+    public String toString() {
+        return "Pair{" +
+               "key=" + key +
+               ", value=" + value +
+               '}';
     }
 }

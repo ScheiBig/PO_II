@@ -3,12 +3,14 @@ package edu.jeznach.po2.common.file;
 import edu.jeznach.po2.common.configuration.Configuration;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
+import java.io.*;
 
 /**
  * Represents mapping of a file stored in container directory.
  */
-public class FileMapping {
+public class FileMapping implements Serializable {
+
+    private static final long serialVersionUID = 6290530909737276632L;
 
     private @NotNull String pathname = "";
     /**
@@ -53,10 +55,28 @@ public class FileMapping {
         this.modification_timestamp = modification_timestamp;
     }
 
-    protected FileMapping(@NotNull FileMapping fileMapping) {
+    public FileMapping(@NotNull FileMapping fileMapping) {
         this(fileMapping.getPathname(),
              fileMapping.getSize_bytes(),
              fileMapping.getChecksum(),
              fileMapping.getModification_timestamp());
+    }
+
+    private void writeObject(ObjectOutputStream stream) throws IOException {
+        stream.defaultWriteObject();
+    }
+
+    private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
+        stream.defaultReadObject();
+    }
+
+    @Override
+    public String toString() {
+        return "FileMapping{" +
+               "pathname='" + pathname + '\'' +
+               ", size_bytes=" + size_bytes +
+               ", checksum='" + checksum + '\'' +
+               ", modification_timestamp=" + modification_timestamp +
+               '}';
     }
 }

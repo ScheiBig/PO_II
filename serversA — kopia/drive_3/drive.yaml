@@ -1,0 +1,5 @@
+!!edu.jeznach.po2.server.file.DriveMapping
+drive_location: C:\GitHub\PO_II\serversA\drive_3
+log_name: log.txt
+name: drive_3
+users: []

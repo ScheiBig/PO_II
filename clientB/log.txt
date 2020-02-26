@@ -1,0 +1,1770 @@
+13.02.2020 13:43:27 -> {
+🧨 java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\files\ert.txt (System nie może odnaleźć określonej ścieżki):
+java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\files\ert.txt (System nie może odnaleźć określonej ścieżki)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at edu.jeznach.po2.common.file.FileManager.createChecksum(FileManager.java:136)
+	at edu.jeznach.po2.common.file.FileManager.getChecksum(FileManager.java:33)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:74)
+
+}
+13.02.2020 14:13:29 -> {
+🧨 java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\files\xs\ss.txt (System nie może odnaleźć określonej ścieżki):
+java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\files\xs\ss.txt (System nie może odnaleźć określonej ścieżki)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at edu.jeznach.po2.common.file.FileManager.createChecksum(FileManager.java:146)
+	at edu.jeznach.po2.common.file.FileManager.getChecksum(FileManager.java:33)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:99)
+
+}
+13.02.2020 14:13:29 -> {
+🧨 java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\user.yaml (Nie można odnaleźć określonego pliku):
+java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\user.yaml (Nie można odnaleźć określonego pliku)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at edu.jeznach.po2.common.file.FileManager.createChecksum(FileManager.java:146)
+	at edu.jeznach.po2.common.file.FileManager.getChecksum(FileManager.java:33)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:99)
+
+}
+13.02.2020 14:13:29 -> {
+🧨 java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\files\keke.txt (System nie może odnaleźć określonej ścieżki):
+java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\files\keke.txt (System nie może odnaleźć określonej ścieżki)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at edu.jeznach.po2.common.file.FileManager.createChecksum(FileManager.java:146)
+	at edu.jeznach.po2.common.file.FileManager.getChecksum(FileManager.java:33)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:99)
+
+}
+13.02.2020 14:13:29 -> {
+🧨 java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\user.yaml (Nie można odnaleźć określonego pliku):
+java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\user.yaml (Nie można odnaleźć określonego pliku)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at edu.jeznach.po2.common.file.FileManager.createChecksum(FileManager.java:146)
+	at edu.jeznach.po2.common.file.FileManager.getChecksum(FileManager.java:33)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:99)
+
+}
+13.02.2020 14:13:32 -> {
+🧨 java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\files\xs\ss.txt (System nie może odnaleźć określonej ścieżki):
+java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\files\xs\ss.txt (System nie może odnaleźć określonej ścieżki)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at edu.jeznach.po2.common.file.FileManager.createChecksum(FileManager.java:146)
+	at edu.jeznach.po2.common.file.FileManager.getChecksum(FileManager.java:33)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:99)
+
+}
+13.02.2020 14:18:07 -> {
+🧨 java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\files\tat.t (System nie może odnaleźć określonej ścieżki):
+java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\files\tat.t (System nie może odnaleźć określonej ścieżki)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at edu.jeznach.po2.common.file.FileManager.createChecksum(FileManager.java:146)
+	at edu.jeznach.po2.common.file.FileManager.getChecksum(FileManager.java:33)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:77)
+
+}
+13.02.2020 14:22:12 -> {
+🧨 java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\xs (Odmowa dostępu):
+java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\xs (Odmowa dostępu)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at edu.jeznach.po2.common.file.FileManager.createChecksum(FileManager.java:146)
+	at edu.jeznach.po2.common.file.FileManager.getChecksum(FileManager.java:33)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:99)
+
+}
+13.02.2020 14:22:57 -> {
+🧨 java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\Nowy dokument tekstowy.txt (Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces):
+java.io.FileNotFoundException: C:\GitHub\PO_II\clientA\files\Nowy dokument tekstowy.txt (Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at edu.jeznach.po2.common.file.FileManager.createChecksum(FileManager.java:146)
+	at edu.jeznach.po2.common.file.FileManager.getChecksum(FileManager.java:33)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:77)
+
+}
+13.02.2020 14:23:56 -> {
+🧨 java.net.SocketException: Software caused connection abort: socket write error:
+java.net.SocketException: Software caused connection abort: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:111)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at edu.jeznach.po2.common.file.FileManager.sendFile(FileManager.java:123)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:132)
+
+}
+13.02.2020 14:25:10 -> {
+🧨 java.net.SocketException: Socket is closed:
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getOutputStream(Socket.java:960)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:124)
+
+}
+13.02.2020 14:51:07 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:87)
+	at edu.jeznach.po2.client.App.main(App.java:218)
+
+}
+13.02.2020 14:52:35 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:87)
+	at edu.jeznach.po2.client.App.main(App.java:218)
+
+}
+13.02.2020 14:54:58 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:87)
+	at edu.jeznach.po2.client.App.main(App.java:218)
+
+}
+13.02.2020 14:54:58 -> {
+🧨 java.io.IOException: File not found:
+java.io.IOException: File not found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:140)
+
+}
+13.02.2020 14:54:58 -> {
+🧨 java.io.IOException: File not found:
+java.io.IOException: File not found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:140)
+
+}
+13.02.2020 14:56:24 -> {
+🧨 java.io.IOException: File not found:
+java.io.IOException: File not found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:140)
+
+}
+13.02.2020 14:56:24 -> {
+🧨 java.io.IOException: File not found:
+java.io.IOException: File not found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:140)
+
+}
+13.02.2020 14:58:52 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:87)
+	at edu.jeznach.po2.client.App.main(App.java:218)
+
+}
+13.02.2020 15:04:32 -> {
+🧨 java.io.FileNotFoundException: C:\GitHub\PO_II\clientB\files\xs\Nowy dokument tekstowy.txt (Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces):
+java.io.FileNotFoundException: C:\GitHub\PO_II\clientB\files\xs\Nowy dokument tekstowy.txt (Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at edu.jeznach.po2.common.file.FileManager.createChecksum(FileManager.java:145)
+	at edu.jeznach.po2.common.file.FileManager.getChecksum(FileManager.java:33)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:79)
+
+}
+13.02.2020 15:04:32 -> {
+🧨 java.io.FileNotFoundException: C:\GitHub\PO_II\clientB\files\xs (Odmowa dostępu):
+java.io.FileNotFoundException: C:\GitHub\PO_II\clientB\files\xs (Odmowa dostępu)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at edu.jeznach.po2.common.file.FileManager.createChecksum(FileManager.java:145)
+	at edu.jeznach.po2.common.file.FileManager.getChecksum(FileManager.java:33)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:108)
+
+}
+13.02.2020 15:04:39 -> {
+🧨 java.io.FileNotFoundException: C:\GitHub\PO_II\clientB\files\xs (Odmowa dostępu):
+java.io.FileNotFoundException: C:\GitHub\PO_II\clientB\files\xs (Odmowa dostępu)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at edu.jeznach.po2.common.file.FileManager.createChecksum(FileManager.java:145)
+	at edu.jeznach.po2.common.file.FileManager.getChecksum(FileManager.java:33)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:108)
+
+}
+13.02.2020 15:22:08 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:89)
+	at edu.jeznach.po2.client.App.main(App.java:228)
+
+}
+13.02.2020 15:25:51 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:89)
+	at edu.jeznach.po2.client.App.main(App.java:231)
+
+}
+13.02.2020 15:26:43 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:89)
+	at edu.jeznach.po2.client.App.main(App.java:232)
+
+}
+13.02.2020 15:29:11 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:89)
+	at edu.jeznach.po2.client.App.main(App.java:232)
+
+}
+13.02.2020 15:31:12 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:89)
+	at edu.jeznach.po2.client.App.main(App.java:232)
+
+}
+13.02.2020 15:32:05 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:89)
+	at edu.jeznach.po2.client.App.main(App.java:232)
+
+}
+13.02.2020 15:32:23 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:89)
+	at edu.jeznach.po2.client.App.main(App.java:232)
+
+}
+13.02.2020 15:33:43 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:89)
+	at edu.jeznach.po2.client.App.main(App.java:232)
+
+}
+13.02.2020 15:33:43 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:33:43 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:33:43 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:33:43 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:33:43 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:33:43 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:33:43 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:33:43 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:33:43 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:36:30 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:86)
+	at edu.jeznach.po2.client.App.main(App.java:231)
+
+}
+13.02.2020 15:36:30 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:36:30 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:36:30 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:36:30 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:36:30 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:36:30 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:36:30 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:36:30 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:36:30 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:38:36 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:86)
+	at edu.jeznach.po2.client.App.main(App.java:232)
+
+}
+13.02.2020 15:38:36 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:38:36 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:38:36 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:38:36 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:38:36 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:38:36 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:38:36 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:38:36 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 15:38:36 -> {
+🧨 java.io.IOException: File found:
+java.io.IOException: File found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:105)
+
+}
+13.02.2020 16:00:36 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:86)
+	at edu.jeznach.po2.client.App.main(App.java:232)
+
+}
+13.02.2020 16:03:51 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:86)
+	at edu.jeznach.po2.client.App.main(App.java:232)
+
+}
+13.02.2020 16:09:35 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:86)
+	at edu.jeznach.po2.client.App.main(App.java:232)
+
+}
+13.02.2020 16:11:17 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:86)
+	at edu.jeznach.po2.client.App.main(App.java:232)
+
+}
+13.02.2020 16:14:35 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:86)
+	at edu.jeznach.po2.client.App.main(App.java:232)
+
+}
+13.02.2020 16:16:13 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:86)
+	at edu.jeznach.po2.client.App.main(App.java:232)
+
+}
+13.02.2020 16:23:08 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:86)
+	at edu.jeznach.po2.client.App.main(App.java:232)
+
+}
+13.02.2020 16:27:27 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:86)
+	at edu.jeznach.po2.client.App.main(App.java:232)
+
+}
+13.02.2020 16:28:40 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:86)
+	at edu.jeznach.po2.client.App.main(App.java:232)
+
+}
+13.02.2020 16:32:45 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:86)
+	at edu.jeznach.po2.client.App.main(App.java:232)
+
+}
+13.02.2020 16:34:34 -> {
+🧨 java.net.SocketException: Connection reset by peer: socket write error:
+java.net.SocketException: Connection reset by peer: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:111)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at edu.jeznach.po2.common.file.FileManager.sendFile(FileManager.java:143)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:109)
+
+}
+13.02.2020 16:35:50 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:86)
+	at edu.jeznach.po2.client.App.main(App.java:232)
+
+}
+13.02.2020 16:35:57 -> {
+🧨 java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at java.io.FilterInputStream.read(FilterInputStream.java:107)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:83)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:204)
+
+}
+13.02.2020 16:35:59 -> {
+🧨 java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at java.io.FilterInputStream.read(FilterInputStream.java:107)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:83)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:204)
+
+}
+13.02.2020 16:35:59 -> {
+🧨 java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at java.io.FilterInputStream.read(FilterInputStream.java:107)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:83)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:204)
+
+}
+13.02.2020 16:36:01 -> {
+🧨 java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at java.io.FilterInputStream.read(FilterInputStream.java:107)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:83)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:204)
+
+}
+13.02.2020 16:36:02 -> {
+🧨 java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at java.io.FilterInputStream.read(FilterInputStream.java:107)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:83)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:204)
+
+}
+13.02.2020 16:38:02 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:86)
+	at edu.jeznach.po2.client.App.main(App.java:232)
+
+}
+13.02.2020 16:42:08 -> {
+🧨 java.io.FileNotFoundException: C:\GitHub\PO_II\clientB\files\ojj.txt~ (Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces):
+java.io.FileNotFoundException: C:\GitHub\PO_II\clientB\files\ojj.txt~ (Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at edu.jeznach.po2.common.file.FileManager.createChecksum(FileManager.java:169)
+	at edu.jeznach.po2.common.file.FileManager.getChecksum(FileManager.java:36)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:84)
+
+}
+13.02.2020 16:42:08 -> {
+🧨 java.io.IOException: File not found:
+java.io.IOException: File not found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:127)
+
+}
+13.02.2020 16:42:08 -> {
+🧨 java.io.IOException: File not found:
+java.io.IOException: File not found
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:127)
+
+}
+17.02.2020 12:52:44 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:86)
+	at edu.jeznach.po2.client.App.main(App.java:233)
+
+}
+17.02.2020 12:53:09 -> {
+🧨 java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at java.io.FilterInputStream.read(FilterInputStream.java:107)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:83)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:214)
+
+}
+17.02.2020 12:55:43 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:86)
+	at edu.jeznach.po2.client.App.main(App.java:234)
+
+}
+17.02.2020 12:57:18 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:86)
+	at edu.jeznach.po2.client.App.main(App.java:235)
+
+}
+17.02.2020 13:29:55 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:86)
+	at edu.jeznach.po2.client.App.main(App.java:235)
+
+}
+17.02.2020 13:30:34 -> {
+🧨 java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at java.io.FilterInputStream.read(FilterInputStream.java:107)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:83)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:214)
+
+}
+17.02.2020 13:32:31 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:86)
+	at edu.jeznach.po2.client.App.main(App.java:236)
+
+}
+17.02.2020 14:03:58 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:87)
+	at edu.jeznach.po2.client.App.main(App.java:239)
+
+}
+17.02.2020 14:11:03 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:87)
+	at edu.jeznach.po2.client.App.main(App.java:239)
+
+}
+17.02.2020 14:15:12 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:87)
+	at edu.jeznach.po2.client.App.main(App.java:239)
+
+}
+17.02.2020 14:21:24 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:87)
+	at edu.jeznach.po2.client.App.main(App.java:239)
+
+}
+17.02.2020 14:22:05 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:87)
+	at edu.jeznach.po2.client.App.main(App.java:239)
+
+}
+17.02.2020 14:25:36 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:87)
+	at edu.jeznach.po2.client.App.main(App.java:239)
+
+}
+17.02.2020 15:15:16 -> {
+🧨 java.net.SocketException: Connection reset by peer: socket write error:
+java.net.SocketException: Connection reset by peer: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:111)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at edu.jeznach.po2.common.file.FileManager.sendFile(FileManager.java:147)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:159)
+
+}
+17.02.2020 15:17:43 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:87)
+	at edu.jeznach.po2.client.App.main(App.java:239)
+
+}
+17.02.2020 15:39:00 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:87)
+	at edu.jeznach.po2.client.App.main(App.java:239)
+
+}
+17.02.2020 15:46:58 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:87)
+	at edu.jeznach.po2.client.App.main(App.java:239)
+
+}
+21.02.2020 00:06:25 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:87)
+	at edu.jeznach.po2.client.App.main(App.java:234)
+
+}
+21.02.2020 00:12:18 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:87)
+	at edu.jeznach.po2.client.App.main(App.java:234)
+
+}
+21.02.2020 00:12:18 -> {
+🧨 Server not responding: java.net.SocketException: Software caused connection abort: recv failed:
+java.net.SocketException: Software caused connection abort: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$5(FileEventWorker.java:340)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:340)
+
+}
+21.02.2020 00:12:19 -> {
+🧨 Cannot send file: java.net.SocketException: Software caused connection abort: socket write error:
+java.net.SocketException: Software caused connection abort: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:111)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at edu.jeznach.po2.common.file.FileManager.sendFile(FileManager.java:161)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$6(FileEventWorker.java:349)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:348)
+
+}
+21.02.2020 00:12:21 -> {
+🧨 Cannot send file: java.net.SocketException: Software caused connection abort: socket write error:
+java.net.SocketException: Software caused connection abort: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:111)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at edu.jeznach.po2.common.file.FileManager.sendFile(FileManager.java:161)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$6(FileEventWorker.java:349)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:348)
+
+}
+21.02.2020 00:15:34 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:87)
+	at edu.jeznach.po2.client.App.main(App.java:234)
+
+}
+21.02.2020 00:18:18 -> {
+🧨 Server not responding: java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$5(FileEventWorker.java:340)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:340)
+
+}
+21.02.2020 00:18:27 -> {
+🧨 Server not responding: java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$13(FileEventWorker.java:416)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:416)
+
+}
+21.02.2020 00:56:27 -> {
+🧨 Server not responding: java.net.SocketException: Connection reset:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$5(FileEventWorker.java:340)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:340)
+
+}
+21.02.2020 00:57:48 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:87)
+	at edu.jeznach.po2.client.App.main(App.java:234)
+
+}
+21.02.2020 00:57:48 -> {
+🧨 No size provided in response: java.lang.NullPointerException:
+java.lang.NullPointerException
+	at edu.jeznach.po2.client.communication.Messenger.lambda$requestMapping$1(Messenger.java:58)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.communication.Messenger.requestMapping(Messenger.java:58)
+	at edu.jeznach.po2.client.App.<init>(App.java:117)
+	at edu.jeznach.po2.client.App.main(App.java:234)
+
+}
+21.02.2020 00:57:48 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+21.02.2020 00:57:48 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+21.02.2020 00:57:48 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+21.02.2020 00:57:48 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+21.02.2020 00:57:48 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+21.02.2020 01:00:48 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:87)
+	at edu.jeznach.po2.client.App.main(App.java:234)
+
+}
+21.02.2020 01:01:11 -> {
+🧨 Cannot perform deleting file: java.io.IOException: File doesn't exists:
+java.io.IOException: File doesn't exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:420)
+
+}
+21.02.2020 01:01:20 -> {
+🧨 Cannot perform deleting file: java.io.IOException: File doesn't exists:
+java.io.IOException: File doesn't exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:420)
+
+}
+21.02.2020 01:01:32 -> {
+🧨 Cannot receive file: java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:82)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$34(FileEventWorker.java:594)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:80)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:600)
+
+}
+21.02.2020 01:01:32 -> {
+🧨 Cannot dispose files: java.nio.file.FileSystemException: C:\GitHub\PO_II\clientB\files\f.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+:
+java.nio.file.FileSystemException: C:\GitHub\PO_II\clientB\files\f.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:86)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:269)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$null$35(FileEventWorker.java:601)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$36(FileEventWorker.java:601)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:84)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:600)
+
+}
+21.02.2020 01:01:37 -> {
+🧨 Server not responding: java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$5(FileEventWorker.java:340)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:340)
+
+}
+21.02.2020 01:08:45 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:87)
+	at edu.jeznach.po2.client.App.main(App.java:234)
+
+}
+21.02.2020 01:13:35 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:87)
+	at edu.jeznach.po2.client.App.main(App.java:234)
+
+}
+21.02.2020 01:16:07 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:87)
+	at edu.jeznach.po2.client.App.main(App.java:234)
+
+}
+21.02.2020 01:17:41 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:87)
+	at edu.jeznach.po2.client.App.main(App.java:234)
+
+}
+21.02.2020 01:17:41 -> {
+ℹ Created new mapping:
+User not registered in this directory yet
+}
+21.02.2020 01:19:30 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:87)
+	at edu.jeznach.po2.client.App.main(App.java:234)
+
+}
+21.02.2020 01:19:30 -> {
+ℹ Created new mapping:
+User not registered in this directory yet
+}
+21.02.2020 01:30:16 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:87)
+	at edu.jeznach.po2.client.App.main(App.java:234)
+
+}
+21.02.2020 15:37:00 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:104)
+	at edu.jeznach.po2.client.App.main(App.java:251)
+
+}
+21.02.2020 15:39:44 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:107)
+	at edu.jeznach.po2.client.App.main(App.java:254)
+
+}
+21.02.2020 15:39:55 -> {
+🧨 Cannot receive mapping: java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at edu.jeznach.po2.common.file.FileManager.receiveString(FileManager.java:115)
+	at edu.jeznach.po2.client.communication.Messenger.lambda$requestMapping$3(Messenger.java:65)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.communication.Messenger.requestMapping(Messenger.java:65)
+	at edu.jeznach.po2.client.App.<init>(App.java:137)
+	at edu.jeznach.po2.client.App.main(App.java:254)
+
+}
+21.02.2020 15:39:55 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+21.02.2020 15:39:55 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+21.02.2020 15:39:55 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+21.02.2020 15:39:55 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+21.02.2020 15:39:55 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+21.02.2020 15:41:25 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:107)
+	at edu.jeznach.po2.client.App.main(App.java:254)
+
+}
+21.02.2020 15:41:45 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:107)
+	at edu.jeznach.po2.client.App.main(App.java:254)
+
+}
+21.02.2020 15:42:06 -> {
+🧨 Cannot calculate Checksum: java.io.FileNotFoundException: C:\GitHub\PO_II\clientB\files\x (Odmowa dostępu):
+java.io.FileNotFoundException: C:\GitHub\PO_II\clientB\files\x (Odmowa dostępu)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at edu.jeznach.po2.common.file.FileManager.createChecksum(FileManager.java:236)
+	at edu.jeznach.po2.common.file.FileManager.getChecksum(FileManager.java:37)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$7(FileEventWorker.java:362)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:362)
+
+}
+21.02.2020 15:54:10 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:107)
+	at edu.jeznach.po2.client.App.main(App.java:254)
+
+}
+21.02.2020 15:55:03 -> {
+🧨 Cannot receive file: java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:82)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$34(FileEventWorker.java:594)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:80)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:600)
+
+}
+21.02.2020 15:55:03 -> {
+🧨 Cannot dispose files: java.nio.file.FileSystemException: C:\GitHub\PO_II\clientB\files\bek.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+:
+java.nio.file.FileSystemException: C:\GitHub\PO_II\clientB\files\bek.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:86)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:269)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$null$35(FileEventWorker.java:601)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$36(FileEventWorker.java:601)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:84)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:600)
+
+}
+21.02.2020 16:05:55 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:107)
+	at edu.jeznach.po2.client.App.main(App.java:254)
+
+}
+21.02.2020 16:06:05 -> {
+🧨 Cannot receive mapping: java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at edu.jeznach.po2.common.file.FileManager.receiveString(FileManager.java:115)
+	at edu.jeznach.po2.client.communication.Messenger.lambda$requestMapping$3(Messenger.java:65)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.communication.Messenger.requestMapping(Messenger.java:65)
+	at edu.jeznach.po2.client.App.<init>(App.java:137)
+	at edu.jeznach.po2.client.App.main(App.java:254)
+
+}
+21.02.2020 16:06:05 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+21.02.2020 16:06:05 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+21.02.2020 16:06:05 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+21.02.2020 16:06:05 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+21.02.2020 16:06:15 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+21.02.2020 16:07:44 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:107)
+	at edu.jeznach.po2.client.App.main(App.java:254)
+
+}
+21.02.2020 16:08:22 -> {
+🧨 Cannot receive file: java.nio.file.FileSystemException: C:\GitHub\PO_II\clientB\files\bek.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+:
+java.nio.file.FileSystemException: C:\GitHub\PO_II\clientB\files\bek.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:86)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileCopy.move(WindowsFileCopy.java:376)
+	at sun.nio.fs.WindowsFileSystemProvider.move(WindowsFileSystemProvider.java:287)
+	at java.nio.file.Files.move(Files.java:1395)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$34(FileEventWorker.java:596)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:80)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:600)
+
+}
+21.02.2020 16:15:10 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:107)
+	at edu.jeznach.po2.client.App.main(App.java:254)
+
+}
+21.02.2020 16:28:15 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:107)
+	at edu.jeznach.po2.client.App.main(App.java:254)
+
+}
+21.02.2020 16:28:25 -> {
+🧨 Cannot receive mapping: java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at edu.jeznach.po2.common.file.FileManager.receiveString(FileManager.java:115)
+	at edu.jeznach.po2.client.communication.Messenger.lambda$requestMapping$3(Messenger.java:65)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.communication.Messenger.requestMapping(Messenger.java:65)
+	at edu.jeznach.po2.client.App.<init>(App.java:137)
+	at edu.jeznach.po2.client.App.main(App.java:254)
+
+}
+21.02.2020 16:28:25 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+21.02.2020 16:28:25 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+21.02.2020 16:28:25 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+21.02.2020 16:28:25 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+21.02.2020 16:28:25 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+21.02.2020 17:56:10 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:107)
+	at edu.jeznach.po2.client.App.main(App.java:254)
+
+}
+21.02.2020 17:56:58 -> {
+🧨 Cannot receive file: java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:82)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$34(FileEventWorker.java:594)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:80)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:600)
+
+}
+21.02.2020 17:56:58 -> {
+🧨 Cannot dispose files: java.nio.file.FileSystemException: C:\GitHub\PO_II\clientB\files\bek.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+:
+java.nio.file.FileSystemException: C:\GitHub\PO_II\clientB\files\bek.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:86)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:269)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$null$35(FileEventWorker.java:601)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$36(FileEventWorker.java:601)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:84)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:600)
+
+}
+21.02.2020 17:59:08 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:107)
+	at edu.jeznach.po2.client.App.main(App.java:254)
+
+}
+21.02.2020 17:59:42 -> {
+🧨 Cannot delete file: java.nio.file.FileSystemException: C:\GitHub\PO_II\clientB\files\bek.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+:
+java.nio.file.FileSystemException: C:\GitHub\PO_II\clientB\files\bek.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:86)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:269)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$37(FileEventWorker.java:610)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:610)
+
+}
+21.02.2020 18:00:06 -> {
+🧨 Cannot receive file: java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:82)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$34(FileEventWorker.java:594)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:80)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:600)
+
+}
+21.02.2020 18:00:06 -> {
+🧨 Cannot dispose files: java.nio.file.FileSystemException: C:\GitHub\PO_II\clientB\files\f.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+:
+java.nio.file.FileSystemException: C:\GitHub\PO_II\clientB\files\f.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:86)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:269)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$null$35(FileEventWorker.java:601)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$36(FileEventWorker.java:601)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:84)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:600)
+
+}
+21.02.2020 18:02:35 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:107)
+	at edu.jeznach.po2.client.App.main(App.java:254)
+
+}
+21.02.2020 18:17:06 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:107)
+	at edu.jeznach.po2.client.App.main(App.java:254)
+
+}
+21.02.2020 18:17:30 -> {
+🧨 Cannot delete file: java.nio.file.FileSystemException: C:\GitHub\PO_II\clientB\files\f.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+:
+java.nio.file.FileSystemException: C:\GitHub\PO_II\clientB\files\f.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:86)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:269)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$37(FileEventWorker.java:610)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:610)
+
+}
+21.02.2020 21:33:33 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:123)
+	at edu.jeznach.po2.client.App.main(App.java:270)
+
+}
+21.02.2020 21:33:44 -> {
+🧨 Cannot receive mapping: java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at edu.jeznach.po2.common.file.FileManager.receiveString(FileManager.java:114)
+	at edu.jeznach.po2.client.communication.Messenger.lambda$requestMapping$3(Messenger.java:65)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.communication.Messenger.requestMapping(Messenger.java:65)
+	at edu.jeznach.po2.client.App.<init>(App.java:153)
+	at edu.jeznach.po2.client.App.main(App.java:270)
+
+}
+21.02.2020 21:33:44 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+21.02.2020 21:33:44 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+21.02.2020 21:33:44 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+21.02.2020 21:33:44 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+21.02.2020 21:33:44 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+21.02.2020 21:34:35 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:123)
+	at edu.jeznach.po2.client.App.main(App.java:270)
+
+}
+24.02.2020 17:22:23 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:129)
+	at edu.jeznach.po2.client.App.main(App.java:276)
+
+}
+25.02.2020 03:26:56 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:159)
+	at edu.jeznach.po2.client.App.main(App.java:306)
+
+}
+25.02.2020 03:27:21 -> {
+🧨 Cannot receive mapping: java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at edu.jeznach.po2.common.file.FileManager.receiveString(FileManager.java:114)
+	at edu.jeznach.po2.client.communication.Messenger.lambda$requestMapping$3(Messenger.java:65)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.communication.Messenger.requestMapping(Messenger.java:65)
+	at edu.jeznach.po2.client.App.<init>(App.java:189)
+	at edu.jeznach.po2.client.App.main(App.java:306)
+
+}
+25.02.2020 03:27:21 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+25.02.2020 03:27:21 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+25.02.2020 03:27:21 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+25.02.2020 03:27:21 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+25.02.2020 03:27:21 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+25.02.2020 03:28:12 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:159)
+	at edu.jeznach.po2.client.App.main(App.java:306)
+
+}
+25.02.2020 03:33:40 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:159)
+	at edu.jeznach.po2.client.App.main(App.java:306)
+
+}
+25.02.2020 03:35:40 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:159)
+	at edu.jeznach.po2.client.App.main(App.java:307)
+
+}
+25.02.2020 03:36:19 -> {
+🧨 Cannot receive file: java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:82)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$34(FileEventWorker.java:594)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:80)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:600)
+
+}
+25.02.2020 03:36:19 -> {
+🧨 Cannot dispose files: java.nio.file.FileSystemException: C:\GitHub\PO_II\clientB\files\bek.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+:
+java.nio.file.FileSystemException: C:\GitHub\PO_II\clientB\files\bek.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:86)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:269)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$null$35(FileEventWorker.java:601)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$36(FileEventWorker.java:601)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:84)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:600)
+
+}
+25.02.2020 03:36:19 -> {
+🧨 Cannot receive file: java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:82)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$34(FileEventWorker.java:594)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:80)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:600)
+
+}
+25.02.2020 03:36:19 -> {
+🧨 Cannot dispose files: java.nio.file.FileSystemException: C:\GitHub\PO_II\clientB\files\xs\ss.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+:
+java.nio.file.FileSystemException: C:\GitHub\PO_II\clientB\files\xs\ss.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:86)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:269)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$null$35(FileEventWorker.java:601)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$36(FileEventWorker.java:601)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:84)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:600)
+
+}
+25.02.2020 03:36:56 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:159)
+	at edu.jeznach.po2.client.App.main(App.java:307)
+
+}
+25.02.2020 03:37:42 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:159)
+	at edu.jeznach.po2.client.App.main(App.java:307)
+
+}
+25.02.2020 03:38:07 -> {
+🧨 Cannot delete file: java.nio.file.FileSystemException: C:\GitHub\PO_II\clientB\files\bek.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+:
+java.nio.file.FileSystemException: C:\GitHub\PO_II\clientB\files\bek.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:86)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:269)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$37(FileEventWorker.java:610)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:610)
+
+}
+25.02.2020 03:38:08 -> {
+🧨 Cannot delete file: java.nio.file.NoSuchFileException: C:\GitHub\PO_II\clientB\files\xs\ss.txt~temp~:
+java.nio.file.NoSuchFileException: C:\GitHub\PO_II\clientB\files\xs\ss.txt~temp~
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:79)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:269)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$37(FileEventWorker.java:610)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:610)
+
+}
+25.02.2020 03:39:10 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:159)
+	at edu.jeznach.po2.client.App.main(App.java:307)
+
+}
+25.02.2020 03:39:45 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:159)
+	at edu.jeznach.po2.client.App.main(App.java:307)
+
+}
+25.02.2020 03:40:10 -> {
+🧨 Cannot receive mapping: java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at edu.jeznach.po2.common.file.FileManager.receiveString(FileManager.java:114)
+	at edu.jeznach.po2.client.communication.Messenger.lambda$requestMapping$3(Messenger.java:65)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.communication.Messenger.requestMapping(Messenger.java:65)
+	at edu.jeznach.po2.client.App.<init>(App.java:189)
+	at edu.jeznach.po2.client.App.main(App.java:307)
+
+}
+25.02.2020 03:40:10 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+25.02.2020 03:40:10 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+25.02.2020 03:40:10 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+25.02.2020 03:40:10 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+25.02.2020 03:40:10 -> {
+🧨 Cannot perform sending file: java.io.IOException: File already exists:
+java.io.IOException: File already exists
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:344)
+
+}
+25.02.2020 03:46:03 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:159)
+	at edu.jeznach.po2.client.App.main(App.java:313)
+
+}
+25.02.2020 03:46:16 -> {
+🧨 java.io.IOException: test:
+java.io.IOException: test
+	at edu.jeznach.po2.client.App.<init>(App.java:159)
+	at edu.jeznach.po2.client.App.main(App.java:313)
+
+}
+25.02.2020 03:46:57 -> {
+🧨 Cannot receive file: java.net.SocketTimeoutException: Read timed out:
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.security.DigestInputStream.read(DigestInputStream.java:161)
+	at edu.jeznach.po2.common.file.FileManager.receiveFile(FileManager.java:82)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$34(FileEventWorker.java:594)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:80)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:600)
+
+}
+25.02.2020 03:46:57 -> {
+🧨 Cannot dispose files: java.nio.file.FileSystemException: C:\GitHub\PO_II\clientB\files\bek.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+:
+java.nio.file.FileSystemException: C:\GitHub\PO_II\clientB\files\bek.txt~temp~: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces.
+
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:86)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:269)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$null$35(FileEventWorker.java:601)
+	at edu.jeznach.po2.common.util.LogHelper.expect(LogHelper.java:34)
+	at edu.jeznach.po2.client.work.FileEventWorker.lambda$run$36(FileEventWorker.java:601)
+	at edu.jeznach.po2.common.util.LogHelper$LogHelperWrapper.resolve(LogHelper.java:84)
+	at edu.jeznach.po2.client.work.FileEventWorker.run(FileEventWorker.java:600)
+
+}

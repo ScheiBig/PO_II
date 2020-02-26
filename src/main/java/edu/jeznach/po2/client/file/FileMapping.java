@@ -5,6 +5,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Represents mapping of a file stored in container directory.
  */
+@SuppressWarnings("serial")
 public class FileMapping extends edu.jeznach.po2.common.file.FileMapping {
 
     @Override
